@@ -14,6 +14,7 @@ include("conecta.php");
 
       <script src="<?php echo $media_host;?>/js/vendor/jquery.min.js"></script>
       <script src="<?php echo $media_host;?>/js/skel_config.js"></script>
+      <script src="<?php echo $media_host;?>/js/vendor/jquery.easing.1.3.js"></script> <!-- easing -->
       <script src="<?php echo $media_host;?>/js/vendor/skel.min.js"></script>
 
       <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
@@ -22,7 +23,7 @@ include("conecta.php");
       <!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
       <!--[if lte IE 7]><link rel="stylesheet" href="css/ie7.css" /><![endif]-->
       
-      <script src="<?php echo $media_host;?>/js/vendor/jquery.easing.1.3.js"></script> <!-- easing -->
+
       <script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
       <script src="<?php echo $media_host;?>/js/main.js"></script>
 
@@ -46,7 +47,7 @@ include("conecta.php");
         <div id="sidebar">
        <!-- Logo -->
 
-        <div id="logo" a href="#" onclick="javascript:document.form1.submit();" style="cursor:pointer;"> 
+        <div id="logo" a href="#" onclick="window.location='<?php echo $media_host?>'" style="cursor:pointer;"> 
 
     </div>
           
