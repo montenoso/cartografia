@@ -11,52 +11,59 @@ include("conecta.php");
         <meta name="description" content="" />
         <meta name="keywords" content="" />
         <!--<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,700|Open+Sans+Condensed:300,700" rel="stylesheet" />-->
-        <link rel="stylesheet" type="text/css" href="http://montenoso.net/cartografia/css/accordion.css" />
-        <link rel="stylesheet" type="text/css" href="http://montenoso.net/cartografia/css/bdd.css" />
+        <link rel="stylesheet" type="text/css" href="http://montenoso.net/cartografia_nova/css/accordion.css" />
+        <link rel="stylesheet" type="text/css" href="http://montenoso.net/cartografia_nova/css/bdd.css" />
         
-        <script src="http://montenoso.net/cartografia/js/jquery.min.js"></script>
-        <script src="http://montenoso.net/cartografia/js/config.js"></script>
-        <script src="http://montenoso.net/cartografia/js/skel.min.js"></script>
-        <script src="http://montenoso.net/cartografia/js/skel-panels.min.js"></script>
+
+
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
+        <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
+
+
+        <script src="http://montenoso.net/cartografia_nova/js/jquery.min.js"></script>
+        <script src="http://montenoso.net/cartografia_nova/js/config.js"></script>
+        <script src="http://montenoso.net/cartografia_nova/js/skel.min.js"></script>
+        <script src="http://montenoso.net/cartografia_nova/js/skel-panels.min.js"></script>
         <noscript>
-            <link rel="stylesheet" href="http://montenoso.net/cartografia/css/skel-noscript.css" />
-            <link rel="stylesheet" href="http://montenoso.net/cartografia/css/style.css" />
-            <link rel="stylesheet" href="http://montenoso.net/cartografia/css/style-desktop.css" />
-            <link rel="stylesheet" href="http://montenoso.net/cartografia/css/style-wide.css" />
+            <link rel="stylesheet" href="http://montenoso.net/cartografia_nova/css/skel-noscript.css" />
+            <link rel="stylesheet" href="http://montenoso.net/cartografia_nova/css/style.css" />
+            <link rel="stylesheet" href="http://montenoso.net/cartografia_nova/css/style-desktop.css" />
+            <link rel="stylesheet" href="http://montenoso.net/cartografia_nova/css/style-wide.css" />
         </noscript>
         <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
         <!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
         <!--[if lte IE 7]><link rel="stylesheet" href="css/ie7.css" /><![endif]-->
         
-        <script src="http://montenoso.net/cartografia/js/jquery.easing.1.3.js"></script> <!-- easing -->
+        <script src="http://montenoso.net/cartografia_nova/js/jquery.easing.1.3.js"></script> <!-- easing -->
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script> <!-- jQuery -->
         
-        <script type="text/javascript" src="http://montenoso.net/cartografia/js/prototype.js"></script>
-        <script type="text/javascript" src="http://montenoso.net/cartografia/js/effects.js"></script>
-        <script type="text/javascript" src="http://montenoso.net/cartografia/js/accordion.js"></script>
+        <script type="text/javascript" src="http://montenoso.net/cartografia_nova/js/prototype.js"></script>
+        <script type="text/javascript" src="http://montenoso.net/cartografia_nova/js/effects.js"></script>
+        <script type="text/javascript" src="http://montenoso.net/cartografia_nova/js/accordion.js"></script>
         
-         <script src="http://montenoso.net/cartografia/openlayersmaster/lib/OpenLayers.js"></script> 
-        <link rel="stylesheet" href="http://montenoso.net/cartografia/openlayersmaster/theme/default/style.css" type="text/css">
+         <script src="http://montenoso.net/cartografia_nova/openlayersmaster/lib/OpenLayers.js"></script> 
+        <link rel="stylesheet" href="http://montenoso.net/cartografia_nova/openlayersmaster/theme/default/style.css" type="text/css">
        
      <!-- <script src="http://www.openlayers.org/api/OpenLayers.js"></script>-->
         
         <!--<script src="js/jquery-1.3.2.js"></script>-->
-        <script src="http://montenoso.net/cartografia/postMap-montes2.js"></script>
-        <script src="http://montenoso.net/cartografia/js/ajax.js"></script> <!-- cargar contenido en div -->
-        <script src="http://montenoso.net/cartografia/js/ajax9.js"></script> <!-- buscador general -->
+        <script src="http://montenoso.net/cartografia_nova/js/map_cartodb.js"></script>
+        <script src="http://montenoso.net/cartografia_nova/js/ajax.js"></script> <!-- cargar contenido en div -->
+        <script src="http://montenoso.net/cartografia_nova/js/ajax9.js"></script> <!-- buscador general -->
         
-          <script src="http://montenoso.net/cartografia/js/verTodo.js"></script> <!-- ver todos archivos en el mapa-->
-        <script src="http://montenoso.net/cartografia/js/ocultarTodo.js"></script><!-- ocultar todos archivos en el mapa-->
-        <script src="http://montenoso.net/cartografia/js/posicionarElemento.js"></script>
-        <script src="http://montenoso.net/cartografia/js/valoresInsertar.js"></script>
-        <script src="http://montenoso.net/cartografia/js/valoresFormRuta.js"></script>
-        <script src="http://montenoso.net/cartografia/js/valoresArchivosSelec.js"></script>
-        <script src="http://montenoso.net/cartografia/js/upload.js"></script>
-        <script src="http://montenoso.net/cartografia/js/pasarIdDoc.js"></script>
-        <script src="http://montenoso.net/cartografia/js/ficha.js"></script>
+        <script src="http://montenoso.net/cartografia_nova/js/verTodo.js"></script> <!-- ver todos archivos en el mapa-->
+        <script src="http://montenoso.net/cartografia_nova/js/ocultarTodo.js"></script><!-- ocultar todos archivos en el mapa-->
+        <script src="http://montenoso.net/cartografia_nova/js/posicionarElemento.js"></script>
+        <script src="http://montenoso.net/cartografia_nova/js/valoresInsertar.js"></script>
+        <script src="http://montenoso.net/cartografia_nova/js/valoresFormRuta.js"></script>
+        <script src="http://montenoso.net/cartografia_nova/js/valoresArchivosSelec.js"></script>
+        <script src="http://montenoso.net/cartografia_nova/js/upload.js"></script>
+        <script src="http://montenoso.net/cartografia_nova/js/pasarIdDoc.js"></script>
+        <script src="http://montenoso.net/cartografia_nova/js/ficha.js"></script>
         
-        <script src="http://montenoso.net/cartografia/js/CargarRelatos.js"></script>
-        <script src="http://montenoso.net/cartografia/js/ficha-mask.js"></script>
+        <script src="http://montenoso.net/cartografia_nova/js/CargarRelatos.js"></script>
+        <script src="http://montenoso.net/cartografia_nova/js/ficha-mask.js"></script>
         
         <script type="text/javascript">
             function showUser(str)
@@ -168,12 +175,12 @@ include("conecta.php");
                 <!-- Sidebar -->
                 <div id="sidebar">
                <!-- Logo -->
-                <form id="form1" name="form1" method="post" action="http://montenoso.net/cartografia/">
+                <form id="form1" name="form1" method="post" action="http://montenoso.net/cartografia_nova/">
                     <div id="logo" a href="#" onclick="javascript:document.form1.submit();" style="cursor:pointer;"> 
                 </form>
                     </div>
                      </br>
-                    <div id="texto">  "Cartografía aberta.</br> En Desenvolvemento."</div>
+                    <div id="texto">  "Cartografía en desenvolvemento.</br>v2"</div>
                     </br>
                 <!--------------------------- MENÚ ACORDEÓN ------------------------------>
                 <div id="accordion">
@@ -283,8 +290,7 @@ include("conecta.php");
                         <div class="accordion_content">
                             <div>
                             <br/>
-                                Este espazo créase co obxetivo de contrubuír á visibilización dos Montes Veciñais en Man Común galegos e as comunidades que os xestionan. Nel situamos as comunidades e facilitamos os datos básicos sobre elas. Tamén poñemos en común experiencias, documentación e reflexións en torno ás xornadas do equipo en algúns deles. Dan conta dunha liña de traballo do proxecto en torno aos comúns situados e ó hiperlocalismo como estratexia para o estudo desta realidade que racha coa dicotomía público-privado. Son xornadas moi heteroxéneas nas que nos achegamento ás comunidades a través de encontros informais con comuneirxs. Argozón, Guillade, Torres e Vilamateo, Ombre e Mouriscados son as comunidades escollidas para estes primeiros traballos de campo, que han ir espallándose a outras comunidades de montes da nosa xeografía.
-                            </div>
+                                Este espazo créase co obxetivo de contrubuír á visibilización dos Montes Veciñais en Man Común galegos e as comunidades que os xestionan. Nel situamos as comunidades e facilitamos os datos básicos sobre elas. Tamén poñemos en común experiencias, documentación e reflexións en torno ás xornadas do equipo en algúns deles. 
                         </div>
                 
                     </div> <!-- end vertical_container -->
