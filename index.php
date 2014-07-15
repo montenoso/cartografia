@@ -27,6 +27,24 @@ include("conecta.php");
       <script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
       <script src="<?php echo $media_host;?>/js/main.js"></script>
 
+
+      <script type="text/javascript" >
+        <?php
+          $sql = "SELECT material_id, longitud, latitud, selectedradio, titulo_registro FROM documento ORDER BY fecha_inser DESC";
+          $consulta = mysql_query($sql) or die ("No se pudo ejecutar la consulta");
+          $datos = mysql_query($sql, $conexion);
+          $markers= array();
+          while ($resultado = mysql_fetch_assoc($datos)) {
+            $markers[]=$resultado;
+          }
+          $markersJson=json_encode($markers);
+
+          echo "var recursos = ".$markersJson.";"
+        ?> 
+
+        console.log(recursos);
+
+      </script>
               
   </head>
   <!--
@@ -45,10 +63,11 @@ include("conecta.php");
 
         <!-- Sidebar -->
         <div id="sidebar">
-       <!-- Logo -->
 
-        <div id="logo" a href="#" onclick="window.location='<?php echo $media_host?>'" style="cursor:pointer;"> 
+         <!-- Logo -->
 
+          <div id="logo" a href="#" onclick="window.location='<?php echo $media_host;?>'" style="cursor:pointer;"> </div>
+        </div>
     </div>
           
 	</body>
