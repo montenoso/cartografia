@@ -708,6 +708,8 @@ function  marker_clusterer( opts ) {
       that.markers[id].setIcon( {url:that.options.icon_path + icon_category + that.options.icon_small, anchor:that.icon_small.anchor}); // SMALL ICON
     }
 
+console.log(that.options.icon_path + icon_category + that.options.icon_small);
+
     that.markers[id].setVisible(true);
   }
 

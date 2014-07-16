@@ -12,11 +12,16 @@ include("conecta.php");
       <meta name="description" content="" />
       <meta name="keywords" content="" />
 
+
+      <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry&v=3.exp&sensor=false"></script>
       <script src="<?php echo $media_host;?>/js/vendor/jquery.min.js"></script>
       <script src="<?php echo $media_host;?>/js/skel_config.js"></script>
       <script src="<?php echo $media_host;?>/js/vendor/jquery.easing.1.3.js"></script> <!-- easing -->
       <script src="<?php echo $media_host;?>/js/vendor/skel.min.js"></script>
+      <script src="<?php echo $media_host;?>/js/vendor/tiny_map_utilities/marker_clusterer/vendor/rbush.js"></script>
+      <script src="<?php echo $media_host;?>/js/vendor/tiny_map_utilities/marker_clusterer/marker_clusterer.js"></script>
 
+  
       <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
 
       <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
@@ -39,10 +44,10 @@ include("conecta.php");
           }
           $markersJson=json_encode($markers);
 
-          echo "var recursos = ".$markersJson.";"
+          echo "var recursos = ".$markersJson.";";
         ?> 
 
-        console.log(recursos);
+        //console.log(recursos);
 
       </script>
               
