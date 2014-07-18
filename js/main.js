@@ -59,7 +59,7 @@ $(document).ready(
 
     // layer simple desde vista
 
-    cartodb.createLayer(map, 'http://montenoso2.cartodb.com/api/v2/viz/9ad57d16-0552-11e4-8ccb-0e10bcd91c2b/viz.json')
+    cartodb.createLayer(map, 'http://montenoso2.cartodb.com/api/v2/viz/9ad57d16-0552-11e4-8ccb-0e10bcd91c2b/viz.json', { legends: false })
     .addTo(map)
     .on('done', function(layer) {
       console.log(layer);
