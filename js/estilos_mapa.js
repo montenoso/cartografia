@@ -1,9 +1,78 @@
-estilos_mapa = [
+var estilos_mapa = [
     {
-        "featureType": "administrative",
+        "featureType": "water",
         "stylers": [
             {
-                "visibility": "off"
+                "saturation": 43
+            },
+            {
+                "lightness": -11
+            },
+            {
+                "hue": "#0088ff"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "hue": "#ff0000"
+            },
+            {
+                "saturation": -100
+            },
+            {
+                "lightness": 99
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#808080"
+            },
+            {
+                "lightness": 54
+            }
+        ]
+    },
+    {
+        "featureType": "landscape.man_made",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#ece2d9"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.park",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#ccdca1"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "color": "#767676"
+            }
+        ]
+    },
+    {
+        "featureType": "road",
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "color": "#ffffff"
             }
         ]
     },
@@ -11,53 +80,24 @@ estilos_mapa = [
         "featureType": "poi",
         "stylers": [
             {
-                "visibility": "simplified"
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "labels",
-        "stylers": [
-            {
-                "visibility": "simplified"
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "stylers": [
-            {
-                "visibility": "simplified"
-            }
-        ]
-    },
-    {
-        "featureType": "transit",
-        "stylers": [
-            {
-                "visibility": "simplified"
-            }
-        ]
-    },
-    {
-        "featureType": "landscape",
-        "stylers": [
-            {
-                "visibility": "simplified"
-            }
-        ]
-    },
-    {
-        "featureType": "road.highway",
-        "stylers": [
-            {
                 "visibility": "off"
             }
         ]
     },
     {
-        "featureType": "road.local",
+        "featureType": "landscape.natural",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#b8cb93"
+            }
+        ]
+    },
+    {
+        "featureType": "poi.park",
         "stylers": [
             {
                 "visibility": "on"
@@ -65,8 +105,7 @@ estilos_mapa = [
         ]
     },
     {
-        "featureType": "road.highway",
-        "elementType": "geometry",
+        "featureType": "poi.sports_complex",
         "stylers": [
             {
                 "visibility": "on"
@@ -74,32 +113,18 @@ estilos_mapa = [
         ]
     },
     {
-        "featureType": "water",
+        "featureType": "poi.medical",
         "stylers": [
             {
-                "color": "#84afa3"
-            },
-            {
-                "lightness": 52
+                "visibility": "on"
             }
         ]
     },
     {
+        "featureType": "poi.business",
         "stylers": [
             {
-                "saturation": -17
-            },
-            {
-                "gamma": 0.36
-            }
-        ]
-    },
-    {
-        "featureType": "transit.line",
-        "elementType": "geometry",
-        "stylers": [
-            {
-                "color": "#3f518c"
+                "visibility": "simplified"
             }
         ]
     }
