@@ -35,24 +35,37 @@ $(document).ready(
       }
     );*/
 
-
+/*
  var url = 'http://montenoso2.cartodb.com/api/v2/viz/9ad57d16-0552-11e4-8ccb-0e10bcd91c2b/viz.json';
  cartodb.createVis('map', url)
  .done(function(vis, layers) {
  }); 
+*/
 
-/*
     var map;
 
     var mapOptions = {
-      zoom: 8,
+      zoom: 9,
       center: new google.maps.LatLng(42.7956247,-7.9483766),
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      zoomControl:true,
+      zoomControlOptions: { style:google.maps.ZoomControlStyle.SMALL },
+      streetViewControl:false,
+      panControl:false
     };
     map = new google.maps.Map(document.getElementById('map'), mapOptions);
 
 
-    clusterer(map);
+    // layer simple desde vista
+
+    cartodb.createLayer(map, 'http://montenoso2.cartodb.com/api/v2/viz/9ad57d16-0552-11e4-8ccb-0e10bcd91c2b/viz.json')
+    .addTo(map)
+    .on('done', function(layer) {
+      console.log(layer);
+    });
+
+
+    /*clusterer(map);
 
     google.maps.event.addListenerOnce(map, 'idle', function(){
       var cl = clusterer(map, recursos);
