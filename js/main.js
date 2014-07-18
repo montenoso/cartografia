@@ -42,6 +42,8 @@ $(document).ready(
  }); 
 */
 
+
+
     var map;
 
     var mapOptions = {
@@ -62,20 +64,20 @@ $(document).ready(
     cartodb.createLayer(map, 'http://montenoso2.cartodb.com/api/v2/viz/9ad57d16-0552-11e4-8ccb-0e10bcd91c2b/viz.json', { legends: false })
     .addTo(map)
     .on('done', function(layer) {
-      console.log(layer);
+      //console.log(layer);
     });
 
 
-    /*clusterer(map);
+   // cluster clusterer(map);
 
     google.maps.event.addListenerOnce(map, 'idle', function(){
       var cl = clusterer(map, recursos);
-      cl.filter(
+      /*cl.filter(
           {enabled_list: [378,376,374],  categories:[]}
-        );
-      show_all_markers();
+        );*/
+      //show_all_markers();
     });
-*/
+
 
   }
 );
@@ -86,7 +88,7 @@ function clusterer( mapa , resources) {
     map: mapa,
     json_data: resources,
     data_structure: {id: 'material_id', lat: 'latitud', lng: 'longitud'},
-    zoom_range : [12,13],
+    zoom_range : [9,10],
     zIndex: 10,
     cluster_radious: 20,
     //icon_path: '/img/nntmap/cluster_icons/',
@@ -94,9 +96,10 @@ function clusterer( mapa , resources) {
     icon_medium_diameter: 20,
     icon_big_diameter: 22,
     //show_disabled_points: false, 
-//    nocluster_zoom_range: [16,25],
+    //nocluster_zoom_range: [13,25],
 
-    debug:true // abre ventana debug de cluster icons
+    
+    //debug:true // abre ventana debug de cluster icons
   });
 
 }
