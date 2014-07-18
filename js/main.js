@@ -51,7 +51,8 @@ $(document).ready(
       zoomControl:true,
       zoomControlOptions: { style:google.maps.ZoomControlStyle.SMALL },
       streetViewControl:false,
-      panControl:false
+      panControl:false,
+      styles: estilos_mapa
     };
     map = new google.maps.Map(document.getElementById('map'), mapOptions);
 

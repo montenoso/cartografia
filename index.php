@@ -16,6 +16,7 @@ include("conecta.php");
       <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry&v=3.exp&sensor=false"></script>
       <script src="<?php echo $media_host;?>/js/vendor/jquery.min.js"></script>
       <script src="<?php echo $media_host;?>/js/skel_config.js"></script>
+      <script src="<?php echo $media_host;?>/js/estilos_mapa.js"></script>
       <script src="<?php echo $media_host;?>/js/vendor/jquery.easing.1.3.js"></script> <!-- easing -->
       <script src="<?php echo $media_host;?>/js/vendor/skel.min.js"></script>
       <script src="<?php echo $media_host;?>/js/vendor/tiny_map_utilities/marker_clusterer/vendor/rbush.js"></script>
