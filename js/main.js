@@ -91,7 +91,7 @@ function clusterer( mapa , resources) {
     zoom_range : [9,10],
     zIndex: 10,
     cluster_radious: 20,
-    //icon_path: '/img/nntmap/cluster_icons/',
+    icon_path: '../images/marcadores_cluster/',
     icon_small_diameter: 18,
     icon_medium_diameter: 20,
     icon_big_diameter: 22,
