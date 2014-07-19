@@ -88,13 +88,13 @@ function clusterer( mapa , resources) {
     map: mapa,
     json_data: resources,
     data_structure: {id: 'material_id', lat: 'latitud', lng: 'longitud'},
-    zoom_range : [9,10],
+    zoom_range : [9,25],
     zIndex: 10,
     cluster_radious: 20,
-    icon_path: '../images/marcadores_cluster/',
+    icon_path: 'images/marcadores_cluster/',
     icon_small_diameter: 18,
     icon_medium_diameter: 20,
-    icon_big_diameter: 22,
+    icon_big_diameter: 22
     //show_disabled_points: false, 
     //nocluster_zoom_range: [13,25],
 
