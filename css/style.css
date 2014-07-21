@@ -614,9 +614,12 @@
 
 	#wrapper
 	{
-		position: relative;
-                height: auto;
-                background: #364050 url('images/bg1.png');
+  position:absolute;
+  top:0;
+  bottom:0;
+  left:0;
+  right:0;
+  background: #364050 url('images/bg1.png');
 	}
 
 /*********************************************************************************/
@@ -763,7 +766,11 @@
 /* Content                                                                       */
 /*********************************************************************************/
 		
-	#content
+  #content{
+  height:100%;
+}
+
+	/**#content
 	{
 		position: relative;
                 height: auto;
@@ -786,8 +793,7 @@
 	{
 		position: relative;
 		z-index: 1;
-	}
-		
+	}*/
 /*********************************************************************************/
 /* Map                                                                       */
 /*********************************************************************************/
@@ -796,7 +802,7 @@
 	{
 		position: relative;
                 width: 100%;
-                height: 1000px;
+                 height:100%;
 		background-color: #fff;
 	}
 
