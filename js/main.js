@@ -72,6 +72,7 @@ $(document).ready(
 
     google.maps.event.addListenerOnce(map, 'idle', function(){
       var cl = clusterer(map, recursos);
+      cl.filter( defineFilters() )
       /*cl.filter(
           {enabled_list: [378,376,374],  categories:[]}
         );*/
@@ -80,6 +81,7 @@ $(document).ready(
 
 
   }
+
 );
 
 
@@ -88,14 +90,14 @@ function clusterer( mapa , resources) {
   var icons_path = 'images/marcadores_cluster/';
 
   return new marker_clusterer(
-    {
+    { // pequenos
       icon_path: icons_path,
     },
-    {
+    { // medianos
       icon_path: icons_path,
       anchor: [12,28]
     },
-    {
+    { // ghrandes
       icon_path: icons_path,
       anchor:[16,36]
     },
@@ -103,7 +105,6 @@ function clusterer( mapa , resources) {
     },
     {
     },
-
     {
       map: mapa,
       json_data: resources,
@@ -118,6 +119,41 @@ function clusterer( mapa , resources) {
       //debug:true // abre ventana debug de cluster icons
     }
   );
-
 }
+
+
+// este método queda algo bizarro, pero é debido á natureza do propio marker clusterer e a maneira que ten de categorizar iconos
+function defineFilters() {
+
+  var tipos = {};
+  var lista_todos = [];
+
+
+  $(recursos).each( function(i,e){
+    eval(
+      "if( typeof tipos." + e.selectedradio + "  == 'undefined' ){ " +
+      "  tipos." + e.selectedradio + " = {id:'" + e.selectedradio + "', important:true, elements:[] };" +
+      "}" +
+      "tipos." + e.selectedradio + ".elements.push(" + e.material_id + ");"
+    );
+
+    lista_todos.push( e.material_id );
+
+  });
+  //console.log(tipos);
+
+  var f = {
+    enabled_list: lista_todos,
+    categories: []
+  };
+
+  $.each(tipos, function(i,e) {
+    //console.log(e);
+    //console.log(e)
+    f.categories.push(e);
+  });
   
+//console.log(JSON.stringify( f ))
+  return f;
+}
+
