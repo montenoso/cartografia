@@ -60,7 +60,6 @@ $(document).ready(
 
 
     // layer simple desde vista
-
     cartodb.createLayer(map, 'http://montenoso2.cartodb.com/api/v2/viz/d5f2c756-182a-11e4-9427-0e73339ffa50/viz.json', { legends: false })
     .addTo(map)
     .on('done', function(layer) {
@@ -69,6 +68,13 @@ $(document).ready(
 
 
    // cluster clusterer(map);
+
+    // convertir id's string en integer
+    $.each( recursos, function(i,e) {
+      recursos[i].material_id = parseInt( e.material_id );
+    });
+
+
 
     google.maps.event.addListenerOnce(map, 'idle', function(){
       var cl = clusterer(map, recursos);
@@ -114,6 +120,12 @@ function clusterer( mapa , resources) {
       cluster_radious: 20,
       //show_disabled_points: false, 
       //nocluster_zoom_range: [13,25],
+      hover_event: function(marker, data){
+        $(data).each(function(i,e){
+
+          //console.log( e.selectedradio );
+        });
+      }
 
       
       //debug:true // abre ventana debug de cluster icons
@@ -132,10 +144,14 @@ function defineFilters() {
   $(recursos).each( function(i,e){
     eval(
       "if( typeof tipos." + e.selectedradio + "  == 'undefined' ){ " +
-      "  tipos." + e.selectedradio + " = {id:'" + e.selectedradio + "', important:true, elements:[] };" +
+      "  tipos." + e.selectedradio + " = {id:'" + e.selectedradio + "', important:false, elements:[], hide:false };" +
       "}" +
       "tipos." + e.selectedradio + ".elements.push(" + e.material_id + ");"
     );
+
+    if( typeof tipos.comunidade != 'undefined' ) {
+      tipos.comunidade.important = true;
+    }
 
     lista_todos.push( e.material_id );
 
@@ -150,8 +166,10 @@ function defineFilters() {
   $.each(tipos, function(i,e) {
     //console.log(e);
     //console.log(e)
-    f.categories.push(e);
+    f.categories.push( e );
   });
+
+  console.log(f)
   
 //console.log(JSON.stringify( f ))
   return f;
