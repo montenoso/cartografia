@@ -93,6 +93,14 @@ $(document).ready(
 
 function clusterer( mapa , resources) {
 
+  var iwindow = new smart_infowindow({
+    map:mapa,
+    width: 150,
+    max_height:200,
+    marker_distance: [8,8], // [top, bottom]
+  });
+
+
   var icons_path = 'images/marcadores_cluster/';
 
   return new marker_clusterer(
@@ -120,11 +128,24 @@ function clusterer( mapa , resources) {
       cluster_radious: 20,
       //show_disabled_points: false, 
       //nocluster_zoom_range: [13,25],
-      hover_event: function(marker, data){
-        $(data).each(function(i,e){
-
-          //console.log( e.selectedradio );
+      hover_event: function(marker, data) {
+        /*
+        if($(data).length == 1 ) {
+          iwindow.SetMarkerDistances([4,4]);
+        }
+        else
+        if ($(data).length > 6) {
+          iwindow.SetMarkerDistances([10,10]);
+        }
+        else {
+          iwindow.SetMarkerDistances([8,8]);
+        }*/
+        
+        var infocontent = "";
+        $(data).each( function(i,e) {
+          infocontent = infocontent + "<div>" + e.titulo_registro + "</div>" ;
         });
+        iwindow.open(marker, 'mouseover' , infocontent);
       }
 
       
