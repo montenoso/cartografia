@@ -5,7 +5,8 @@ smart_infowindow.prototype = new google.maps.OverlayView();
 
 /** @constructor */
 function smart_infowindow(opts) {
-
+  var that = this;
+  
   // obtain paths
   var current_path = $('script[src$="/smart_infowindow.js"]').attr('src').replace("smart_infowindow.js", "");
 
@@ -20,7 +21,7 @@ function smart_infowindow(opts) {
     border_height: 0,
     width: 200,
     allways_top: false, // when hover is locked, allways up direction
-    corner_distance:30,
+    corner_distance: 30,
     marker_distance: [40,-10], // [top, bottom]
     peak_img: current_path + 'img/peak.png',
     peak_img_width: 13,
@@ -34,6 +35,8 @@ function smart_infowindow(opts) {
 
 
 smart_infowindow.prototype.onAdd = function() {
+  var that = this;
+  
 
   if(this.options.box_id)
     var box_id=" id='"+this.options.box_id+"' ";
@@ -66,7 +69,7 @@ smart_infowindow.prototype.onAdd = function() {
   google.maps.event.addDomListener(this.div_, 'mouseleave', function(e){if (e.stopPropagation) e.stopPropagation();}); // cancels double right click 
 
 
-  s_i_that = this;
+  that = this;
 
   //
   // Here disable wheel zoom into infobox, create too the variable "is_on_infowindow", that makes
@@ -74,24 +77,24 @@ smart_infowindow.prototype.onAdd = function() {
   is_on_infowindow = false;
 
   // enter on infowindow and set true
-  $(s_i_that.div_).bind('mouseenter', function(){
+  $(that.div_).bind('mouseenter', function(){
     is_on_infowindow = true;
-    s_i_that.options.map.setOptions({scrollwheel: false});
+    that.options.map.setOptions({scrollwheel: false});
   });
   
   click_event_opened = false;
 
   // exit infowindow and set false
-  $(s_i_that.div_).bind('mouseleave',function(){
-    s_i_that.options.map.setOptions({scrollwheel: s_i_that.options.map_scrollwhell_is_enabled});
+  $(that.div_).bind('mouseleave',function(){
+    that.options.map.setOptions({scrollwheel: that.options.map_scrollwhell_is_enabled});
     is_on_infowindow = false;
     if(click_event_opened == false)
-      s_i_that.close();
+      that.close();
   });
 
   //
   //  when change zoom close infowindow
-  google.maps.event.addListener(this.options.map, 'zoom_changed', function(){s_i_that.close()});
+  google.maps.event.addListener(this.options.map, 'zoom_changed', function(){that.close()});
 
 };
 
@@ -101,12 +104,15 @@ smart_infowindow.prototype.draw = function() {
 
 // hovers and clicks
 smart_infowindow.prototype.MarkerEvent = function(marker, evento, content) {
+  var that = this;
+
   google.maps.event.addListener(marker, evento, function( ){
-    s_i_that.open(marker, evento, content);
+    that.open(marker, evento, content);
   });
 }
 
 smart_infowindow.prototype.open = function( marker, evento, content ) {
+  var that = this;
 
   var click = false
 
@@ -114,8 +120,8 @@ smart_infowindow.prototype.open = function( marker, evento, content ) {
     click_event_opened = true;
     var click = true;
     // if click on map check if is mouse is now on infowindow
-    map_click_event = google.maps.event.addListenerOnce(s_i_that.options.map, 'click', function(){
-      s_i_that.close();
+    map_click_event = google.maps.event.addListenerOnce(that.options.map, 'click', function(){
+      that.close();
       click_event_opened = false;
     });
   }
@@ -124,7 +130,7 @@ smart_infowindow.prototype.open = function( marker, evento, content ) {
 
     marker_mouseout_event = google.maps.event.addListenerOnce(marker, 'mouseout', function(){
       if(is_on_infowindow == false )
-        s_i_that.close();
+        that.close();
     });
   }
 
@@ -133,9 +139,13 @@ smart_infowindow.prototype.open = function( marker, evento, content ) {
     // lets open infowindow 
     this.close();
     this.SetContent(content);
-    this.SetStyles();
-    this.SetPosition(marker, click);
-    $(this.div_).show();
+    setTimeout(function () {
+      that.SetStyles();
+      that.SetPosition(marker, click);
+      that.SetStyles();
+      $(that.div_).show();
+    }, 10);
+
   }
 
 };
@@ -150,9 +160,11 @@ smart_infowindow.prototype.close = function( ) {
 // Private Setters
 //
 smart_infowindow.prototype.SetStyles = function() {
+  var that = this;
+  
   $(this.div_).find('.box').css('box-shadow', this.options.box_shadow );
   $(this.div_).find('.box').css('background-color', this.options.background_color );
-//  $(this.div_).find('.box .innerbox').css('padding', '5px');
+  $(this.div_).find('.box .innerbox').css('padding', '6px');
   $(this.div_).css('cursor', 'default' );
   $(this.div_).css('width', this.options.width );
   $(this.div_).find('.box .innerbox').css('height', 'auto')
@@ -164,10 +176,12 @@ smart_infowindow.prototype.SetStyles = function() {
 
 
 
-  s_i_that = this;
+  that = this;
 };
 
 smart_infowindow.prototype.SetPosition = function( marker, click_ev ) {
+  var that = this;
+  
   var overlayProjection = this.getProjection();
   var canvas_marker_point = overlayProjection.fromLatLngToDivPixel( marker.getPosition() );
   var bounds = this.options.map.getBounds();
@@ -211,6 +225,7 @@ smart_infowindow.prototype.SetPosition = function( marker, click_ev ) {
       click_ev == true  // is a click event
   ){
     $(this.div_).find('.bottom-space').css('height', this.options.peak_img_height);
+
     var final_peak_point_y = canvas_marker_point.y - $(this.div_).height() - this.options.marker_distance[0] ;
     peak_v = -1; // peak vertical on bottom
   }
@@ -285,24 +300,32 @@ smart_infowindow.prototype.SetPosition = function( marker, click_ev ) {
 
 
 smart_infowindow.prototype.SetPeak = function(v, h) {
+  var that = this;
+  
 
   var peak_img = document.createElement('img');
   $(peak_img).attr('src', this.options.peak_img);
 
   $(this.div_).find('.top-space').html("");
   $(this.div_).find('.bottom-space').html("");
+ 
+  $(this.div_).find('.bottom-space').css("position", 'relative');
+  //$(this.div_).find('.bottom-space').css("border", '1px solid black');
+  $(peak_img).css('position', 'relative');  
+  $(peak_img).css('top',  '-7px');
+
 
   // set to or bottom position (and rotate with jquery rotate library)
   if(v===1){
     var current_peak_container = $(this.div_).find('.top-space');
-    current_peak_container.css('height:default')
-    current_peak_container.html(peak_img)
-
+    current_peak_container.css('height:default');
+    current_peak_container.html(peak_img);
     current_peak_container.find('img').rotate(180);
   }
   else{
     var current_peak_container = $(this.div_).find('.bottom-space');
     current_peak_container.css('height:default')
+
     current_peak_container.html(peak_img);
   }
 
@@ -320,6 +343,7 @@ smart_infowindow.prototype.SetPeak = function(v, h) {
   }
 
   current_peak_container.find('img').css('margin-left', peak_margin_left+'px');
+
 };
 
 

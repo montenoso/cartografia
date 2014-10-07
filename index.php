@@ -24,7 +24,7 @@ include("conecta.php");
       <script src="<?php echo $media_host;?>/js/vendor/tiny_map_utilities/smart_infowindow/vendor/jQueryRotate.js"></script>
       <script src="<?php echo $media_host;?>/js/vendor/tiny_map_utilities/smart_infowindow/smart_infowindow.js"></script>      
 
-  
+  <style> img{1px solid black;}</style> 
       <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
 
       <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->

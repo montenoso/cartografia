@@ -95,9 +95,9 @@ function clusterer( mapa , resources) {
 
   var iwindow = new smart_infowindow({
     map:mapa,
-    width: 150,
+    width: 300,
     max_height:200,
-    marker_distance: [8,8], // [top, bottom]
+    marker_distance: [16,0], // [top, bottom]
   });
 
 
