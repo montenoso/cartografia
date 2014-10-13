@@ -96,7 +96,7 @@ function clusterer( mapa , resources) {
   var iwindow = new smart_infowindow({
     map:mapa,
     box_id: 'caixa_mapa',
-    width: 300,
+    width: 340,
     box_padding:0,
     max_height:200,
     marker_distance: [0,0], // [top, bottom]
@@ -108,6 +108,7 @@ function clusterer( mapa , resources) {
   return new marker_clusterer(
     { // pequenos
       icon_path: icons_path,
+      anchor: [12,28],
     },
     { // medianos
       icon_path: icons_path,
@@ -148,12 +149,13 @@ function clusterer( mapa , resources) {
 
         $(data).each( function(i,e) {
 
-
-          if( e.selectedradio == 'comunidade' ) {
-            comunidade = comunidade + "<div class='elemento comunidade'>" + e.titulo_registro + "</div>" ;
-          }
-          else {
-            recursos = recursos + "<div class='elemento recurso'>" + e.titulo_registro + "</div>";
+          if( e.titulo_registro != '') {
+            if( e.selectedradio == 'comunidade' ) {
+              comunidade = comunidade + "<div class='elemento comunidade'  >" + e.titulo_registro + "</div>" ;
+            }
+            else {
+              recursos = recursos + "<div class='elemento recurso tipo_"+e.selectedradio+"' >" + e.titulo_registro + "</div>";
+            }
           }
         });
 
