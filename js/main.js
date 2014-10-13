@@ -254,6 +254,7 @@ function mapa_selecciona_elemento(id, lat, lng) {
 
 function mapa_desselecciona() { 
   cl.marker_unselect();
+  $("#display_mapa_content").html( "" );
   $("#display_mapa").hide();
 }
 
