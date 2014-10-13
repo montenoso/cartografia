@@ -20,6 +20,7 @@
 }
 
   #caixa_mapa .elemento.comunidade{
+    font-weight: bold;
     hwight:30px;
     background-image:  url('/images/marcadores_cluster/point_small/bosque-pinar.png' );
     background-color:#AADE9E;

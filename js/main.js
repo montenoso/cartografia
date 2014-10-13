@@ -103,7 +103,7 @@ function clusterer( mapa , resources) {
     width: 340,
     box_padding:0,
     max_height:200,
-    marker_distance: [0,0], // [top, bottom]
+    marker_distance: [0,-10], // [top, bottom]
   });
 
   return new marker_clusterer(
