@@ -28,8 +28,7 @@ include("conecta.php");
        
         <div id="ficha">
         </br>
-        </br>
-   
+
         <?php
      
            echo  "<h2>".$titulo."</h2>";
