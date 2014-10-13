@@ -44,6 +44,10 @@ $(document).ready(
 
 
 
+
+    icons_path = 'images/marcadores_cluster/';
+    cl = false;
+
     var mapOptions = {
       zoom: 9,
       center: new google.maps.LatLng(42.7956247,-7.9483766),
@@ -73,9 +77,8 @@ $(document).ready(
     });
 
 
-
     google.maps.event.addListenerOnce(mapa, 'idle', function(){
-      var cl = clusterer(mapa, recursos);
+      cl = clusterer(mapa, recursos);
       cl.filter( defineFilters() )
       /*cl.filter(
           {enabled_list: [378,376,374],  categories:[]}
@@ -100,9 +103,6 @@ function clusterer( mapa , resources) {
     marker_distance: [0,0], // [top, bottom]
   });
 
-
-  var icons_path = 'images/marcadores_cluster/';
-
   return new marker_clusterer(
     { // pequenos
       icon_path: icons_path,
@@ -119,7 +119,9 @@ function clusterer( mapa , resources) {
     {
     },
     {
+
     },
+
     {
       map: mapa,
       json_data: resources,
@@ -212,8 +214,17 @@ function defineFilters() {
 }
 
 function mapa_selecciona_elemento(id, lat, lng) {
-
   mapa.setCenter({lat: lat, lng: lng})
   mapa.setZoom(14);
+
+
+    cl.marker_select(
+        id,
+        {
+          url: icons_path + "point_selected.png",
+          anchor: new google.maps.Point(19,42)
+        }
+      );
+
 }
 
