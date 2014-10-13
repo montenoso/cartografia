@@ -64,6 +64,11 @@ include("conecta.php");
 	-->
 	<body  class="left-sidebar">
 
+    <div id="display_mapa" style="padding:10px;top:0;left:0;position:absolute;width:450px;height:800px;overflow:auto; z-index:10000;background-color:white;">
+      <div id="display_mapa_close" style="position:absolute;right:10px;top:0px;"> <a href="#">Pechar [X]</a> </div>   
+      <div id="display_mapa_content"></div>
+    </div>
+
     <!-- Wrapper -->
     <div id="wrapper">
 

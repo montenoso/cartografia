@@ -2,10 +2,8 @@
 session_start();
 include("conecta.php");
     
-   if (isset($_GET['id'])){
-      $id = $_GET['id'];
-      //echo "id: ".$id;
-      
+   if ( isset($_GET['id']) && is_numeric($_GET['id']) ){
+      $id = $_GET['id'];      
       
       $queryFicha = "SELECT * FROM documento WHERE material_id = $id";
       
@@ -29,16 +27,14 @@ include("conecta.php");
        ?>
        
         <div id="ficha">
-         <input type="button" id="volver" value="Voltar ao mapa" onClick="ocultarFicha(); init()"></input>
         </br>
         </br>
    
         <?php
      
-           echo  "<b>Título:</b> ".$titulo."</br>";
-           echo "<b>Descripción:</b> ".$descripción."</br>";
-           echo "<b>Tag:</b> ".$tag."</br>";
-            echo "".$URL."</br>";
+           echo  "<h2>".$titulo."</h2>";
+           echo "<div>".$descripción."</div>";
+           echo "<div><a href='".$URL."'/>".$URL."</a></div>";
           
            
            /*echo "Tema: ".$tema."</br>";
@@ -66,7 +62,10 @@ include("conecta.php");
 ?> <video controls="controls" src="uploads/<?php echo $nombre_fichero_sin_espacios; ?>" ></video>
     <br>
 <?php }
+
+    echo "<div> ".$tag."</div>";
 ?>
+
     <br>
     </br>
               

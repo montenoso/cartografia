@@ -87,8 +87,12 @@ $(document).ready(
     });
 
 
+    $("#display_mapa_close").click(function(){
+      mapa_desselecciona();
+    });
+    $("#display_mapa").hide();
     google.maps.event.addListener(mapa, 'click', function(){
-      cl.marker_unselect();
+      mapa_desselecciona();
     });
   }
 
@@ -229,5 +233,27 @@ function mapa_selecciona_elemento(id, lat, lng) {
         }
       );
 
+
+    $.get("").success(function(){
+      
+
+    })
+
+    $.ajax({
+
+      url: "ficha.php" ,
+      data: {id:id},
+      success: function(datos) {
+        $("#display_mapa_content").html( datos );
+        $("#display_mapa").show();
+      }
+    });
+
+}
+
+
+function mapa_desselecciona() { 
+  cl.marker_unselect();
+  $("#display_mapa").hide();
 }
 
