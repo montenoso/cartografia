@@ -95,9 +95,11 @@ function clusterer( mapa , resources) {
 
   var iwindow = new smart_infowindow({
     map:mapa,
+    box_id: 'caixa_mapa',
     width: 300,
+    box_padding:0,
     max_height:200,
-    marker_distance: [16,0], // [top, bottom]
+    marker_distance: [0,0], // [top, bottom]
   });
 
 
@@ -124,7 +126,7 @@ function clusterer( mapa , resources) {
       json_data: resources,
       data_structure: {id: 'material_id', lat: 'latitud', lng: 'longitud'},
       zoom_range : [9,25],
-      zIndex: 10,
+      zIndex: 1 ,
       cluster_radious: 20,
       //show_disabled_points: false, 
       //nocluster_zoom_range: [13,25],
@@ -141,11 +143,21 @@ function clusterer( mapa , resources) {
           iwindow.SetMarkerDistances([8,8]);
         }*/
         
-        var infocontent = "";
+        var recursos="";
+        var comunidade="";
+
         $(data).each( function(i,e) {
-          infocontent = infocontent + "<div>" + e.titulo_registro + "</div>" ;
+
+
+          if( e.selectedradio == 'comunidade' ) {
+            comunidade = comunidade + "<div class='elemento comunidade'>" + e.titulo_registro + "</div>" ;
+          }
+          else {
+            recursos = recursos + "<div class='elemento recurso'>" + e.titulo_registro + "</div>";
+          }
         });
-        iwindow.open(marker, 'mouseover' , infocontent);
+
+        iwindow.open(marker, 'mouseover' , comunidade + recursos );
       }
 
       

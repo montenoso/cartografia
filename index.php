@@ -26,6 +26,7 @@ include("conecta.php");
 
   
       <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
+      <link rel="stylesheet" href="css/estilos_mapa.css" />
 
       <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
       <!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="css/ie8.css" /><![endif]-->

@@ -16,6 +16,7 @@ function smart_infowindow(opts) {
     map_scrollwhell_is_enabled: true,
     background_color: '#fff',
     box_shadow: '0px 0px 9px #888',
+    box_padding: '9px',
     peak_image: false,
     max_height: 200,
     border_height: 0,
@@ -164,7 +165,7 @@ smart_infowindow.prototype.SetStyles = function() {
   
   $(this.div_).find('.box').css('box-shadow', this.options.box_shadow );
   $(this.div_).find('.box').css('background-color', this.options.background_color );
-  $(this.div_).find('.box .innerbox').css('padding', '6px');
+  $(this.div_).find('.box .innerbox').css('padding', this.options.box_padding );
   $(this.div_).css('cursor', 'default' );
   $(this.div_).css('width', this.options.width );
   $(this.div_).find('.box .innerbox').css('height', 'auto')

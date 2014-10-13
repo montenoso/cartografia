@@ -1,0 +1,23 @@
+#caixa_mapa {
+  color:black;
+}
+
+#caixa_mapa .elemento {
+  hwight:30px;
+  padding:7px;
+  cursor:pointer;
+}
+
+#caixa_mapa .elemento:hover { 
+  background-color:#eee;
+}
+
+  #caixa_mapa .elemento.comunidade{
+    hwight:30px;
+    background-color:#AADE9E;
+
+  }
+
+  #caixa_mapa .elemento.comunidade:hover { 
+    background-color: #99C78E;
+  }
