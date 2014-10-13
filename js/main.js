@@ -95,7 +95,8 @@ $(document).ready(
     });
     $("#display_mapa").hide();
     google.maps.event.addListener(mapa, 'click', function(){
-      mapa_desselecciona();
+      if( $("#display_mapa_content").html() != '' )
+        mapa_desselecciona();
     });
   }
 
@@ -277,5 +278,8 @@ function mapa_desselecciona() {
     window.location="#";
   $("#display_mapa_content").html( "" );
   $("#display_mapa").hide();
+  if( mapa.getZoom() > 12 ){
+    mapa.setZoom(12);  
+  }
 }
 
