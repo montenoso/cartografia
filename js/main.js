@@ -79,7 +79,10 @@ $(document).ready(
 
     google.maps.event.addListenerOnce(mapa, 'idle', function(){
       cl = clusterer(mapa, recursos);
-      cl.filter( defineFilters() )
+      cl.filter( defineFilters() );
+
+      mapa_establece_url($(location).attr('hash') );
+      
       /*cl.filter(
           {enabled_list: [378,376,374],  categories:[]}
         );*/
@@ -157,7 +160,7 @@ function clusterer( mapa , resources) {
         $(data).each( function(i,e) {
 
 
-          var evento_click = "onclick=\'mapa_selecciona_elemento( " + e.material_id + ", "+ e.latitud +", " + e.longitud + ");\'";
+          var evento_click = "onclick=\'mapa_establece_url( \"#recurso/" + e.material_id + "\" );\'";
 
           if( e.titulo_registro != '') {
             if( e.selectedradio == 'comunidade' ) {
@@ -220,40 +223,58 @@ function defineFilters() {
   return f;
 }
 
-function mapa_selecciona_elemento(id, lat, lng) {
-  mapa.setCenter({lat: lat, lng: lng})
-  mapa.setZoom(14);
+
+function mapa_establece_url(uri) {
+
+  var ruta = uri.replace( /^#/, '' );
+  var params = ruta.split('/');
+
+  if(params[0] == 'recurso'){
+    mapa_selecciona_elemento( params[1] );
+    window.location = uri;  
+  }
+
+//var hash = $(location).attr('hash');
+  // mapa_selecciona_elemento(id);
+}
+
+function mapa_selecciona_elemento(id) {
 
 
-    cl.marker_select(
-        id,
-        {
-          url: icons_path + "point_selected.png",
-          anchor: new google.maps.Point(19,42)
+  $.each(recursos, function(i, recurso_data) {
+
+    if ( recurso_data.material_id == id ) {
+      console.log(recurso_data.latitud, recurso_data.longitud)
+      mapa.setCenter({lat: parseFloat(recurso_data.latitud), lng: parseFloat(recurso_data.longitud) } )
+      mapa.setZoom(14);
+
+
+      cl.marker_select(
+          id,
+          {
+            url: icons_path + "point_selected.png",
+            anchor: new google.maps.Point(19,42)
+          }
+        );
+
+      $.ajax({
+
+        url: "ficha.php" ,
+        data: {id:id},
+        success: function(datos) {
+          $("#display_mapa_content").html( datos );
+          $("#display_mapa").show();
         }
-      );
+      });
 
-
-    $.get("").success(function(){
-      
-
-    })
-
-    $.ajax({
-
-      url: "ficha.php" ,
-      data: {id:id},
-      success: function(datos) {
-        $("#display_mapa_content").html( datos );
-        $("#display_mapa").show();
-      }
-    });
-
+    }
+  });
 }
 
 
 function mapa_desselecciona() { 
   cl.marker_unselect();
+    window.location="#";
   $("#display_mapa_content").html( "" );
   $("#display_mapa").hide();
 }

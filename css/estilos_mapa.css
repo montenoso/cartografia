@@ -22,13 +22,13 @@
   #caixa_mapa .elemento.comunidade{
     font-weight: bold;
     hwight:30px;
-    background-image:  url('/images/marcadores_cluster/point_small/bosque-pinar.png' );
+    background-image:  url('../images/marcadores_cluster/point_small/bosque-pinar.png' );
     background-color:#AADE9E;
   }
 
-    #caixa_mapa .elemento.tipo_audio { background-image: url('/images/marcadores_cluster/point_small/audio.png' ); }
-    #caixa_mapa .elemento.tipo_foto { background-image: url('/images/marcadores_cluster/point_small/foto.png' ); }
-    #caixa_mapa .elemento.tipo_video { background-image: url('/images/marcadores_cluster/point_small/video.png' ); }
+    #caixa_mapa .elemento.tipo_audio { background-image: url('../images/marcadores_cluster/point_small/audio.png' ); }
+    #caixa_mapa .elemento.tipo_foto { background-image: url('../images/marcadores_cluster/point_small/foto.png' ); }
+    #caixa_mapa .elemento.tipo_video { background-image: url('../images/marcadores_cluster/point_small/video.png' ); }
 
   #caixa_mapa .elemento.comunidade:hover { 
     background-color: #99C78E;
