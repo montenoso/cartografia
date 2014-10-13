@@ -87,6 +87,9 @@ $(document).ready(
     });
 
 
+    google.maps.event.addListener(mapa, 'click', function(){
+      cl.marker_unselect();
+    });
   }
 
 );
