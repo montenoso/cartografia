@@ -44,8 +44,6 @@ $(document).ready(
 
 
 
-    var map;
-
     var mapOptions = {
       zoom: 9,
       center: new google.maps.LatLng(42.7956247,-7.9483766),
@@ -56,12 +54,12 @@ $(document).ready(
       panControl:false,
       styles: estilos_mapa
     };
-    map = new google.maps.Map(document.getElementById('map'), mapOptions);
+    mapa = new google.maps.Map(document.getElementById('map'), mapOptions);
 
 
     // layer simple desde vista
-    cartodb.createLayer(map, 'http://montenoso2.cartodb.com/api/v2/viz/d5f2c756-182a-11e4-9427-0e73339ffa50/viz.json', { legends: false })
-    .addTo(map)
+    cartodb.createLayer(mapa, 'http://montenoso2.cartodb.com/api/v2/viz/d5f2c756-182a-11e4-9427-0e73339ffa50/viz.json', { legends: false })
+    .addTo(mapa)
     .on('done', function(layer) {
       //console.log(layer);
     });
@@ -76,8 +74,8 @@ $(document).ready(
 
 
 
-    google.maps.event.addListenerOnce(map, 'idle', function(){
-      var cl = clusterer(map, recursos);
+    google.maps.event.addListenerOnce(mapa, 'idle', function(){
+      var cl = clusterer(mapa, recursos);
       cl.filter( defineFilters() )
       /*cl.filter(
           {enabled_list: [378,376,374],  categories:[]}
@@ -149,12 +147,15 @@ function clusterer( mapa , resources) {
 
         $(data).each( function(i,e) {
 
+
+          var evento_click = "onclick=\'mapa_selecciona_elemento( " + e.material_id + ", "+ e.latitud +", " + e.longitud + ");\'";
+
           if( e.titulo_registro != '') {
             if( e.selectedradio == 'comunidade' ) {
-              comunidade = comunidade + "<div class='elemento comunidade'  >" + e.titulo_registro + "</div>" ;
+              comunidade = comunidade + "<div class='elemento comunidade' " + evento_click + "  >" + e.titulo_registro + "</div>" ;
             }
             else {
-              recursos = recursos + "<div class='elemento recurso tipo_"+e.selectedradio+"' >" + e.titulo_registro + "</div>";
+              recursos = recursos + "<div class='elemento recurso tipo_"+e.selectedradio+"'  " +evento_click + " >" + e.titulo_registro + "</div>";
             }
           }
         });
@@ -208,5 +209,11 @@ function defineFilters() {
   
 //console.log(JSON.stringify( f ))
   return f;
+}
+
+function mapa_selecciona_elemento(id, lat, lng) {
+
+  mapa.setCenter({lat: lat, lng: lng})
+  mapa.setZoom(14);
 }
 
