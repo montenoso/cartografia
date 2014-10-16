@@ -5,45 +5,6 @@ $(document).ready(
  function (){
 
     var url = 'http://montenoso2.cartodb.com/api/v2/viz/9ad57d16-0552-11e4-8ccb-0e10bcd91c2b/viz.json';
-/*
-    var mapa = new L.Map('map', {
-      center: [42.7956247,-7.9483766],
-      zoom: 8
-    });
-*/
-
-/*
-    cartodb.createVis(
-      'map', 
-      url, 
-      {
-        legends: false
-      })
-      .done(function(vis, layers) {
-
-
-        var marker_latlng = new google.maps.LatLng( 42.7956247,-7.9483766 );
-        mapa = vis.getNativeMap();
-        console.log(mapa);
-
-        var marker = new google.maps.Marker({
-          position: marker_latlng,
-          map: mapa
-        });
-
-        //var cluster_recursos = clusterer(vis.map);
-      }
-    );*/
-
-/*
- var url = 'http://montenoso2.cartodb.com/api/v2/viz/9ad57d16-0552-11e4-8ccb-0e10bcd91c2b/viz.json';
- cartodb.createVis('map', url)
- .done(function(vis, layers) {
- }); 
-*/
-
-
-
 
     icons_path = 'images/marcadores_cluster/';
     cl = false;
@@ -83,9 +44,7 @@ $(document).ready(
 
       mapa_establece_url($(location).attr('hash') );
       
-      /*cl.filter(
-          {enabled_list: [378,376,374],  categories:[]}
-        );*/
+  
       //show_all_markers();
     });
 
@@ -93,7 +52,7 @@ $(document).ready(
     $("#display_mapa_close").click(function(){
       mapa_desselecciona();
     });
-    $("#display_mapa").hide();
+
     google.maps.event.addListener(mapa, 'click', function(){
       if( $("#display_mapa_content").html() != '' )
         mapa_desselecciona();
@@ -110,7 +69,7 @@ function clusterer( mapa , resources) {
     box_id: 'caixa_mapa',
     width: 340,
     box_padding:0,
-    max_height:200,
+    max_height:250,
     marker_distance: [0,-10], // [top, bottom]
   });
 

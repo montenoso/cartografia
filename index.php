@@ -15,10 +15,8 @@ include("conecta.php");
 
       <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry&v=3.exp&sensor=false"></script>
       <script src="<?php echo $media_host;?>/js/vendor/jquery.min.js"></script>
-      <script src="<?php echo $media_host;?>/js/skel_config.js"></script>
       <script src="<?php echo $media_host;?>/js/estilos_mapa.js"></script>
-      <script src="<?php echo $media_host;?>/js/vendor/jquery.easing.1.3.js"></script> <!-- easing -->
-      <script src="<?php echo $media_host;?>/js/vendor/skel.min.js"></script>
+      <script src="<?php echo $media_host;?>/js/interfazController.js"></script>
       <script src="<?php echo $media_host;?>/js/vendor/tiny_map_utilities/marker_clusterer/vendor/rbush.js"></script>
       <script src="<?php echo $media_host;?>/js/vendor/tiny_map_utilities/marker_clusterer/marker_clusterer.js"></script>
       <script src="<?php echo $media_host;?>/js/vendor/tiny_map_utilities/smart_infowindow/vendor/jQueryRotate.js"></script>
@@ -28,10 +26,6 @@ include("conecta.php");
       <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
       <link rel="stylesheet" href="css/estilos_mapa.css" />
 
-      <!--[if lte IE 9]><link rel="stylesheet" href="css/ie9.css" /><![endif]-->
-      <!--[if lte IE 8]><script src="js/html5shiv.js"></script><link rel="stylesheet" href="css/ie8.css" /><![endif]-->
-      <!--[if lte IE 7]><link rel="stylesheet" href="css/ie7.css" /><![endif]-->
-      
 
       <script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
       <script src="<?php echo $media_host;?>/js/main.js"></script>
@@ -59,33 +53,15 @@ include("conecta.php");
       </script>
               
   </head>
-  <!--
-		Note: Set the body element's class to "left-sidebar" to position the sidebar on the left.
-		Set it to "right-sidebar" to, you guessed it, position it on the right.
-	-->
-	<body  class="left-sidebar">
 
-    <div id="display_mapa" style="padding:10px;top:0;left:0;position:absolute;width:450px;height:800px;overflow:auto; z-index:10000;background-color:white;">
-      <div id="display_mapa_close" style="position:absolute;right:10px;top:0px;"> <a href="#">Pechar [X]</a> </div>   
-      <div id="display_mapa_content"></div>
+	<body >
+    <div id="espacio_mapa">
+      <div id="map"></div> 
+      <div id="display_mapa" >
+        <div id="display_mapa_close" style="display:none;"> <a href="#">Pechar [X]</a> </div>   
+        <div id="display_mapa_content" style="display:none;"></div>
+        <div id="display_mapa_filters">MENU FILTROS</div>
+      </div>
     </div>
-
-    <!-- Wrapper -->
-    <div id="wrapper">
-
-    <!-- Content -->
-        <div id="content">
-                <div id="map"></div> 
-        </div>
-
-        <!-- Sidebar -->
-        <div id="sidebar">
-
-         <!-- Logo -->
-
-          <div id="logo" a href="#" onclick="window.location='<?php echo $media_host;?>'" style="cursor:pointer;"> </div>
-        </div>
-    </div>
-          
 	</body>
 </html>

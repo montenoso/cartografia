@@ -1,18 +1,45 @@
+
+body {
+  padding:0;
+  margin:0;
+}
+
+
+/***********************************************************************
+                          ESTRUCTURA XERAL
+***********************************************************************/
+#espacio_mapa {}
+
+  #map { 
+    float:left;
+    width:100px; height:100px; 
+  }
+  #espacio_mapa { 
+
+  }
+    #espacio_mapa #display_mapa_filters {
+      width:200px;
+      height:200px;
+      background-color:red; 
+    }
+
+
+
+/***********************************************************************
+                          INFOWINDOW MAPA
+***********************************************************************/
 #caixa_mapa {
   color:black;
 }
 
 #caixa_mapa .elemento {
-  hwight:30px;
-  padding:7px;
+  height:30px !important;
+  padding-top:10px;
   cursor:pointer;
   padding-left:40px;
-  height:45px;
   overflow: hidden;
-
   background-repeat: no-repeat;
   background-position: 10px 10px;
-
 }
 
 #caixa_mapa .elemento:hover { 
@@ -21,7 +48,7 @@
 
   #caixa_mapa .elemento.comunidade{
     font-weight: bold;
-    hwight:30px;
+    height:30px;
     background-image:  url('../images/marcadores_cluster/point_small/bosque-pinar.png' );
     background-color:#AADE9E;
   }
@@ -33,3 +60,7 @@
   #caixa_mapa .elemento.comunidade:hover { 
     background-color: #99C78E;
   }
+
+
+  /* /INFOWINDOW MAPA */
+
