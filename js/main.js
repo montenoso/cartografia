@@ -67,7 +67,7 @@ function clusterer( mapa , resources) {
   var iwindow = new smart_infowindow({
     map:mapa,
     box_id: 'caixa_mapa',
-    width: 340,
+    width: 300,
     box_padding:0,
     max_height:250,
     marker_distance: [0,-10], // [top, bottom]
