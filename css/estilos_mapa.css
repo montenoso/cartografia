@@ -21,8 +21,14 @@ body {
 
     }
 
-    #espacio_mapa #display_mapa_filters {
+    #espacio_mapa #display_mapa_content {
+      width: 100%;
+      /*padding:5px;*/
+    }
 
+    #espacio_mapa #display_mapa_filters {
+      width: 100%;
+      /*padding:5px;*/
     }
 
 

@@ -5,6 +5,12 @@ $(document).ready(
   function (){
     interfazControl = new interfazController();
     interfazControl.setScreenSizes();
+
+
+    $( window ).resize(function() {
+      interfazControl.setScreenSizes();
+    });
+    
   }
 );
 
@@ -37,13 +43,13 @@ function interfazController() {
 
     // establece anchos
     if( this.sidebarStatus == 'filtros' ) {
-      $('#display_mapa_filters').width( this.filtersWidth  );
+      $('#display_mapa').width( this.filtersWidth  );
       $('#display_mapa').css( 'margin-left', this.screenWidth - this.filtersWidth + 'px' );
       $('#map').width( this.screenWidth - this.filtersWidth );
     } 
     else 
     if( this.sidebarStatus == 'ficha_recurso' ) {
-      $('#display_mapa_content').width( this.fichaWidth );
+      $('#display_mapa').width( this.fichaWidth );
       $('#display_mapa').css( 'margin-left', this.screenWidth - this.fichaWidth + 'px' );
       $('#map').width( this.screenWidth - this.fichaWidth );
     }
