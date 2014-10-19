@@ -52,14 +52,12 @@ $(document).ready(
 
 
     $("#display_mapa_close").click(function(){
-      //mapa_desselecciona();
-      interfazControl.setSidebarFiltros();
+      mapa_desselecciona();
     });
 
     google.maps.event.addListener(mapa, 'click', function(){
       if( $("#display_mapa_content").html() != '' )
-        //mapa_desselecciona();
-        interfazControl.setSidebarFiltros();
+        mapa_desselecciona();
     });
   }
 
@@ -241,7 +239,7 @@ function mapa_desselecciona() {
   cl.marker_unselect();
     window.location="#";
   $("#display_mapa_content").html( "" );
-  $("#display_mapa").hide();
+  interfazControl.setSidebarFiltros();
   if( mapa.getZoom() > 12 ){
     mapa.setZoom(12);  
   }
