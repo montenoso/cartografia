@@ -4,6 +4,8 @@
 $(document).ready(
  function (){
 
+
+
     var url = 'http://montenoso2.cartodb.com/api/v2/viz/9ad57d16-0552-11e4-8ccb-0e10bcd91c2b/viz.json';
 
     icons_path = 'images/marcadores_cluster/';
@@ -50,12 +52,14 @@ $(document).ready(
 
 
     $("#display_mapa_close").click(function(){
-      mapa_desselecciona();
+      //mapa_desselecciona();
+      interfazControl.setSidebarFiltros();
     });
 
     google.maps.event.addListener(mapa, 'click', function(){
       if( $("#display_mapa_content").html() != '' )
-        mapa_desselecciona();
+        //mapa_desselecciona();
+        interfazControl.setSidebarFiltros();
     });
   }
 
@@ -177,7 +181,7 @@ function defineFilters() {
     f.categories.push( e );
   });
 
-  console.log(f)
+  //console.log(f)
   
 //console.log(JSON.stringify( f ))
   return f;
@@ -223,7 +227,8 @@ function mapa_selecciona_elemento(id) {
         data: {id:id},
         success: function(datos) {
           $("#display_mapa_content").html( datos );
-          $("#display_mapa").show();
+          interfazControl.setSidebarFichaRecurso();
+          //console.log( interfazControl )
         }
       });
 

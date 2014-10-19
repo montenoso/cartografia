@@ -17,10 +17,12 @@ body {
   #espacio_mapa { 
 
   }
+    #espacio_mapa #display_mapa {
+
+    }
+
     #espacio_mapa #display_mapa_filters {
-      width:200px;
-      height:200px;
-      background-color:red; 
+
     }
 
 
