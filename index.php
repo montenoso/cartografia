@@ -16,7 +16,6 @@ include("conecta.php");
       <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry&v=3.exp&sensor=false"></script>
       <script src="<?php echo $media_host;?>/js/vendor/jquery.min.js"></script>
       <script src="<?php echo $media_host;?>/js/estilos_mapa.js"></script>
-      <script src="<?php echo $media_host;?>/js/interfazController.js"></script>
       <script src="<?php echo $media_host;?>/js/vendor/tiny_map_utilities/marker_clusterer/vendor/rbush.js"></script>
       <script src="<?php echo $media_host;?>/js/vendor/tiny_map_utilities/marker_clusterer/marker_clusterer.js"></script>
       <script src="<?php echo $media_host;?>/js/vendor/tiny_map_utilities/smart_infowindow/vendor/jQueryRotate.js"></script>
@@ -28,6 +27,9 @@ include("conecta.php");
 
 
       <script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
+
+      <script src="<?php echo $media_host;?>/js/interfazController.js"></script>
+      <script src="<?php echo $media_host;?>/js/mapController.js"></script>
       <script src="<?php echo $media_host;?>/js/main.js"></script>
 
 

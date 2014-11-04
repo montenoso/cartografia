@@ -1,40 +1,25 @@
 
-var interfazControl = false;
-
-$(document).ready(
-  function (){
-    interfazControl = new interfazController();
-    interfazControl.setScreenSizes();
-
-
-    $( window ).resize(function() {
-      interfazControl.setScreenSizes();
-    });
-    
-  }
-);
-
-
 
 function interfazController() {
+  var that = this;
 
-  this.headerHeight = 0;
-  this.filtersWidth = 200;
-  this.fichaWidth = 500;
+  that.headerHeight = 0;
+  that.filtersWidth = 200;
+  that.fichaWidth = 500;
 
 
-  this.screenWidth = false;
-  this.screenHeight = false;
+  that.screenWidth = false;
+  that.screenHeight = false;
 
-  this.sidebarStatus = 'filtros';
+  that.sidebarStatus = 'filtros';
 
-  this.setScreenSizes = function(){
-    this.screenWidth = $(window).width();
-    this.screenHeight = $(window).height();
+  that.setScreenSizes = function(){
+    that.screenWidth = $(window).width();
+    that.screenHeight = $(window).height();
 
 
     // establece altos
-    var altoReal = this.screenHeight - this.headerHeight;
+    var altoReal = that.screenHeight - that.headerHeight;
     
     $('#display_mapa').height( altoReal );
     $('#display_mapa_content').height( altoReal );
@@ -42,32 +27,32 @@ function interfazController() {
     $('#map').height( altoReal);
 
     // establece anchos
-    if( this.sidebarStatus == 'filtros' ) {
-      $('#display_mapa').width( this.filtersWidth  );
-      $('#display_mapa').css( 'margin-left', this.screenWidth - this.filtersWidth + 'px' );
-      $('#map').width( this.screenWidth - this.filtersWidth );
+    if( that.sidebarStatus == 'filtros' ) {
+      $('#display_mapa').width( that.filtersWidth  );
+      $('#display_mapa').css( 'margin-left', that.screenWidth - that.filtersWidth + 'px' );
+      $('#map').width( that.screenWidth - that.filtersWidth );
     } 
     else 
-    if( this.sidebarStatus == 'ficha_recurso' ) {
-      $('#display_mapa').width( this.fichaWidth );
-      $('#display_mapa').css( 'margin-left', this.screenWidth - this.fichaWidth + 'px' );
-      $('#map').width( this.screenWidth - this.fichaWidth );
+    if( that.sidebarStatus == 'ficha_recurso' ) {
+      $('#display_mapa').width( that.fichaWidth );
+      $('#display_mapa').css( 'margin-left', that.screenWidth - that.fichaWidth + 'px' );
+      $('#map').width( that.screenWidth - that.fichaWidth );
     }
 
   }
 
 
-  this.setSidebarFichaRecurso = function() {
-    this.sidebarStatus = 'ficha_recurso';
+  that.setSidebarFichaRecurso = function() {
+    that.sidebarStatus = 'ficha_recurso';
     $('#display_mapa_filters').hide();
     $('#display_mapa_content').show();
-    this.setScreenSizes();
+    that.setScreenSizes();
   }
 
-  this.setSidebarFiltros = function() {
-    this.sidebarStatus = 'filtros';
+  that.setSidebarFiltros = function() {
+    that.sidebarStatus = 'filtros';
     $('#display_mapa_content').hide();
     $('#display_mapa_filters').show();
-    this.setScreenSizes();
+    that.setScreenSizes();
   }
 }
