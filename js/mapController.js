@@ -58,29 +58,18 @@ function mapController() {
   }
 
 
-  // este método queda algo bizarro, pero é debido á natureza do propio marker clusterer e a maneira que ten de categorizar iconos
+  // define os filters para o sistema de clustering
   that.defineFilters = function() {
 
-    var tipos = {};
+    var tipos;
     var lista_todos = [];
 
 
     $(recursos).each( function(i,e){
-      eval(
-        "if( typeof tipos." + e.selectedradio + "  == 'undefined' ){ " +
-        "  tipos." + e.selectedradio + " = {id:'" + e.selectedradio + "', important:false, elements:[], hide:false };" +
-        "}" +
-        "tipos." + e.selectedradio + ".elements.push(" + e.material_id + ");"
-      );
-
-      if( typeof tipos.comunidade != 'undefined' ) {
-        tipos.comunidade.important = true;
-      }
-
       lista_todos.push( e.material_id );
-
     });
-    //console.log(tipos);
+
+    tipos = getAllCategories();
 
     var f = {
       enabled_list: lista_todos,
@@ -88,14 +77,9 @@ function mapController() {
     };
 
     $.each(tipos, function(i,e) {
-      //console.log(e);
-      //console.log(e)
       f.categories.push( e );
     });
 
-    //console.log(f)
-    
-  //console.log(JSON.stringify( f ))
     return f;
   }
 

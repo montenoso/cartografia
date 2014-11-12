@@ -73,3 +73,20 @@ $(document).ready(
 );
 
 
+// Devolve todas as categorías diferentes
+
+function getAllCategories() {
+
+  var tipos = {}
+
+  $(recursos).each( function(i,e){
+    eval(
+      "if( typeof tipos." + e.selectedradio + "  == 'undefined' ){ " +
+      "  tipos." + e.selectedradio + " = {id:'" + e.selectedradio + "', important:false, elements:[], hide:false };" +
+      "}" +
+      "tipos." + e.selectedradio + ".elements.push(" + e.material_id + ");"
+    );
+  });
+
+  return tipos;
+}
