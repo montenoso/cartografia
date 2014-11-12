@@ -28,6 +28,7 @@ include("conecta.php");
 
       <script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
 
+      <script src="<?php echo $media_host;?>/js/filtrosController.js"></script>
       <script src="<?php echo $media_host;?>/js/interfazController.js"></script>
       <script src="<?php echo $media_host;?>/js/mapController.js"></script>
       <script src="<?php echo $media_host;?>/js/main.js"></script>
@@ -62,7 +63,13 @@ include("conecta.php");
       <div id="display_mapa" >
         <div id="display_mapa_close" style="display:none;"> <a href="#">Pechar [X]</a> </div>   
         <div id="display_mapa_content" style="display:none;"></div>
-        <div id="display_mapa_filters">MENU FILTROS</div>
+        <div id="display_mapa_filters">
+          <div>Buscar:</div>
+          <div class="buscador"> <input type="text"></div>
+
+
+          <div class="categorias"></div>
+        </div>
       </div>
     </div>
 	</body>

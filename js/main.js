@@ -6,6 +6,8 @@ $(document).ready(
 
     interfazControl = new interfazController();
     mapControl = new mapController();
+    filtrosControl = new filtrosController();
+
 
     // set sizes
     interfazControl.setScreenSizes();
