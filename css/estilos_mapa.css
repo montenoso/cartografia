@@ -83,6 +83,7 @@ body {
   }
 
     #display_mapa_filters .categorias .cat {
+      cursor:pointer;
       padding:2px;
       padding-bottom:0px;
       border:1px solid grey;
