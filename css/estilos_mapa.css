@@ -83,15 +83,22 @@ body {
   }
 
     #display_mapa_filters .categorias .cat {
-      width:20px;
-      height:20px;
-      border:1px solid black;
+      padding:2px;
+      border:1px solid grey;
       float:left;
       margin-left:3px;
+
+      filter: alpha(opacity=40); /* internet explorer */
+      -khtml-opacity: 0.4;      /* khtml, old safari */
+      -moz-opacity: 0.4;       /* mozilla, netscape */
+      opacity: 0.4;           /* fx, safari, opera */      
     }
 
     #display_mapa_filters .categorias .cat.selected {
-      background-color: red;
+      filter: alpha(opacity=100); /* internet explorer */
+      -khtml-opacity: 1;      /* khtml, old safari */
+      -moz-opacity: 1;       /* mozilla, netscape */
+      opacity: 1;           /* fx, safari, opera */      
     }
   /* FINAL BOTÓNS CATEGORÍAS */
 

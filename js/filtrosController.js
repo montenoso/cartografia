@@ -14,10 +14,14 @@ function filtrosController() {
     that.categoriasMapa =  getAllCategories();
 
     $.each(that.categoriasMapa, function(i,e){
-      $( that.categoriasDiv ).append('<div class="cat selected"  categoria="' + e.id + '">' + '</div>');
+      $( that.categoriasDiv ).append('<div class="cat selected"  categoria="' + e.id + '"> <img src="/images/marcadores_cluster/filters/' + i + '.png"></div>');
       that.selectedCategories.push(i);
     });
 
+
+    $( that.categoriasDiv ).find('.cat img').click( function( elemento ){
+      that.toogleCategoria( $(elemento.target).parent() );
+    });
     $( that.categoriasDiv ).find('.cat').click( function( elemento ){
       that.toogleCategoria( $(elemento.target) );
     });
