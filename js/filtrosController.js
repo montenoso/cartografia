@@ -14,7 +14,8 @@ function filtrosController() {
     that.categoriasMapa =  getAllCategories();
 
     $.each(that.categoriasMapa, function(i,e){
-      $( that.categoriasDiv ).append('<div class="cat" categoria="' + e.id + '">' + '</div>');
+      $( that.categoriasDiv ).append('<div class="cat selected"  categoria="' + e.id + '">' + '</div>');
+      that.selectedCategories.push(i);
     });
 
     $( that.categoriasDiv ).find('.cat').click( function( elemento ){
@@ -43,15 +44,28 @@ function filtrosController() {
   that.updateCategoryButtons = function() {
     $( that.categoriasDiv ).find('.cat').removeClass('selected');
 
-    //console.log($( that.categoriasDiv ).html())
     $.each( $( that.categoriasDiv ).find('.cat'), function(i,e) {
-      console.log(e)
       var cat = $(e).attr('categoria');
       if( $.inArray( cat, that.selectedCategories )  != -1 ) {
         $(e).addClass('selected');
       }
     });
 
+    that.filterSelectedCategories();
+
+  }
+
+  that.filterSelectedCategories = function() {
+    var enabledPoints = [];
+
+    $.each( that.categoriasMapa, function( i, e ) {
+      if( $.inArray( i,  that.selectedCategories )  != -1  ) {
+
+        eval( 'enabledPoints = $.merge( enabledPoints, that.categoriasMapa.' + i + '.elements);');
+      }
+    });
+
+    mapControl.setFilters( enabledPoints );
   }
 
   // Constructor

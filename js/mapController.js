@@ -59,20 +59,24 @@ function mapController() {
 
 
   // define os filters para o sistema de clustering
-  that.defineFilters = function() {
+  that.setFilters = function(listaActivados) {
 
     var tipos;
-    var lista_todos = [];
 
 
-    $(recursos).each( function(i,e){
-      lista_todos.push( e.material_id );
-    });
+
+
+    if( typeof listaActivados == 'undefined' ) {
+      var listaActivados = [];
+      $(recursos).each( function(i,e){
+        listaActivados.push( e.material_id );
+      });
+    }
 
     tipos = getAllCategories();
 
     var f = {
-      enabled_list: lista_todos,
+      enabled_list: listaActivados,
       categories: []
     };
 
@@ -80,7 +84,7 @@ function mapController() {
       f.categories.push( e );
     });
 
-    return f;
+    cl.filter( f );
   }
 
 

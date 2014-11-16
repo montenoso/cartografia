@@ -53,7 +53,7 @@ $(document).ready(
 
     google.maps.event.addListenerOnce(mapa, 'idle', function(){
       cl = mapControl.clusterer(mapa, recursos);
-      cl.filter( mapControl.defineFilters() );
+      mapControl.setFilters();
 
       mapControl.mapa_establece_url($(location).attr('hash') );
       
