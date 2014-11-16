@@ -66,7 +66,7 @@ include("conecta.php");
         <div id="display_mapa_content" style="display:none;"></div>
         <div id="display_mapa_filters">
           <div>Buscar:</div>
-          <div class="buscador"> <input type="text"></div>
+          <!--<div class="buscador"> <input type="text"></div>-->
 
 
           <div class="categorias"></div>
