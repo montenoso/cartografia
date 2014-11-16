@@ -28,6 +28,7 @@ include("conecta.php");
 
       <script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
 
+      <script src="<?php echo $media_host;?>/js/utils.js"></script>
       <script src="<?php echo $media_host;?>/js/filtrosController.js"></script>
       <script src="<?php echo $media_host;?>/js/interfazController.js"></script>
       <script src="<?php echo $media_host;?>/js/mapController.js"></script>

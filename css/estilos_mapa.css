@@ -72,5 +72,26 @@ body {
   }
 
 
-  /* /INFOWINDOW MAPA */
+  /* FINAL INFOWINDOW MAPA */
+
+
+
+  /* BOTÓNS CATEGORÍAS */
+
+  #display_mapa_filters .categorias {
+
+  }
+
+    #display_mapa_filters .categorias .cat {
+      width:20px;
+      height:20px;
+      border:1px solid black;
+      float:left;
+      margin-left:3px;
+    }
+
+    #display_mapa_filters .categorias .cat.selected {
+      background-color: red;
+    }
+  /* FINAL BOTÓNS CATEGORÍAS */
 
