@@ -65,10 +65,10 @@ include("conecta.php");
         <div id="display_mapa_close" style="display:none;"> <a href="#">Pechar [X]</a> </div>   
         <div id="display_mapa_content" style="display:none;"></div>
         <div id="display_mapa_filters">
-          <div>Buscar:</div>
-          <!--<div class="buscador"> <input type="text"></div>-->
+          <!--<div>Buscar:</div>
+          <div class="buscador"> <input type="text"></div>-->
 
-
+          <div> Categorías:</div>
           <div class="categorias"></div>
         </div>
       </div>
