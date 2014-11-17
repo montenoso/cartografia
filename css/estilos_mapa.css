@@ -77,19 +77,35 @@ div.nzAutoCompleterDialog div.row .elemento, #caixa_mapa .elemento {
 
 
 
+  /* BUSCADOR */
+
+  #buscaRecursos {
+    height:25px;
+    font-size:18px;
+    margin-left:3px;
+    width:90%;
+    color:#888;
+    border:2px solid blue;
+  }
+
+  /* FINAL BUSCADOR*/
+
+
   /* BOTÓNS CATEGORÍAS */
 
   #display_mapa_filters .categorias {
-    height:50px;
+    margin-bottom:20px;
+    margin-right:5px;
   }
 
-    #display_mapa_filters .categorias .cat {
+    #display_mapa_filters .categorias .cat , #display_mapa_filters .categorias .cat.selected:hover{
       cursor:pointer;
-      padding:2px;
-      padding-bottom:0px;
+      padding:8px;
       border:1px solid grey;
-      float:left;
-      margin-left:3px;
+      margin-top:6px;
+      margin-left:6px;
+      font-size:18px;
+      color:#888;
 
       filter: alpha(opacity=40); /* internet explorer */
       -khtml-opacity: 0.4;      /* khtml, old safari */

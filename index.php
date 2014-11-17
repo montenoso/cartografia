@@ -68,7 +68,7 @@ include("conecta.php");
           <div>Búsqueda:</div>
           <div class="buscador">
           <div> <input id="buscaRecursos" type="text"></div>
-
+          <br>
           <div> Categorías dispoñibles:</div>
           <div class="categorias"></div>
           <div> Tags:</div>

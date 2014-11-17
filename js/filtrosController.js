@@ -10,11 +10,18 @@ function filtrosController() {
   that.categoriasDiv = '#display_mapa_filters .categorias';
 
 
+  that.categoriasFiltros = {
+    comunidade: 'Comunidades',    
+    foto: 'Fotografías',
+    video: 'Vídeos',
+    audio: 'Audios'
+  };
+
   that.setCategorias = function() {
     that.categoriasMapa =  getAllCategories();
 
-    $.each(that.categoriasMapa, function(i,e){
-      $( that.categoriasDiv ).append('<div class="cat selected"  categoria="' + e.id + '"> <img src="/images/marcadores_cluster/filters/' + i + '.png"></div>');
+    $.each(that.categoriasFiltros, function(i,e){
+      $( that.categoriasDiv ).append('<div class="cat selected"  categoria="' + i + '"> <img src="/images/marcadores_cluster/filters/' + i + '.png"> '+e+' </div>');
       that.selectedCategories.push(i);
     });
 
