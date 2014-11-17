@@ -72,7 +72,24 @@ function filtrosController() {
     mapControl.setFilters( enabledPoints );
   }
 
+  //
   // Constructor
+  //
+  
+  // categorías
   that.setCategorias();
 
+  // Buscador
+
+  that.buscador = new nzAutoCompleter ({
+      divId: 'buscaRecursos',
+      dialogId: 'buscaRecursosDialog',
+      data: recursos,
+      searchIds: ['titulo_registro', 'selectedradio'],
+      visiblePattern: ' "<img src=\'/images/marcadores_cluster/filters/" + row.selectedradio + ".png\'>" +row.titulo_registro',
+      actionSelect: function( row ) { 
+        mapControl.mapa_establece_url('#recurso/'+row.material_id)
+        $('#buscaRecursos').val('');
+      }
+  });
 }
