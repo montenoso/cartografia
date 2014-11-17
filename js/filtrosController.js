@@ -86,7 +86,8 @@ function filtrosController() {
       dialogId: 'buscaRecursosDialog',
       data: recursos,
       searchIds: ['titulo_registro', 'selectedradio'],
-      visiblePattern: ' "<img src=\'/images/marcadores_cluster/filters/" + row.selectedradio + ".png\'>" +row.titulo_registro',
+      //visiblePattern: ' "<img src=\'/images/marcadores_cluster/" + row.selectedradio + "_point_small.png\'>" +row.titulo_registro',
+      visiblePattern: ' "<div class=\'elemento recurso tipo_" + row.selectedradio + "\'>"+ row.titulo_registro+"</div>" ',
       actionSelect: function( row ) { 
         mapControl.mapa_establece_url('#recurso/'+row.material_id)
         $('#buscaRecursos').val('');

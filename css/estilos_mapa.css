@@ -2,6 +2,7 @@
 body {
   padding:0;
   margin:0;
+  font-family:  Arial, sans-serif;
 }
 
 
@@ -40,7 +41,7 @@ body {
   color:black;
 }
 
-#caixa_mapa .elemento {
+div.nzAutoCompleterDialog div.row .elemento, #caixa_mapa .elemento {
   height:20px !important;
   padding-top:7px;
   padding-bottom:10px;
@@ -63,11 +64,11 @@ body {
     background-color:#AADE9E;
   }
 
-    #caixa_mapa .elemento.tipo_audio { background-image: url('../images/marcadores_cluster/point_small/audio.png' ); }
-    #caixa_mapa .elemento.tipo_foto { background-image: url('../images/marcadores_cluster/point_small/foto.png' ); }
-    #caixa_mapa .elemento.tipo_video { background-image: url('../images/marcadores_cluster/point_small/video.png' ); }
+    div.nzAutoCompleterDialog div.elemento.tipo_audio, #caixa_mapa .elemento.tipo_audio { background-image: url('../images/marcadores_cluster/point_small/audio.png' ); }
+    div.nzAutoCompleterDialog div.elemento.tipo_foto, #caixa_mapa .elemento.tipo_foto { background-image: url('../images/marcadores_cluster/point_small/foto.png' ); }
+    div.nzAutoCompleterDialog div.elemento.tipo_video, #caixa_mapa .elemento.tipo_video { background-image: url('../images/marcadores_cluster/point_small/video.png' ); }
 
-  #caixa_mapa .elemento.comunidade:hover { 
+  div.nzAutoCompleterDialog div.elemento:hover, #caixa_mapa .elemento.comunidade:hover { 
     background-color: #99C78E;
   }
 
