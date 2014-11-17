@@ -4,7 +4,7 @@ function interfazController() {
   var that = this;
 
   that.headerHeight = 0;
-  that.filtersWidth = 200;
+  that.filtersWidth = 270;
   that.fichaWidth = 500;
 
 
