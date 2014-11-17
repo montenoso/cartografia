@@ -115,7 +115,7 @@ function nzAutoCompleter( opts ) {
 
   that.indexation();
 
-  $('body').append('<div class="nzAutoCompleterDialog" id="'+that.options.dialogId+'">asdfasdf</div>');
+  $('body').append('<div class="nzAutoCompleterDialog" style="display:none;" id="'+that.options.dialogId+'"></div>');
 
   $( '#' + that.options.divId ).on('keyup' ,function() {
 

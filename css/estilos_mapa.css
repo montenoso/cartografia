@@ -80,7 +80,7 @@ div.nzAutoCompleterDialog div.row .elemento, #caixa_mapa .elemento {
   /* BOTÓNS CATEGORÍAS */
 
   #display_mapa_filters .categorias {
-
+    height:50px;
   }
 
     #display_mapa_filters .categorias .cat {

@@ -93,4 +93,6 @@ function filtrosController() {
         $('#buscaRecursos').val('');
       }
   });
+
+  console.log(recursos)
 }
