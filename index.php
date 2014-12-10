@@ -62,7 +62,7 @@ include("conecta.php");
     <div id="espacio_mapa">
       <div id="map"></div> 
       <div id="display_mapa" >
-        <div id="display_mapa_close" style="display:none;"> <a href="#">Pechar [X]</a> </div>   
+        <div id="display_mapa_engadir" style="display:none;"></div>
         <div id="display_mapa_content" style="display:none;"></div>
         <div id="display_mapa_filters">
           <div>Búsqueda:</div>
@@ -73,6 +73,8 @@ include("conecta.php");
           <div class="categorias"></div>
           <div> Tags:</div>
           <div class="tags"></div>
+
+          <div style="cursor:pointer;" onclick="mapa_establece_url('#novo' );" >ENGADIR NOVO</div>
         </div>
       </div>
     </div>

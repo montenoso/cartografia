@@ -55,7 +55,7 @@ $(document).ready(
       cl = mapControl.clusterer(mapa, recursos);
       mapControl.setFilters();
 
-      mapControl.mapa_establece_url($(location).attr('hash') );
+      mapa_establece_url($(location).attr('hash') );
       
   
       //show_all_markers();
@@ -91,4 +91,20 @@ function getAllCategories() {
   });
 
   return tipos;
+}
+
+mapa_establece_url = function(uri) {
+
+  var ruta = uri.replace( /^#/, '' );
+  var params = ruta.split('/');
+
+  if(params[0] == 'recurso'){
+    mapControl.mapa_selecciona_elemento( params[1] );
+    window.location = uri;  
+  }
+  else
+  if(params[0] == 'novo'){
+    interfazControl.setSidebarEngadir();
+    window.location = uri;  
+  }
 }

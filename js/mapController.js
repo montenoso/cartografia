@@ -36,7 +36,7 @@ function mapController() {
           $(data).each( function(i,e) {
 
 
-            var evento_click = "onclick=\'mapControl.mapa_establece_url( \"#recurso/" + e.material_id + "\" );\'";
+            var evento_click = "onclick=\'mapa_establece_url( \"#recurso/" + e.material_id + "\" );\'";
 
             if( e.titulo_registro != '') {
               if( e.selectedradio == 'comunidade' ) {
@@ -87,20 +87,6 @@ function mapController() {
     cl.filter( f );
   }
 
-
-  that.mapa_establece_url = function(uri) {
-
-    var ruta = uri.replace( /^#/, '' );
-    var params = ruta.split('/');
-
-    if(params[0] == 'recurso'){
-      that.mapa_selecciona_elemento( params[1] );
-      window.location = uri;  
-    }
-
-  //var hash = $(location).attr('hash');
-    // mapa_selecciona_elemento(id);
-  }
 
   that.mapa_selecciona_elemento = function(id) {
 
