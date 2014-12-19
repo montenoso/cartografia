@@ -31,6 +31,7 @@ include("conecta.php");
       <script src="<?php echo $media_host;?>/js/utils.js"></script>
       <script src="<?php echo $media_host;?>/js/filtrosController.js"></script>
       <script src="<?php echo $media_host;?>/js/interfazController.js"></script>
+      <script src="<?php echo $media_host;?>/js/formController.js"></script>
       <script src="<?php echo $media_host;?>/js/mapController.js"></script>
       <script src="<?php echo $media_host;?>/js/main.js"></script>
 
@@ -62,7 +63,20 @@ include("conecta.php");
     <div id="espacio_mapa">
       <div id="map"></div> 
       <div id="display_mapa" >
-        <div id="display_mapa_engadir" style="display:none;"></div>
+        <div id="display_mapa_engadir" style="display:none;">
+          
+          <form id="recurso_form">
+            <select id="selector_provincia" name="provincia">
+              <option class="value0" value="0">Selecciona</option>
+              <option value="15">A Coruña</option>
+              <option value="27">Lugo</option>
+              <option value="32">Ourense</option>
+              <option value="36">Pontevedra</option>
+            </select>
+
+          </form>
+
+        </div>
         <div id="display_mapa_content" style="display:none;"></div>
         <div id="display_mapa_filters">
           <div>Búsqueda:</div>

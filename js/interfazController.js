@@ -6,7 +6,7 @@ function interfazController() {
   that.headerHeight = 0;
   that.filtersWidth = 270;
   that.fichaWidth = 500;
-  that.engadirWidth = 700;
+  that.engadirWidth = 600;
 
   that.screenWidth = false;
   that.screenHeight = false;
@@ -45,6 +45,8 @@ function interfazController() {
       $('#map').width( that.screenWidth - that.engadirWidth );
     }
 
+    if(typeof mapa != 'undefined')
+      google.maps.event.trigger(mapa, 'resize')
   }
 
 

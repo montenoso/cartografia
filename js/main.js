@@ -7,6 +7,7 @@ $(document).ready(
     interfazControl = new interfazController();
     mapControl = new mapController();
     filtrosControl = new filtrosController();
+    formControl = new formController();
 
 
     // set sizes
@@ -104,7 +105,7 @@ mapa_establece_url = function(uri) {
   }
   else
   if(params[0] == 'novo'){
-    interfazControl.setSidebarEngadir();
+    formControl.showForm();
     window.location = uri;  
   }
 }
