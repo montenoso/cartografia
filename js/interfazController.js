@@ -13,6 +13,23 @@ function interfazController() {
 
   that.sidebarStatus = 'filtros';
 
+
+  that.hideCortina = function() {
+    $('#cortina_mapa').hide();
+  }
+
+  that.showCortina = function() {
+
+    $('#cortina_mapa').css('background-color', '#000');
+    $('#cortina_mapa').css('position', 'absolute');
+    $('#cortina_mapa').css({ opacity: 0.5 });
+
+    $('#cortina_mapa').height( $('#map').height() );
+    $('#cortina_mapa').width( $('#map').width() );
+
+    $('#cortina_mapa').show();
+  }
+
   that.setScreenSizes = function(){
     that.screenWidth = $(window).width();
     that.screenHeight = $(window).height();

@@ -62,6 +62,7 @@ include("conecta.php");
 	<body >
     <div id="espacio_mapa">
       <div id="map"></div> 
+      <div id="cortina_mapa" style="display:none;"></div>
       <div id="display_mapa" >
         <div id="display_mapa_engadir" style="display:none;">
           
