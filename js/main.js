@@ -83,9 +83,17 @@ function getAllCategories() {
   var tipos = {}
 
   $(recursos).each( function(i,e){
+
+    if(e.selectedradio == 'comunidade') {
+      var importante = 'true';
+    }
+    else {
+      var importante = 'false';
+    }
+
     eval(
       "if( typeof tipos." + e.selectedradio + "  == 'undefined' ){ " +
-      "  tipos." + e.selectedradio + " = {id:'" + e.selectedradio + "', important:false, elements:[], hide:false };" +
+      "  tipos." + e.selectedradio + " = {id:'" + e.selectedradio + "', important:"+importante+", elements:[], hide:false };" +
       "}" +
       "tipos." + e.selectedradio + ".elements.push(" + e.material_id + ");"
     );

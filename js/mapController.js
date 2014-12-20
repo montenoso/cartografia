@@ -84,6 +84,9 @@ function mapController() {
       f.categories.push( e );
     });
 
+
+    console.log(f.categories)
+
     cl.filter( f );
   }
 

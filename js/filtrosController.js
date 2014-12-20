@@ -21,7 +21,7 @@ function filtrosController() {
     that.categoriasMapa =  getAllCategories();
 
     $.each(that.categoriasFiltros, function(i,e){
-      $( that.categoriasDiv ).append('<div class="cat selected"  categoria="' + i + '"> <img src="/images/marcadores_cluster/filters/' + i + '.png"> '+e+' </div>');
+      $( that.categoriasDiv ).append('<div class="cat selected"  categoria="' + i + '"> <img src="images/marcadores_cluster/filters/' + i + '.png"> '+e+' </div>');
       that.selectedCategories.push(i);
     });
 
@@ -96,7 +96,7 @@ function filtrosController() {
       //visiblePattern: ' "<img src=\'/images/marcadores_cluster/" + row.selectedradio + "_point_small.png\'>" +row.titulo_registro',
       visiblePattern: ' "<div class=\'elemento recurso tipo_" + row.selectedradio + "\'>"+ row.titulo_registro+"</div>" ',
       actionSelect: function( row ) { 
-        mapControl.mapa_establece_url('#recurso/'+row.material_id)
+        mapa_establece_url('#recurso/'+row.material_id)
         $('#buscaRecursos').val('');
       }
   });
