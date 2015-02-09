@@ -24,7 +24,7 @@ foreach( $json->responses as $response ) {
 		}
 		else
 		if( preg_match('#group(.*)#', $qid ) )  {
-			echo "</table><h3>$q</h3> <table>";
+			echo "<h3>$q</h3> ";
 		}
 		else
 		if( preg_match('#statement(.*)#', $qid ) ) {
@@ -38,7 +38,7 @@ foreach( $json->responses as $response ) {
 
 				if(preg_match('#yesno_(.*)#', $qid) ){
 					if($r == 1) {
-						$r = 'Sí';
+						$r = 'Si';
 					}
 					else {
 						$r = 'Non';
@@ -61,3 +61,6 @@ foreach( $json->responses as $response ) {
 
 	}
 }
+
+
+
