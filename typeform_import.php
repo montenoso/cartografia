@@ -7,6 +7,8 @@ echo "<html><head></head><body>";
 
 require_once('conf.php');
 
+global $typeform_api_url;
+
 $json = json_decode(file_get_contents( $typeform_api_url ));
 
 
@@ -25,7 +27,7 @@ $last_a = false;
 foreach( $json->responses as $response ) {
 	$ID_1 = 0;
 	$lines = array();
-	echo "<h2>Comunidade:</h2>";
+
 	foreach($questions as $qid => $q){
 		if($qid == 'terms_1101624') {
 
@@ -69,22 +71,33 @@ foreach( $json->responses as $response ) {
 		}
 
 	}
-		imprime_tabla($lines);
+		imprime_tabla($lines, $response->id);
 }
 
 
 
-function imprime_tabla($lArray) {
-	echo "<table>";
+function imprime_tabla($lArray, $typeform_reference) {
+	global $typeform_export_path;
+
+	$file_content = '';
+
+	$file_content .= "<table>\n";
 	foreach ($lArray as $l) {
 		if(is_array($l)) {
-			echo "<tr><td>".$l[0]."</td><td>".$l[1]."</td></tr>";
+			$file_content .= "<tr><td>".$l[0]."</td><td>".$l[1]."</td></tr>\n";
 		}
 		else {
-			echo "<tr><td><b>".$l."</b></td></tr>";
+			$file_content .= "<tr><td><b>".$l."</b></td></tr>\n";
 		}
 	}
-	echo "</table>";
+	$file_content .= "</table>\n";
+
+
+	$fname = $typeform_export_path.'/'.$typeform_reference.'.php';
+	if(!file_exists( $fname ) )	{
+		file_put_contents($fname, $file_content);
+		echo "Arquivo $typeform_reference creado con éxito <br>";
+	}
 }
 
 
