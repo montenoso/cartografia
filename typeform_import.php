@@ -96,7 +96,7 @@ function imprime_tabla($lArray, $typeform_reference) {
 	$fname = $typeform_export_path.'/'.$typeform_reference.'.php';
 	if(!file_exists( $fname ) )	{
 		file_put_contents($fname, $file_content);
-		echo "Arquivo $typeform_reference creado con éxito <br>";
+		echo "Arquivo ".$typeform_export_path.'/'.$typeform_reference.'.php'." creado con éxito <br>";
 	}
 }
 

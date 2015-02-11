@@ -11,7 +11,7 @@ include("conecta.php");
       
   if (!$result) {
      $error=mysql_error($conexion);
-     die ("Producíuse un erro ó executar a consulta.<br>MySQL dice: $error<br>A consulta era: $query")."<br>";
+     die ("Ocorreu un erro, contacte coas administradoras do sistema. Moitas grazas.");
    }
    
    while ($registro= mysql_fetch_object($result)) {
@@ -34,7 +34,10 @@ include("conecta.php");
            echo  "<h2>".$titulo."</h2>";
            echo "<div>".$descripción."</div>";
            echo "<div><a href='".$URL."'/>".$URL."</a></div>";
-          
+           if( $selectedRadio == 'comunidade' ) {
+              echo "<br>";
+              echo "<a href='comunidade.php?q=$registro->material_id'>Ver ficha da comunidade</a>";
+           }
            
            /*echo "Tema: ".$tema."</br>";
            echo "Tag: ".$tag."</br>";
