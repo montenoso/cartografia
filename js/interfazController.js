@@ -6,7 +6,7 @@ function interfazController() {
   that.headerHeight = 0;
   that.filtersWidth = 270;
   that.fichaWidth = 500;
-  that.comunidadeWidth = 510;
+  that.comunidadeWidth = 700;
   that.engadirWidth = 600;
 
   that.screenWidth = false;
@@ -59,7 +59,7 @@ function interfazController() {
     else
     if( that.sidebarStatus == 'ficha_comunidade' ) {
       $('#display_mapa').width( that.comunidadeWidth );
-      $('#display_mapa').css( 'margin-left', that.screenWidth - that.fichaWidth + 'px' );
+      $('#display_mapa').css( 'margin-left', that.screenWidth - that.comunidadeWidth + 'px' );
       $('#map').width( that.screenWidth - that.comunidadeWidth );
     }
     else
