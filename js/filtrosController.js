@@ -101,5 +101,5 @@ function filtrosController() {
       }
   });
 
-  console.log(recursos)
+  //console.log(recursos)
 }

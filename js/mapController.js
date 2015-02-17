@@ -97,27 +97,31 @@ function mapController() {
     $.each(recursos, function(i, recurso_data) {
 
       if ( recurso_data.material_id == id ) {
-        console.log(recurso_data.latitud, recurso_data.longitud)
-        mapa.setCenter({lat: parseFloat(recurso_data.latitud), lng: parseFloat(recurso_data.longitud) } )
-        mapa.setZoom(14);
+        //console.log(recurso_data.latitud, recurso_data.longitud)
 
-
-        cl.marker_select(
-            id,
-            {
-              url: icons_path + "point_selected.png",
-              anchor: new google.maps.Point(19,42)
-            }
-          );
 
         $.ajax({
 
           url: "ficha.php" ,
           data: {id:id},
           success: function(datos) {
+            
+            if(recurso_data.selectedradio == 'comunidade') {
+              interfazControl.setSidebarFichaComunidade();
+            }
+            else {
+              interfazControl.setSidebarFichaRecurso();
+            }
             $("#display_mapa_content").html( datos );
-            interfazControl.setSidebarFichaRecurso();
-            //console.log( interfazControl )
+            mapa.setCenter({lat: parseFloat(recurso_data.latitud), lng: parseFloat(recurso_data.longitud) } )
+            mapa.setZoom(14);
+            cl.marker_select(
+              id,
+              {
+                url: icons_path + "point_selected.png",
+                anchor: new google.maps.Point(19,42)
+              }
+            );
           }
         });
 
