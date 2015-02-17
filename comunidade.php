@@ -1,84 +1,86 @@
-<?php
+
+
+<?
+
+
+
+
+
+
+
+
+
+
 session_start();
 include("conecta.php");
-		
-if ( isset($_GET['q']) && is_numeric($_GET['q']) ){
-	$id = $_GET['q'];      
-	
-	$queryFicha = "SELECT * FROM documento WHERE material_id = $id";
-	
-	$result = mysql_query($queryFicha,$conexion);
+    
+   if ( isset($_GET['id']) && is_numeric($_GET['id']) ){
+      $id = $_GET['id'];      
+      
+      $queryFicha = "SELECT * FROM documento WHERE material_id = $id";
+      
+      $result = mysql_query($queryFicha,$conexion);
+      
+  if (!$result) {
+     $error=mysql_error($conexion);
+     die ("Ocorreu un erro, contacte coas administradoras do sistema. Moitas grazas.");
+   }
+   
+   while ($registro= mysql_fetch_object($result)) {
+       $titulo = $registro->titulo_registro;
+       $descripción= $registro->descripcion;
+       $tema = $registro-> tema;
+       $tag = $registro-> tag;
+       $URL = $registro-> URL;
+       $nombre = $registro-> nombre_archivo;
+       $tag = $registro-> tag;
+       $extension = $registro-> extension;
+       $selectedRadio = $registro-> selectedradio;
+       ?>
+       
+        <div id="ficha">
+        </br>
 
+        <?php
+     
+           echo  "<h2>".$titulo."</h2>";
+           echo "<div>".$descripción."</div>";
+           echo "<div><a href='".$URL."'/>".$URL."</a></div>";
+           if( $selectedRadio == 'comunidade' ) {
+              echo "<br>";
+              echo "<a href='comunidade.php?q=$registro->material_id'>Ver ficha da comunidade</a>";
+           }
+           
+           /*echo "Tema: ".$tema."</br>";
+           echo "Tag: ".$tag."</br>";
+           echo "Nombre: ".$nombre."</br>";*/ ?>
+            <br>
+            
+        <?php
+       }
+   
+   }
+   
+   $nombre_fichero_sin_espacios=str_replace(" ","",$nombre);?> 
+            
+        <?php
+   if($extension == "image/jpeg" || $extension == "image/png" || $extension == "image/gif" || $extension == "image/tiff"){
+?> <img src="uploads/<?php echo $nombre_fichero_sin_espacios; ?>"/>
+    <br>
+<?php }
+    if($extension == "audio/x-wav" || $extension =="audio/mpeg"){
+?>  <audio controls="controls" src="uploads/<?php echo $nombre_fichero_sin_espacios; ?>"/></audio>
+    <br>
+<?php }
+    if($extension == "video/quicktime" || $extension == "video/mp4"){
+?> <video controls="controls" src="uploads/<?php echo $nombre_fichero_sin_espacios; ?>" ></video>
+    <br>
+<?php }
 
-		 
-	$registro= mysql_fetch_object($result);	
-
-	if (!$result || $registro->selectedradio != 'comunidade') {
-		header('Location: '.$media_host);
-	}
-	else {
-
-
-		$titulo = $registro->titulo_registro;
-		$descripción= $registro->descripcion;
-		$tema = $registro-> tema;
-		$tag = $registro-> tag;
-		$URL = $registro-> URL;
-		$nombre = $registro-> nombre_archivo;
-		$tag = $registro-> tag;
-		$extension = $registro-> extension;
-		$selectedRadio = $registro-> selectedradio;
-
-		//
-		//	Captación de datos finalizada :)
-		//	Agora imos co corpo da páxina
-		//
-
-
-	?>
-
-
-
-
-
-
-
-	<!DOCTYPE html>
-	<html>
-	<head>
-	  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-		<title> <?php echo $titulo;?> </title>
-	</head>
-	<body>
-
-
-		<h2><?php echo $titulo;?></h2>
-		<div><?php echo $descripción; ?></div>
-		<div><?php echo $URL; ?> <?php echo $URL; ?></a></div>
-		<div style="width:200px;height:200px;background-color:grey;" id="mapa"></div>
-<?php 
-		if( $selectedRadio == 'comunidade' ) {
-			echo "<a href='$media_host#recurso/$registro->material_id'>Ver na cartografía</a>";
-		}
+    echo "<div> ".$tag."</div>";
 ?>
 
-	<div>
-<?php 
-		global $typeform_export_path, $typeform_api_url, $typeform_correspondencias;
-		$fpath = $typeform_export_path.'/'.$typeform_correspondencias[$id].'.php' ;
-		if( file_exists( $fpath  ) ) {
-			echo "<h2>Máis datos</h2>";
-			require_once($fpath );
-		}
-?>
-	</div>
-
-
-    <script src="https://maps.googleapis.com/maps/api/js?libraries=geometry&v=3.exp&sensor=false"></script>
-    <script src="<?php echo $media_host;?>/js/vendor/jquery.min.js"></script>
-	  <script src="<?php echo $media_host;?>/js/ficha_comunidade.js"></script>
-	</body>
-	</html>
-<?php
-	}
-}
+    <br>
+    </br>
+              
+</div>
