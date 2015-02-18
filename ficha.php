@@ -5,6 +5,25 @@ include("conecta.php");
 
 function ocorreuUnErro() { die ("Ocorreu un erro, contacte coas administradoras do sistema. Moitas grazas."); }
 
+function getSliderElement($e) {
+  return "<li>".$e->titulo_registro."</li>";
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     
 if ( !isset($_GET['id']) || !is_numeric($_GET['id']) ) {
   ocorreuUnErro();
@@ -35,6 +54,22 @@ $tag = $registro-> tag;
 $extension = $registro-> extension;
 $selectedRadio = $registro-> selectedradio;
 
+
+
+if( $selectedRadio == 'comunidade')  {
+  $queryFillos = "SELECT * FROM documento WHERE pai = $id";
+
+  $result = mysql_query($queryFillos,$conexion);
+  if($result) {
+    $slider = '';
+    while( $e = mysql_fetch_object($result) ) {
+      $slider .= getSliderElement( $e );
+    }
+    $slider = "<h3>Relacionados<h3><ul>".$slider."</ul>";
+  }
+
+}
+
 //
 //  Captación de datos finalizada :)
 //  Agora imos co corpo da páxina
@@ -48,7 +83,7 @@ $selectedRadio = $registro-> selectedradio;
     <h2><?php echo $titulo;?></h2>
     <div><?php echo $descripción; ?></div>
     <div><?php echo $URL; ?> <?php echo $URL; ?></a></div>
-
+    <div><?php echo $slider; ?></div>
   <div>
 <?php 
     global $typeform_export_path, $typeform_api_url, $typeform_correspondencias;
@@ -59,6 +94,8 @@ $selectedRadio = $registro-> selectedradio;
     }
 ?>
   </div>
+
+  <div>
 
 <?php else:?>
 
