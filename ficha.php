@@ -43,7 +43,7 @@ $selectedRadio = $registro-> selectedradio;
 
 
 
-<?php if( $registro->selectedradio == 'comunidade') :?>
+<?php if( $selectedRadio == 'comunidade') :?>
 
     <h2><?php echo $titulo;?></h2>
     <div><?php echo $descripción; ?></div>
@@ -62,6 +62,35 @@ $selectedRadio = $registro-> selectedradio;
 
 <?php else:?>
 
+
+
+    <h2><?php echo $titulo;?></h2>
+    <div><?php echo $descripción; ?></div>
+    <div><?php echo $URL; ?> <?php echo $URL; ?></a></div>
+
+  <div>
+
+  </div>
+
+<?php
+   $nombre_fichero_sin_espacios=str_replace(" ","",$nombre);?> 
+            
+        <?php
+   if($extension == "image/jpeg" || $extension == "image/png" || $extension == "image/gif" || $extension == "image/tiff"){
+?> <img src="uploads/<?php echo $nombre_fichero_sin_espacios; ?>"/>
+    <br>
+<?php }
+    if($extension == "audio/x-wav" || $extension =="audio/mpeg"){
+?>  <audio controls="controls" src="uploads/<?php echo $nombre_fichero_sin_espacios; ?>"/></audio>
+    <br>
+<?php }
+    if($extension == "video/quicktime" || $extension == "video/mp4"){
+?> <video controls="controls" src="uploads/<?php echo $nombre_fichero_sin_espacios; ?>" ></video>
+    <br>
+<?php }
+
+    echo "<div> ".$tag."</div>";
+?>
 <?php endif;?>
 
 
