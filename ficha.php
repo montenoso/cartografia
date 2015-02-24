@@ -6,7 +6,7 @@ include("conecta.php");
 function ocorreuUnErro() { die ("Ocorreu un erro, contacte coas administradoras do sistema. Moitas grazas."); }
 
 function getSliderElement($e) {
-  return "<li>".$e->titulo_registro."</li>";
+  return "<li><a onclick='mapControl.mapa_selecciona_elemento(" . $e->material_id . ")' href='#'>" . $e->titulo_registro . "</a></li>";
 }
 
 
