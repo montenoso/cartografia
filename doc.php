@@ -13,30 +13,47 @@
 
 
     <form>
+        <div class="form-group">
+          <label class="control-label" for="localizacion">Localización:</label>      
+          <div class="row">
 
-        <div class="form-group">
-            <label class="control-label" for="comunidade">Comunidade:</label>
-            <div class="input-group">
-                <select class="form-control" name="comunidade" >
-                  <option value="default">Selecciona...</option>
-                  <option value="1">Comunidade 1</option>
+              <div class="col-xs-3">
+                <select class="form-control" name="comunidade" id="comunidade" >
+                  <option value="default">Comunidade</option>
+                  <option value="1">Tal cual</option>
                 </select>
-            </div>
+              </div>
+
+              <div class="col-xs-3">
+                  <div class="input-group">
+                      <span class="input-group-addon">lat</span>
+                      <input type="text" class="form-control" placeholder="43,3624">
+                  </div>
+              </div>
+              <div class="col-xs-3">
+                  <div class="input-group">
+                      <span class="input-group-addon">lon</span>
+                      <input type="text" class="form-control" placeholder="-8,4115">
+                  </div>
+              </div>
+              <div class="col-xs-2">
+                  <div class="input-group">
+                    <button type="button" class="btn btn-default">
+                      <span class="glyphicon glyphicon glyphicon-screenshot"></span> No mapa
+                    </button>
+                  </div>
+              </div>
+          </div>
+        </div>
+
+
+        <div class="form-group" >
+            <label class="control-label" for="lastname">Nomes:</label>
+            <input class="form-control" placeholder="Nome do documento" name="firstname" type="text" />
         </div>
         <div class="form-group">
-            <label class="control-label" for="firstname">Nome:</label>
-            <div class="input-group">
-                <span class="input-group-addon">$</span>
-                <input class="form-control" placeholder="Insira o seu nome próprio" name="firstname" type="text" />
-            </div>
-        </div>
-            
-        <div class="form-group">
-            <label class="control-label" for="lastname">Apelido:</label>
-            <div class="input-group">
-                <span class="input-group-addon">€</span>
-                <input class="form-control" placeholder="Insira o seu apelido" name="lastname" type="text" />
-            </div>
+            <label class="control-label" for="lastname">Descripción:</label>
+                <textarea class="form-control"></textarea>
         </div>
         
             <button type="submit" class="btn btn-primary">Submit</button>

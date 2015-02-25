@@ -65,8 +65,8 @@ include("conecta.php");
       <div id="cortina_mapa" style="display:none;"></div>
       <div id="display_mapa" >
         <div id="display_mapa_engadir" style="display:none;">
-          
-          <form id="recurso_form">
+          <iframe src="doc.php" style="width:80%;height:500px;border:0;"></iframe>
+          <!--<form id="recurso_form">
             <select id="selector_provincia" name="provincia">
               <option class="value0" value="0">Selecciona</option>
               <option value="15">A Coruña</option>
@@ -75,8 +75,7 @@ include("conecta.php");
               <option value="36">Pontevedra</option>
             </select>
 
-          </form>
-
+          </form-->
         </div>
         <div id="display_mapa_content" style="display:none;"></div>
         <div id="display_mapa_filters">
