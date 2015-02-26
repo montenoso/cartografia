@@ -65,7 +65,7 @@ include("conecta.php");
       <div id="cortina_mapa" style="display:none;"></div>
       <div id="display_mapa" >
         <div id="display_mapa_engadir" style="display:none;">
-          <iframe src="doc.php" style="width:80%;height:500px;border:0;"></iframe>
+          <iframe src="doc.php" style="width:100%;height:600px;border:0;"></iframe>
           <!--<form id="recurso_form">
             <select id="selector_provincia" name="provincia">
               <option class="value0" value="0">Selecciona</option>
