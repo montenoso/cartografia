@@ -69,7 +69,7 @@
               <label class="control-label col-xs-10" for="lastname">Localización xeográfica:</label>
               <div class="col-xs-4">
                   <div class="input-group">
-                    <button type="button" class="btn btn-primary">
+                    <button type="button" class="btn btn-primary" onclick="parent.formControl.capturaCoordenadas();">
                       <span class="glyphicon glyphicon glyphicon-screenshot"></span> Obter do mapa
                     </button>
                   </div>

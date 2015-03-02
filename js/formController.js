@@ -3,6 +3,14 @@ function formController() {
   var that = this;
   var form = $('#recurso_form');
 
+
+  that.marker = new google.maps.Marker({
+    //  position: mapa.getCenter(),
+    //  map: false,
+  });
+
+
+
   that.showForm = function() {
     // establece layout en modo formulario
     interfazControl.setSidebarEngadir();
@@ -30,6 +38,14 @@ function formController() {
   }
 
 
+
+  that.capturaCoordenadas = function() {
+    mapa.setOptions({ draggableCursor: 'crosshair' });
+    google.maps.event.addListenerOnce(mapa, 'click', function( event ){
+      mapa.setOptions({ draggableCursor: 'move' });
+      that.situaMapa(event.latLng.lat(), event.latLng.lng());
+    });
+  }
 
 
 }
