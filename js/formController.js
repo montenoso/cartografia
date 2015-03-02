@@ -20,46 +20,12 @@ function formController() {
   }
 
 
-  that.seleccionaProvincia = function() {
-    interfazControl.hideCortina();
-    $('#selector_provincia .value0').hide();
-
-
-
-    switch($('#selector_provincia').val() ){
-      case '15':
-          mapa.setCenter({lat: 43.0481799, lng: -8.4531704 } );
-          mapa.setZoom(10);
-        break;
-      case '27':
-          mapa.setCenter({lat: 43.1175482, lng: -7.8549405 } );
-          mapa.setZoom(10);
-      
-        break;
-      case '32': 
-          mapa.setCenter({lat: 42.205087, lng: -7.712387 } );
-          mapa.setZoom(10);
-        break;
-      case '36':
-          mapa.setCenter({lat: 42.2736426, lng: -8.3454329 } );
-          mapa.setZoom(10);
-        break;
-    }
+  that.situaMapa = function(lat, lon) {
+      interfazControl.hideCortina();
+      $('#selector_provincia .value0').hide();
+      mapa.setCenter({lat: lat, lng: lon } );
+      mapa.setZoom(13);
   }
 
-  that.submit = function() {
-
-  }
-
-
-
-
-  ///
-  // Eventos formulario
-  ///
-
-  $('#selector_provincia').bind('change', function(){
-    that.seleccionaProvincia();
-  });
 
 }

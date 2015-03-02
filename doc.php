@@ -58,7 +58,7 @@
                 <?php 
 
                   foreach( $comunidades as $comunidade ) {
-                    echo "<option value='".$comunidade->material_id."' lat='".$comunidade->latitud."' lon='".$comunidade->longitud."' >".$comunidade->titulo_registro."</option>";
+                    echo "<option value='".$comunidade->material_id."'  onclick='parent.formControl.situaMapa(".$comunidade->latitud.",".$comunidade->longitud.");' >".$comunidade->titulo_registro."</option>";
                   }
                 ?>
               </select>
