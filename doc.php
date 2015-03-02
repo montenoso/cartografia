@@ -1,3 +1,35 @@
+<?php
+
+
+
+
+  function lista_comunidades() {
+    require_once("conecta.php");
+    
+    $retObj = false;
+    $queryFicha = "SELECT * FROM documento WHERE selectedradio = 'comunidade'";
+
+    $result = mysql_query($queryFicha,$conexion);
+
+    if(!$result) {
+      $retObj = false;
+    }
+    else {
+      while ( $item = mysql_fetch_object( $result ) ) {
+        $retObj[] = $item;
+      }
+    }
+
+
+    return $retObj;
+  }
+
+  $comunidades = lista_comunidades();
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="es">
   <head>
@@ -22,8 +54,13 @@
             <label class="control-label col-xs-12" for="lastname">Comunidade á que pertence</label>
             <div class="col-xs-5">
               <select class="form-control" name="comunidade" id="comunidade" >
-                <option value="default">Selecciona unha opción</option>
-                <option value="1">Tal cual</option>
+                <option value="default">Elixe unha opción</option>
+                <?php 
+
+                  foreach( $comunidades as $comunidade ) {
+                    echo "<option value='".$comunidade->material_id."' lat='".$comunidade->latitud."' lon='".$comunidade->longitud."' >".$comunidade->titulo_registro."</option>";
+                  }
+                ?>
               </select>
             </div>
           </div>
@@ -60,7 +97,7 @@
         <div class="form-group col-xs-12">
             <textarea class="form-control" placeholder="Breve descrición" ></textarea>
         </div>
-        <div class="form-group" style="height:250px;">
+        <div class="form-group" style="height:220px;">
 
             <label class="control-label col-xs-12" for="lastname">Documento:</label>
 
@@ -79,6 +116,26 @@
             <div class="col-xs-9">
               <input class="form-control" placeholder="http:// (youtube ou vimeo)" name="firstname" type="text" />
             </div>
+
+        </div>
+
+        <div class="form-group col-xs-12" >
+            <label class="control-label" for="lastname">Categorías ás que pertence:</label>
+
+<div class="btn-group col-xs-12" role="group" aria-label="...">
+  <button type="button" class="btn btn-default">@</button>
+  <button type="button" class="btn btn-default">@</button>
+  <button type="button" class="btn btn-default">@</button>
+  <button type="button" class="btn btn-default">@</button>
+  <button type="button" class="btn btn-default">@</button>
+  <button type="button" class="btn btn-default">@</button>
+  <button type="button" class="btn btn-default">@</button>
+  <button type="button" class="btn btn-default">@</button>
+  <button type="button" class="btn btn-default">@</button>
+  <button type="button" class="btn btn-default">@</button>
+  <button type="button" class="btn btn-default">@</button>
+  <button type="button" class="btn btn-default">@</button>
+</div>
         </div>
 
         <div class="form-group pull-right" >
