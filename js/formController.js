@@ -25,7 +25,11 @@ function formController() {
       $('#selector_provincia .value0').hide();
       mapa.setCenter({lat: lat, lng: lon } );
       mapa.setZoom(13);
+      $("#iframe_formulario").contents().find('#lat').val(lat);
+      $("#iframe_formulario").contents().find('#lon').val(lon);
   }
+
+
 
 
 }

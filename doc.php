@@ -77,13 +77,13 @@
               <div class="col-xs-4">
                   <div class="input-group">
                       <span class="input-group-addon">lat</span>
-                      <input type="text" class="form-control" placeholder="43,3624">
+                      <input type="text" name="lat" id="lat" class="form-control" placeholder="43,3624">
                   </div>
               </div>
               <div class="col-xs-4">
                   <div class="input-group">
                       <span class="input-group-addon">lon</span>
-                      <input type="text" class="form-control" placeholder="-8,4115">
+                      <input type="text" name="lon" id="lon" class="form-control" placeholder="-8,4115">
                   </div>
               </div>
 
