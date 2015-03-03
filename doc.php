@@ -92,10 +92,10 @@
 
         <div class="form-group col-xs-12" >
             <label class="control-label" for="lastname">Acerca do documento:</label>
-            <input class="form-control" placeholder="Nome do documento" name="firstname" type="text" />
+            <input class="form-control" placeholder="Nome do documento" name="nome" type="text" />
         </div>
         <div class="form-group col-xs-12">
-            <textarea class="form-control" placeholder="Breve descrición" ></textarea>
+            <textarea name="descripcion" class="form-control" placeholder="Breve descrición" ></textarea>
         </div>
         <div class="form-group" style="height:220px;">
 
@@ -166,14 +166,22 @@
           rules: {
  
               comunidade: { valueNotEquals: "default" },
-              firstname: {
-                  minlength: 3,
-                  maxlength: 15,
+              lat: {
+                  minlength: 2,
                   required: true
               },
-              lastname: {
-                  minlength: 3,
-                  maxlength: 15,
+              lon: {
+                  minlength: 2,
+                  required: true
+              },
+              nome: {
+                  minlength: 5,
+                  maxlength: 200,
+                  required: true
+              },
+              descripcion: {
+                  minlength: 5,
+                  maxlength: 700,
                   required: true
               }
           },
