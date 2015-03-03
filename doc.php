@@ -70,7 +70,7 @@
               <div class="col-xs-4">
                   <div class="input-group">
                     <button type="button" class="btn btn-primary" onclick="parent.formControl.capturaCoordenadas();">
-                      <span class="glyphicon glyphicon glyphicon-screenshot"></span> Obter do mapa
+                      <span class="glyphicon glyphicon glyphicon-screenshot"></span> Click no mapa
                     </button>
                   </div>
               </div>
@@ -102,15 +102,15 @@
             <label class="control-label col-xs-12" for="lastname">Documento:</label>
 
             <div class="dropdown col-xs-2">
-              <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
-                Vídeo
+              <button class="btn btn-info dropdown-toggle" type="button" id="tipoDocumento" data-toggle="dropdown" aria-expanded="true">
+                <span class="txt">Vídeo</span>
                 <span class="caret"></span>
               </button>
               <ul class="dropdown-menu" role="menu" >
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Foto</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Video</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Audio</a></li>
-                <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Arquivo</a></li>
+                <li role="presentation" onclick="parent.formControl.setTipoDocumento('foto')"><a role="menuitem" tabindex="-1" href="#">Foto</a></li>
+                <li role="presentation" onclick="parent.formControl.setTipoDocumento('video')"><a role="menuitem" tabindex="-1" href="#">Video</a></li>
+                <li role="presentation" onclick="parent.formControl.setTipoDocumento('audio')"><a role="menuitem" tabindex="-1" href="#">Audio</a></li>
+                <li role="presentation" onclick="parent.formControl.setTipoDocumento('arquivo')"><a role="menuitem" tabindex="-1" href="#">Arquivo</a></li>
               </ul>
             </div>
             <div class="col-xs-9">

@@ -5,10 +5,13 @@ function formController() {
 
 
   that.marker = new google.maps.Marker({
-    //  position: mapa.getCenter(),
-    //  map: false,
+        draggable:true
   });
 
+  google.maps.event.addListener( that.marker, 'dragend', function() 
+  {
+    that.situaMapa( that.marker.getPosition().lat(), that.marker.getPosition().lng() );
+  });
 
 
   that.showForm = function() {
@@ -31,10 +34,15 @@ function formController() {
   that.situaMapa = function(lat, lon) {
       interfazControl.hideCortina();
       $('#selector_provincia .value0').hide();
+
       mapa.setCenter({lat: lat, lng: lon } );
+      
       mapa.setZoom(13);
       $("#iframe_formulario").contents().find('#lat').val(lat);
       $("#iframe_formulario").contents().find('#lon').val(lon);
+
+      that.marker.setPosition(new google.maps.LatLng( lat, lon) );
+      that.marker.setMap(mapa);
   }
 
 
@@ -45,6 +53,29 @@ function formController() {
       mapa.setOptions({ draggableCursor: 'move' });
       that.situaMapa(event.latLng.lat(), event.latLng.lng());
     });
+  }
+
+
+  that.setTipoDocumento = function( tipo ) {
+
+    var textoBoton = '';
+    switch( tipo ){
+      case 'foto':
+        textoBoton = 'Foto';
+        break;
+      case 'video':
+        textoBoton = 'Video';
+        break 
+      case 'audio':
+        textoBoton = 'Audio';
+        break;
+      case 'arquivo':
+        textoBoton = 'Arquivo';
+        break;
+
+    }
+
+    $("#iframe_formulario").contents().find('#tipoDocumento .txt').text( textoBoton );
   }
 
 
