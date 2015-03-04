@@ -31,6 +31,11 @@ function formController() {
   }
 
 
+  that.seleccionaComunidade =  function( select ) {
+    var opt = $(select).find(':selected');
+    that.situaMapa( parseFloat(opt.attr('lat')), parseFloat(opt.attr('lon')) );
+  }
+
   that.situaMapa = function(lat, lon) {
       interfazControl.hideCortina();
       $('#selector_provincia .value0').hide();

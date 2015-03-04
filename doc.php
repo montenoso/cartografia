@@ -53,12 +53,12 @@
           <div class="form-group" style="height:140px;">
             <label class="control-label col-xs-12" for="lastname">Comunidade á que pertence</label>
             <div class="col-xs-5">
-              <select class="form-control" name="comunidade" id="comunidade" >
-                <option value="default">Elixe unha opción</option>
+              <select class="form-control" onchange="parent.formControl.seleccionaComunidade(this);" name="comunidade" id="comunidade" >
+                <option value="default" >Elixe unha opción</option>
                 <?php 
 
                   foreach( $comunidades as $comunidade ) {
-                    echo "<option value='".$comunidade->material_id."'  onclick='parent.formControl.situaMapa(".$comunidade->latitud.",".$comunidade->longitud.");' >".$comunidade->titulo_registro."</option>";
+                    echo "<option value='".$comunidade->material_id."'  lat='".$comunidade->latitud."' lon='".$comunidade->longitud."' >".$comunidade->titulo_registro."</option>";
                   }
                 ?>
               </select>
