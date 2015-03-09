@@ -67,6 +67,7 @@ function interfazController() {
       $('#display_mapa').width( that.engadirWidth );
       $('#display_mapa').css( 'margin-left', that.screenWidth - that.engadirWidth + 'px' );
       $('#map').width( that.screenWidth - that.engadirWidth );
+      $('#display_mapa_engadir iframe').css('height', altoReal-10);
     }
 
     if(typeof mapa != 'undefined')

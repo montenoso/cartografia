@@ -38,6 +38,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap -->
+    <link href="css/iconografias.css" rel="stylesheet">
     <link href="js/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <style> 
       .help-block {visibility:hidden;height:0;width:0;padding:0;margin:0;} 
@@ -121,21 +122,25 @@
 
         <div class="form-group col-xs-12" >
             <label class="control-label" for="lastname">Categorías ás que pertence:</label>
-
-<div class="btn-group col-xs-12" role="group" aria-label="...">
-  <button type="button" class="btn btn-default">@</button>
-  <button type="button" class="btn btn-default">@</button>
-  <button type="button" class="btn btn-default">@</button>
-  <button type="button" class="btn btn-default">@</button>
-  <button type="button" class="btn btn-default">@</button>
-  <button type="button" class="btn btn-default">@</button>
-  <button type="button" class="btn btn-default">@</button>
-  <button type="button" class="btn btn-default">@</button>
-  <button type="button" class="btn btn-default">@</button>
-  <button type="button" class="btn btn-default">@</button>
-  <button type="button" class="btn btn-default">@</button>
-  <button type="button" class="btn btn-default">@</button>
-</div>
+            <div class="btn-group col-xs-13" role="group" aria-label="...">
+              <button type="button" title="Actividades" class="btn btn-default"><div class="categoria-actividades-16"></div></button>
+              <button type="button" title="Agricultura" class="btn btn-default"><div class="categoria-agriucltura-16"></div></button>
+              <button type="button" title="Banco de coñecemento" class="btn btn-default"><div class="categoria-bancoConecemento-16"></div></button>
+              <button type="button" title="Comúns" class="btn btn-default"><div class="categoria-comuns-16"></div></button>
+              <button type="button" title="Comunidades" class="btn btn-default"><div class="categoria-comunidades-16"></div></button>
+              <button type="button" title="Ecoloxía" class="btn btn-default"><div class="categoria-ecoloxia-16"></div></button>
+              <button type="button" title="Gandeiría" class="btn btn-default"><div class="categoria-gandeiria-16"></div></button>
+              <button type="button" title="Instalacións" class="btn btn-default"><div class="categoria-instalacions-16"></div></button>
+              <button type="button" title="Lexislación" class="btn btn-default"><div class="categoria-lexislacion-16"></div></button>
+              <button type="button" title="Mancomún" class="btn btn-default"><div class="categoria-mancomun-16"></div></button>
+              <button type="button" title="Monte madeirable" class="btn btn-default"><div class="categoria-monteMadeirable-16"></div></button>
+              <button type="button" title="Feminismos" class="btn btn-default"><div class="categoria-transfeminismos-16"></div></button>
+              <button type="button" title="Xestión" class="btn btn-default"><div class="categoria-xestion-16"></div></button>
+            </div>
+        </div>
+        <div class="form-group col-xs-8" >
+            <label class="control-label" for="tags">Etiquetas:</label>
+            <input class="form-control" placeholder="separadas por coma (,)" name="tags" type="text" />
         </div>
 
         <div class="form-group pull-right" >

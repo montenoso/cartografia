@@ -65,7 +65,7 @@ include("conecta.php");
       <div id="cortina_mapa" style="display:none;"></div>
       <div id="display_mapa" >
         <div id="display_mapa_engadir" style="display:none;">
-          <iframe src="doc.php" id="iframe_formulario" style="width:100%;height:600px;border:0;"></iframe>
+          <iframe src="doc.php" id="iframe_formulario" style="width:100%;border:0;"></iframe>
 
         </div>
         <div id="display_mapa_content" style="display:none;"></div>
