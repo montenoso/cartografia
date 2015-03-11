@@ -116,4 +116,9 @@ mapa_establece_url = function(uri) {
     formControl.showForm();
     window.location = uri;  
   }
+  else 
+  if(params[0] == 'portada'){
+    formControl.showForm();
+    window.location = host_cartografia;  
+  }
 }

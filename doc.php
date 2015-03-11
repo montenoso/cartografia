@@ -50,7 +50,7 @@
     <div class="form-group col-xs-12">
       <h1>Novo documento</h1>
     </div>
-    <form >
+    <form action="docsubmit.php">
           <div class="form-group" style="height:140px;">
             <label class="control-label col-xs-12" for="lastname">Comunidade á que pertence</label>
             <div class="col-xs-5">
@@ -102,8 +102,9 @@
 
             <label class="control-label col-xs-12" for="lastname">Documento:</label>
 
-            <div class="dropdown col-xs-2">
-              <button class="btn btn-info dropdown-toggle" type="button" id="tipoDocumento" data-toggle="dropdown" aria-expanded="true">
+            <div class="dropdown col-xs-3">
+              <button class="btn btn-default dropdown-toggle" type="button" id="tipoDocumento" data-toggle="dropdown" aria-expanded="true">
+                <div class="documento-video-16 selector-documento"></div>
                 <span class="txt">Vídeo</span>
                 <span class="caret"></span>
               </button>
@@ -111,33 +112,38 @@
                 <li role="presentation" onclick="parent.formControl.setTipoDocumento('foto')"><a role="menuitem" tabindex="-1" href="#">Foto</a></li>
                 <li role="presentation" onclick="parent.formControl.setTipoDocumento('video')"><a role="menuitem" tabindex="-1" href="#">Video</a></li>
                 <li role="presentation" onclick="parent.formControl.setTipoDocumento('audio')"><a role="menuitem" tabindex="-1" href="#">Audio</a></li>
-                <li role="presentation" onclick="parent.formControl.setTipoDocumento('arquivo')"><a role="menuitem" tabindex="-1" href="#">Arquivo</a></li>
+                <li role="presentation" onclick="parent.formControl.setTipoDocumento('texto')"><a role="menuitem" tabindex="-1" href="#">Texto</a></li>
               </ul>
             </div>
-            <div class="col-xs-9">
-              <input class="form-control" placeholder="http:// (youtube ou vimeo)" name="firstname" type="text" />
+            <div class="col-xs-9" id="caixa_documento">
+              <input class="form-control" id="documento_video" placeholder="http:// (youtube ou vimeo)" name="video" type="text" />
+              <input class="form-control" id="documento_audio"  placeholder="http:// (soundcloud)" name="audio" type="text" style="display:none;"/>
+              <input class="form-control" id="documento_texto" name="texto" type="file" style="display:none;" />
+              <input class="form-control" id="documento_foto"  name="foto" type="file"  style="display:none;"/>
             </div>
 
         </div>
 
-        <div class="form-group col-xs-12" >
+        <div class="form-group col-xs-12" id="contenedor_categorias" >
             <label class="control-label" for="lastname">Categorías ás que pertence:</label>
             <div class="btn-group col-xs-13" role="group" aria-label="...">
-              <button type="button" title="Actividades" class="btn btn-default"><div class="categoria-actividades-16"></div></button>
-              <button type="button" title="Agricultura" class="btn btn-default"><div class="categoria-agriucltura-16"></div></button>
-              <button type="button" title="Banco de coñecemento" class="btn btn-default"><div class="categoria-bancoConecemento-16"></div></button>
-              <button type="button" title="Comúns" class="btn btn-default"><div class="categoria-comuns-16"></div></button>
-              <button type="button" title="Comunidades" class="btn btn-default"><div class="categoria-comunidades-16"></div></button>
-              <button type="button" title="Ecoloxía" class="btn btn-default"><div class="categoria-ecoloxia-16"></div></button>
-              <button type="button" title="Gandeiría" class="btn btn-default"><div class="categoria-gandeiria-16"></div></button>
-              <button type="button" title="Instalacións" class="btn btn-default"><div class="categoria-instalacions-16"></div></button>
-              <button type="button" title="Lexislación" class="btn btn-default"><div class="categoria-lexislacion-16"></div></button>
-              <button type="button" title="Mancomún" class="btn btn-default"><div class="categoria-mancomun-16"></div></button>
-              <button type="button" title="Monte madeirable" class="btn btn-default"><div class="categoria-monteMadeirable-16"></div></button>
-              <button type="button" title="Feminismos" class="btn btn-default"><div class="categoria-transfeminismos-16"></div></button>
-              <button type="button" title="Xestión" class="btn btn-default"><div class="categoria-xestion-16"></div></button>
+              <button type="button" onclick="parent.formControl.categoria('actividades')" title="Actividades" class="btn btn-default "><div class="categoria-actividades-16"></div></button>
+              <button type="button" onclick="parent.formControl.categoria('agriucltura')" title="Agricultura" class="btn btn-default"><div class="categoria-agriucltura-16"></div></button>
+              <button type="button" onclick="parent.formControl.categoria('bancoConecemento')" title="Banco de coñecemento" class="btn btn-default"><div class="categoria-bancoConecemento-16"></div></button>
+              <button type="button" onclick="parent.formControl.categoria('comuns')" title="Comúns" class="btn btn-default"><div class="categoria-comuns-16"></div></button>
+              <button type="button" onclick="parent.formControl.categoria('comunidades')" title="Comunidades" class="btn btn-default"><div class="categoria-comunidades-16"></div></button>
+              <button type="button" onclick="parent.formControl.categoria('ecoloxia')" title="Ecoloxía" class="btn btn-default"><div class="categoria-ecoloxia-16"></div></button>
+              <button type="button" onclick="parent.formControl.categoria('gandeiria')" title="Gandeiría" class="btn btn-default"><div class="categoria-gandeiria-16"></div></button>
+              <button type="button" onclick="parent.formControl.categoria('instalacions')" title="Instalacións" class="btn btn-default"><div class="categoria-instalacions-16"></div></button>
+              <button type="button" onclick="parent.formControl.categoria('lexislacion')" title="Lexislación" class="btn btn-default"><div class="categoria-lexislacion-16"></div></button>
+              <button type="button" onclick="parent.formControl.categoria('mancomun')" title="Mancomún" class="btn btn-default"><div class="categoria-mancomun-16"></div></button>
+              <button type="button" onclick="parent.formControl.categoria('monteMadeirable')" title="Monte madeirable" class="btn btn-default"><div class="categoria-monteMadeirable-16"></div></button>
+              <button type="button" onclick="parent.formControl.categoria('transfeminismos')" title="Feminismos" class="btn btn-default"><div class="categoria-transfeminismos-16"></div></button>
+              <button type="button" onclick="parent.formControl.categoria('xestion')" title="Xestión" class="btn btn-default"><div class="categoria-xestion-16"></div></button>
             </div>
         </div>
+        <input id="categorias" name="categorias" style="display:none;">
+
         <div class="form-group col-xs-8" >
             <label class="control-label" for="tags">Etiquetas:</label>
             <input class="form-control" placeholder="separadas por coma (,)" name="tags" type="text" />
@@ -146,7 +152,7 @@
         <div class="form-group pull-right" >
           <div class="col-xs-4  ">
             <div class="input-group">
-              <button  class="btn btn-danger">Cancelar</button>
+              <button  onclick="parent.mapa_establece_url('portada');" class="btn btn-danger">Cancelar</button>
             </div>
           </div>
           <div class="col-xs-1">

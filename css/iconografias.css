@@ -46,11 +46,13 @@
 .categoria-xestion-64 {  height:64px; width:64px;  background: url('../images/categorias/64x64/xestion.png') no-repeat; }
 
 
+
+
 /* doocumentos 16x16*/ 
-.documento-audio-16 {}
-.documento-foto-16 {}
-.documento-texto-16 {}
-.documento-video-16 {}
+.documento-audio-16 {  height:16px; width:16px;  background: url('../images/tipoDocumento/16x16/audio.png') no-repeat; }
+.documento-foto-16 {  height:16px; width:16px;  background: url('../images/tipoDocumento/16x16/foto.png') no-repeat; }
+.documento-texto-16 {  height:16px; width:16px;  background: url('../images/tipoDocumento/16x16/texto.png') no-repeat; }
+.documento-video-16 {  height:16px; width:16px;  background: url('../images/tipoDocumento/16x16/video.png') no-repeat; }
 
 /* doocumentos 32x32*/ 
 .documento-audio-32 {}
@@ -63,3 +65,6 @@
 .documento-foto-64 {}
 .documento-texto-64 {}
 .documento-video-64 {}
+
+/*estilos para icono documento*/
+.selector-documento {float:left;margin-right:4px;margin-top:2px;}
