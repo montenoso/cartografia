@@ -1,6 +1,21 @@
 <?php
 
 
+  $postData = array(
+    "comunidade" => false,
+    "lat" => '',
+    "lon" => '',
+    "nome" => '',
+    "descripcion" => '',
+    "categorias" => '',
+    "documento_audio" =>'',
+    "documento_video" =>'',
+    "tags" => ''
+  );
+
+  if(isset( $postPost )){
+    $postData = $postPost;
+  }
 
 
   function lista_comunidades() {
@@ -50,7 +65,7 @@
     <div class="form-group col-xs-12">
       <h1>Novo documento</h1>
     </div>
-    <form action="docsubmit.php">
+    <form action="docsubmit.php" method="POST">
           <div class="form-group" style="height:140px;">
             <label class="control-label col-xs-12" for="lastname">Comunidade á que pertence</label>
             <div class="col-xs-5">
@@ -59,7 +74,14 @@
                 <?php 
 
                   foreach( $comunidades as $comunidade ) {
-                    echo "<option value='".$comunidade->material_id."'  lat='".$comunidade->latitud."' lon='".$comunidade->longitud."' >".$comunidade->titulo_registro."</option>";
+                    if ( $comunidade->material_id == $postData['comunidade']) {
+                      $seleccionado = " selected='selected' ";
+                    }
+                    else {
+                      $seleccionado = " ";
+                    }
+
+                    echo "<option value='".$comunidade->material_id."' lat='".$comunidade->latitud."' lon='".$comunidade->longitud."' ".$seleccionado." >".$comunidade->titulo_registro."</option>";
                   }
                 ?>
               </select>
@@ -78,13 +100,13 @@
               <div class="col-xs-4">
                   <div class="input-group">
                       <span class="input-group-addon">lat</span>
-                      <input type="text" name="lat" id="lat" class="form-control" placeholder="43,3624">
+                      <input type="text" name="lat" id="lat" class="form-control" placeholder="43,3624" value="<?php echo $postData['lat'];?>">
                   </div>
               </div>
               <div class="col-xs-4">
                   <div class="input-group">
                       <span class="input-group-addon">lon</span>
-                      <input type="text" name="lon" id="lon" class="form-control" placeholder="-8,4115">
+                      <input type="text" name="lon" id="lon" class="form-control" placeholder="-8,4115" value="<?php echo $postData['lon'];?>">
                   </div>
               </div>
 
@@ -93,10 +115,10 @@
 
         <div class="form-group col-xs-12" >
             <label class="control-label" for="lastname">Acerca do documento:</label>
-            <input class="form-control" placeholder="Nome do documento" name="nome" type="text" />
+            <input class="form-control" placeholder="Nome do documento" name="nome" type="text" value="<?php echo $postData['nome'];?>" />
         </div>
         <div class="form-group col-xs-12">
-            <textarea name="descripcion" class="form-control" placeholder="Breve descrición" ></textarea>
+            <textarea name="descripcion" class="form-control" placeholder="Breve descrición" ><?php echo $postData['descripcion'];?></textarea>
         </div>
         <div class="form-group" style="height:220px;">
 
@@ -116,10 +138,10 @@
               </ul>
             </div>
             <div class="col-xs-9" id="caixa_documento">
-              <input class="form-control" id="documento_video" placeholder="http:// (youtube ou vimeo)" name="video" type="text" />
-              <input class="form-control" id="documento_audio"  placeholder="http:// (soundcloud)" name="audio" type="text" style="display:none;"/>
-              <input class="form-control" id="documento_texto" name="texto" type="file" style="display:none;" />
-              <input class="form-control" id="documento_foto"  name="foto" type="file"  style="display:none;"/>
+              <input class="form-control" id="documento_video" placeholder="http:// (youtube ou vimeo)" name="documento_video" type="text" />
+              <input class="form-control" disabled id="documento_audio"  placeholder="http:// (soundcloud)" name="documento_audio" type="text" style="display:none;"/>
+              <input class="form-control" disabled id="documento_texto" name="documento_texto" type="file" style="display:none;" />
+              <input class="form-control" disabled id="documento_foto"  name="documento_foto" type="file"  style="display:none;"/>
             </div>
 
         </div>
@@ -142,11 +164,11 @@
               <button type="button" onclick="parent.formControl.categoria('xestion')" title="Xestión" class="btn btn-default"><div class="categoria-xestion-16"></div></button>
             </div>
         </div>
-        <input id="categorias" name="categorias" style="display:none;">
+        <input id="categorias" name="categorias" style="display:none;" >
 
         <div class="form-group col-xs-8" >
             <label class="control-label" for="tags">Etiquetas:</label>
-            <input class="form-control" placeholder="separadas por coma (,)" name="tags" type="text" />
+            <input class="form-control" placeholder="separadas por coma (,)" name="tags" type="text" value="<?php echo $postData['tags'];?>" />
         </div>
 
         <div class="form-group pull-right" >

@@ -115,9 +115,12 @@ function formController() {
 
 
     // caixas documento
-    $("#iframe_formulario").contents().find('#caixa_documento input').hide();
+    $("#iframe_formulario").contents().find('#caixa_documento input').hide().prop('disabled', true);;
+    
     $("#iframe_formulario").contents().find('#caixa_documento input').val('');
     $("#iframe_formulario").contents().find('#documento_'+tipo).show();
+    $("#iframe_formulario").contents().find('#documento_'+tipo).prop('disabled', false);
+
   }
 
 
