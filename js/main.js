@@ -20,7 +20,7 @@ $(document).ready(
 
     var url = 'http://montenoso2.cartodb.com/api/v2/viz/9ad57d16-0552-11e4-8ccb-0e10bcd91c2b/viz.json';
 
-    icons_path = 'images/marcadores_cluster/';
+    icons_path = '/cartografia_nova/images/marcadores_cluster/';
     cl = false;
 
     var mapOptions = {

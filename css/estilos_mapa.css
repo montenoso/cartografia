@@ -9,7 +9,17 @@ body {
 /***********************************************************************
                           ESTRUCTURA XERAL
 ***********************************************************************/
-#espacio_mapa {}
+
+#page {padding:0;}
+
+div.container  {
+  padding:0;
+
+}
+
+#espacio_mapa {
+  padding-top:44px;
+}
 
   #map { 
     float:left;
@@ -60,13 +70,13 @@ div.nzAutoCompleterDialog div.row .elemento, #caixa_mapa .elemento {
   #caixa_mapa .elemento.comunidade{
     font-weight: bold;
     height:30px;
-    background-image:  url('../images/marcadores_cluster/point_small/bosque-pinar.png' );
+    background-image:  url('/cartografia_nova/images/marcadores_cluster/point_small/bosque-pinar.png' );
     background-color:#AADE9E;
   }
 
-    div.nzAutoCompleterDialog div.elemento.tipo_audio, #caixa_mapa .elemento.tipo_audio { background-image: url('../images/marcadores_cluster/point_small/audio.png' ); }
-    div.nzAutoCompleterDialog div.elemento.tipo_foto, #caixa_mapa .elemento.tipo_foto { background-image: url('../images/marcadores_cluster/point_small/foto.png' ); }
-    div.nzAutoCompleterDialog div.elemento.tipo_video, #caixa_mapa .elemento.tipo_video { background-image: url('../images/marcadores_cluster/point_small/video.png' ); }
+    div.nzAutoCompleterDialog div.elemento.tipo_audio, #caixa_mapa .elemento.tipo_audio { background-image: url('/cartografia_nova/images/marcadores_cluster/point_small/audio.png' ); }
+    div.nzAutoCompleterDialog div.elemento.tipo_foto, #caixa_mapa .elemento.tipo_foto { background-image: url('/cartografia_nova/images/marcadores_cluster/point_small/foto.png' ); }
+    div.nzAutoCompleterDialog div.elemento.tipo_video, #caixa_mapa .elemento.tipo_video { background-image: url('/cartografia_nova/images/marcadores_cluster/point_small/video.png' ); }
 
   div.nzAutoCompleterDialog div.elemento:hover, #caixa_mapa .elemento.comunidade:hover { 
     background-color: #99C78E;

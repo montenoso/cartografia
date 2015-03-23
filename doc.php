@@ -1,5 +1,6 @@
 <?php
 
+  //require_once("conf.php");
 
   $postData = array(
     "comunidade" => false,
@@ -19,6 +20,7 @@
 
 
   function lista_comunidades() {
+
     require_once("conecta.php");
     
     $retObj = false;
@@ -65,7 +67,18 @@
     <div class="form-group col-xs-12">
       <h1>Novo documento</h1>
     </div>
-    <form action="docsubmit.php" method="POST">
+    <form action="docsubmit.php" method="POST" enctype="multipart/form-data">
+
+
+
+          <?php if(isset($erros_mensaxe)){
+
+            echo '<div class="form-group col-xs-12">';
+            echo '<ul class="bg-danger">'. $erros_mensaxe.'</ul>';
+            echo '</div>';
+            
+          }?> 
+
           <div class="form-group" style="height:140px;">
             <label class="control-label col-xs-12" for="lastname">Comunidade á que pertence</label>
             <div class="col-xs-5">

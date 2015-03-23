@@ -1,10 +1,10 @@
 var flag=0;
 var positionMarker;
 var iconos = new Array();
-iconos[0] = "images/marcadores/foto.png";
-iconos[1] = "images/marcadores/video.png";
-iconos[2] = "images/marcadores/audio.png";
-iconos[3] = "images/marcadores/texto.png";
+iconos[0] = "/cartografia_nova/images/marcadores/foto.png";
+iconos[1] = "/cartografia_nova/images/marcadores/video.png";
+iconos[2] = "/cartografia_nova/images/marcadores/audio.png";
+iconos[3] = "/cartografia_nova/images/marcadores/texto.png";
 //iconos[4] = "iconos_png/";
 var icono;
 var map;

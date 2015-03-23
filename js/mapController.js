@@ -102,7 +102,7 @@ function mapController() {
 
         $.ajax({
 
-          url: "ficha.php" ,
+          url: "/cartografia_nova/ficha.php" ,
           data: {id:id},
           success: function(datos) {
             

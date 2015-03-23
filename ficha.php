@@ -114,15 +114,15 @@ if( $selectedRadio == 'comunidade')  {
             
         <?php
    if($extension == "image/jpeg" || $extension == "image/png" || $extension == "image/gif" || $extension == "image/tiff"){
-?> <img src="uploads/<?php echo $nombre_fichero_sin_espacios; ?>"/>
+?> <img src="<?php echo $media_host; ?>uploads/<?php echo $nombre_fichero_sin_espacios; ?>"/>
     <br>
 <?php }
     if($extension == "audio/x-wav" || $extension =="audio/mpeg"){
-?>  <audio controls="controls" src="uploads/<?php echo $nombre_fichero_sin_espacios; ?>"/></audio>
+?>  <audio controls="controls" src="<?php echo $media_host; ?>uploads/<?php echo $nombre_fichero_sin_espacios; ?>"/></audio>
     <br>
 <?php }
     if($extension == "video/quicktime" || $extension == "video/mp4"){
-?> <video controls="controls" src="uploads/<?php echo $nombre_fichero_sin_espacios; ?>" ></video>
+?> <video controls="controls" src="<?php echo $media_host; ?>uploads/<?php echo $nombre_fichero_sin_espacios; ?>" ></video>
     <br>
 <?php }
 

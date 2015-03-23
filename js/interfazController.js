@@ -3,7 +3,7 @@
 function interfazController() {
   var that = this;
 
-  that.headerHeight = 0;
+  that.headerHeight = 50;
   that.filtersWidth = 270;
   that.fichaWidth = 500;
   that.comunidadeWidth = 700;
