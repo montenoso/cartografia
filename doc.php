@@ -64,9 +64,6 @@
   </head>
   <body>
 
-    <div class="form-group col-xs-12">
-      <h1>Novo documento</h1>
-    </div>
     <form action="docsubmit.php" method="POST" enctype="multipart/form-data">
 
 
@@ -79,7 +76,7 @@
             
           }?> 
 
-          <div class="form-group" style="height:140px;">
+          <div class="form-group" style="height:70px; margin-top:20px;">
             <label class="control-label col-xs-12" for="lastname">Comunidade á que pertence</label>
             <div class="col-xs-5">
               <select class="form-control" onchange="parent.formControl.seleccionaComunidade(this);" name="comunidade" id="comunidade" >
