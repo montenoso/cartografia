@@ -1,5 +1,8 @@
 @charset "UTF-8";  
 
+
+
+
 /* Categorías 16x16*/ 
 .categoria-actividades-16 {  height:16px; width:16px;  background: url('/cartografia_nova/images/categorias/16x16/actividades.png') no-repeat; }
 .categoria-agriucltura-16 {  height:16px; width:16px;  background: url('/cartografia_nova/images/categorias/16x16/agricultura.png') no-repeat; }
@@ -55,16 +58,36 @@
 .documento-video-16 {  height:16px; width:16px;  background: url('/cartografia_nova/images/tipoDocumento/16x16/video.png') no-repeat; }
 
 /* doocumentos 32x32*/ 
-.documento-audio-32 {}
-.documento-foto-32 {}
-.documento-texto-32 {}
-.documento-video-32 {}
+.documento-audio-32 {  height:32px; width:32px;  background: url('/cartografia_nova/images/tipoDocumento/32x32/audio.png') no-repeat; }
+.documento-foto-32 {  height:32px; width:32px;  background: url('/cartografia_nova/images/tipoDocumento/32x32/foto.png') no-repeat; }
+.documento-texto-32 {  height:32px; width:32px;  background: url('/cartografia_nova/images/tipoDocumento/32x32/texto.png') no-repeat; }
+.documento-video-32 {  height:32px; width:32px;  background: url('/cartografia_nova/images/tipoDocumento/32x32/video.png') no-repeat; }
+
+.documento-audio-32.inv {  height:32px; width:32px;  background: url('/cartografia_nova/images/tipoDocumento/32x32/audio_inv.png') no-repeat; }
+.documento-foto-32.inv {  height:32px; width:32px;  background: url('/cartografia_nova/images/tipoDocumento/32x32/foto_inv.png') no-repeat; }
+.documento-texto-32.inv {  height:32px; width:32px;  background: url('/cartografia_nova/images/tipoDocumento/32x32/texto_inv.png') no-repeat; }
+.documento-video-32.inv {  height:32px; width:32px;  background: url('/cartografia_nova/images/tipoDocumento/32x32/video_inv.png') no-repeat; }
+
+
+
 
 /* doocumentos 64x64*/
-.documento-audio-64 {}
-.documento-foto-64 {}
-.documento-texto-64 {}
-.documento-video-64 {}
+.documento-audio-64 {  height:64px; width:64px;  background: url('/cartografia_nova/images/tipoDocumento/64x64/audio.png') no-repeat; }
+.documento-foto-64 {  height:64px; width:64px;  background: url('/cartografia_nova/images/tipoDocumento/64x64/foto.png') no-repeat; }
+.documento-texto-64 {  height:64px; width:64px;  background: url('/cartografia_nova/images/tipoDocumento/64x64/texto.png') no-repeat; }
+.documento-video-64 {  height:64px; width:64px;  background: url('/cartografia_nova/images/tipoDocumento/64x64/video.png') no-repeat; }
+
+.documento-audio-64.inv {  height:64px; width:64px;  background: url('/cartografia_nova/images/tipoDocumento/64x64/audio_inv.png') no-repeat; }
+.documento-foto-64.inv {  height:64px; width:64px;  background: url('/cartografia_nova/images/tipoDocumento/64x64/foto_inv.png') no-repeat; }
+.documento-texto-64.inv {  height:64px; width:64px;  background: url('/cartografia_nova/images/tipoDocumento/64x64/texto_inv.png') no-repeat; }
+.documento-video-64.inv {  height:64px; width:64px;  background: url('/cartografia_nova/images/tipoDocumento/64x64/video_inv.png') no-repeat; }
 
 /*estilos para icono documento*/
 .selector-documento {float:left;margin-right:4px;margin-top:2px;}
+
+
+
+
+/* Couriñas de filtros */
+.filtros-buscar {   height:32px; width:32px;  background: url('/cartografia_nova/images/search_filters_n.png') no-repeat; }
+.filtros-add {   height:32px; width:32px;  background: url('/cartografia_nova/images/add_filters.png') no-repeat; }

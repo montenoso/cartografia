@@ -26,6 +26,7 @@ include("conecta.php");
 
     <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
     <link rel="stylesheet" href="<?php echo $media_host;?>/css/estilos_mapa.css" />
+    <link rel="stylesheet" href="<?php echo $media_host;?>/css/iconografias.css" />
     <link rel="stylesheet" href="<?php echo $media_host;?>/js/vendor/nzAutoCompleter/nzAutoCompleter.css" />
 
     <script src="http://libs.cartocdn.com/cartodb.js/v3/cartodb.js"></script>
@@ -66,17 +67,15 @@ include("conecta.php");
 
         </div>
         <div id="display_mapa_content" style="display:none;"></div>
-        <div id="display_mapa_filters">
-          <div>Búsqueda:</div>
-          
-          <div> <input id="buscaRecursos" type="text"></div>
-          <br>
-          <div> Categorías dispoñibles:</div>
-          <div class="categorias"></div>
-          <div> Tags:</div>
-          <div class="tags"></div>
 
-          <div style="cursor:pointer;" onclick="mapa_establece_url('#novo' );" >ENGADIR NOVO</div>
+        <div id="display_mapa_filters">
+          
+          <!--div> <input id="buscaRecursos" type="text"></div-->
+          
+          <div class="filtro filtros-buscar boton-filtros"></div>
+          <div class="filtro categorias"></div>
+          <div> </div>
+          <div class="filtro filtros-add boton-filtros" onclick="mapa_establece_url('#novo' );" ></div>
         </div>
       </div>
     </div>

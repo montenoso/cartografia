@@ -14,14 +14,16 @@ function filtrosController() {
     comunidade: 'Comunidades',    
     foto: 'Fotografías',
     video: 'Vídeos',
-    audio: 'Audios'
+    audio: 'Audios',
+    texto: 'Audios'
+
   };
 
   that.setCategorias = function() {
     that.categoriasMapa =  getAllCategories();
 
     $.each(that.categoriasFiltros, function(i,e){
-      $( that.categoriasDiv ).append('<div class="cat selected"  categoria="' + i + '"> <img src="/cartografia_nova/images/marcadores_cluster/filters/' + i + '.png"> '+e+' </div>');
+      $( that.categoriasDiv ).append('<div class="cat selected inv documento-'+i+'-32"  categoria="' + i + '" ><!--img src="/cartografia_nova/images/marcadores_cluster/filters/' + i + '.png"-->  </div>');
       that.selectedCategories.push(i);
     });
 
