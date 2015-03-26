@@ -91,10 +91,19 @@ function filtrosController() {
   // Buscador
 
   $('#display_mapa_filters div.filtros-buscar').click(function() {
-    $('#buscaRecursos').show();
+    $('#buscaRecursos').show( "slow" );
     $('#buscaRecursos').focus();
 
   });
+
+  that.bodyClickEvent = $('body').bind('click', function( ev){
+
+    if(ev.target.className != 'filtro filtros-buscar boton-filtros' && ev.target.className != 'caixaBusqueda'  ) {
+      $('#buscaRecursos').hide( "slow" );
+    }
+  })
+
+
   that.buscador = new nzAutoCompleter ({
       divId: 'buscaRecursos',
       dialogId: 'buscaRecursosDialog',
@@ -105,6 +114,7 @@ function filtrosController() {
       actionSelect: function( row ) { 
         mapa_establece_url('#recurso/'+row.material_id)
         $('#buscaRecursos').val('');
+        $('#buscaRecursos').hide();
       }
   });
 
