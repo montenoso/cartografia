@@ -74,12 +74,11 @@ include("conecta.php");
           
           <div class="filtro filtros-buscar boton-filtros"></div>
           <div class="filtro categorias"></div>
-          <div> </div>
           <div class="filtro filtros-add boton-filtros" onclick="mapa_establece_url('#novo' );" ></div>
         </div>
       </div>
     </div>
-  </div>
+
 <!--
 
   CARTOGRAFÍA

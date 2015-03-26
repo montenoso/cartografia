@@ -3,7 +3,8 @@
 function interfazController() {
   var that = this;
 
-  that.headerHeight = 50;
+  that.headerHeight = $("#nav-topbar").outerHeight();
+  console.log(that.headerHeight);
   that.filtersWidth = 55;
   that.fichaWidth = 500;
   that.comunidadeWidth = 700;
@@ -40,6 +41,8 @@ function interfazController() {
     var altoReal = that.screenHeight - that.headerHeight;
     
     $('#display_mapa').height( altoReal );
+    //$('#display_mapa_content').css('top', 0);
+    //$('#display_mapa_content').css('margin-top', that.headerHeight+'px');
     $('#display_mapa_content').height( altoReal );
     $('#display_mapa_filters').height( altoReal );
     $('#map').height( altoReal);

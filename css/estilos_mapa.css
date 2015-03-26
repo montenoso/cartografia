@@ -13,12 +13,13 @@ body {
 #page {padding:0;}
 
 div.container  {
-  padding:0;
+
 
 }
 
 #espacio_mapa {
-  padding-top:12px;
+/*  padding-top:12px;*/
+
 }
 
   #map { 
@@ -26,7 +27,8 @@ div.container  {
     width:100px; height:100px; 
   }
   #espacio_mapa { 
-
+    position: absolute;
+    bottom: 0;
   }
     #espacio_mapa #display_mapa {
 
