@@ -68,13 +68,21 @@ include("conecta.php");
         </div>
         <div id="display_mapa_content" style="display:none;"></div>
 
-        <div id="display_mapa_filters">
-          
+        <div id="display_mapa_filters">          
           <!--div> <input id="buscaRecursos" type="text"></div-->
-          
           <div class="filtro filtros-buscar boton-filtros"></div>
           <div class="filtro categorias"></div>
           <div class="filtro filtros-add boton-filtros" onclick="mapa_establece_url('#novo' );" ></div>
+        </div>
+        <div id="display_destacados">
+          Aquí <br>
+          tes <br>
+          a <br>
+          túa <br>
+          magnífica <br>
+          barra <br>
+          de <br>
+          destacados <br>
         </div>
       </div>
     </div>

@@ -3,12 +3,19 @@
 function interfazController() {
   var that = this;
 
+  document.documentElement.style.overflow = 'hidden';  // firefox, chrome
+  document.body.scroll = "no"; // ie only
+
+
   that.headerHeight = $("#nav-topbar").outerHeight();
   console.log(that.headerHeight);
   that.filtersWidth = 55;
   that.fichaWidth = 500;
   that.comunidadeWidth = 700;
   that.engadirWidth = 600;
+
+  that.destacadosWidth = 200;
+  that.destacados_a_partir_de = 800; // tamaño a partir do que se mostrará a barra de destacados
 
   that.screenWidth = false;
   that.screenHeight = false;
@@ -49,9 +56,22 @@ function interfazController() {
 
     // establece anchos
     if( that.sidebarStatus == 'filtros' ) {
-      $('#display_mapa').width( that.filtersWidth  );
-      $('#display_mapa').css( 'margin-left', that.screenWidth - that.filtersWidth + 'px' );
-      $('#map').width( that.screenWidth - that.filtersWidth );
+
+      if( that.screenWidth >= this.destacados_a_partir_de ) {// con barra de destacados
+        $('#display_mapa').width( that.filtersWidth  );
+        $('#display_mapa').css( 'margin-left', that.screenWidth - that.filtersWidth - that.destacadosWidth + 'px' );
+        $('#map').width( that.screenWidth - that.filtersWidth - that.destacadosWidth );
+        $('#display_destacados').width( that.destacadosWidth  );
+        $('#display_destacados').show()
+      }
+      else { // Sen barra de destacados
+        $('#display_mapa').width( that.filtersWidth  );
+        $('#display_mapa').css( 'margin-left', that.screenWidth - that.filtersWidth + 'px' );
+        $('#map').width( that.screenWidth - that.filtersWidth );
+
+      }
+
+
     } 
     else 
     if( that.sidebarStatus == 'ficha_recurso' ) {
@@ -82,6 +102,7 @@ function interfazController() {
     that.sidebarStatus = 'ficha_recurso';
     $('#display_mapa_filters').hide();
     $('#display_mapa_engadir').hide();
+    $('#display_destacados').hide();
     $('#display_mapa_content').show();
     that.setScreenSizes();
   }
@@ -90,6 +111,7 @@ function interfazController() {
     that.sidebarStatus = 'ficha_comunidade';
     $('#display_mapa_filters').hide();
     $('#display_mapa_engadir').hide();
+    $('#display_destacados').hide();
     $('#display_mapa_content').show();
     that.setScreenSizes();
   }
@@ -98,6 +120,7 @@ function interfazController() {
     that.sidebarStatus = 'filtros';
     $('#display_mapa_content').hide();
     $('#display_mapa_engadir').hide();
+    $('#display_destacados').hide();
     $('#display_mapa_filters').show();
     that.setScreenSizes();
   }
@@ -106,6 +129,7 @@ function interfazController() {
     that.sidebarStatus = 'engadir';
     $('#display_mapa_content').hide();
     $('#display_mapa_filters').hide();
+    $('#display_destacados').hide();
     $('#display_mapa_engadir').show();
     that.setScreenSizes();
   }

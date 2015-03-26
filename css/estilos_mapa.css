@@ -103,7 +103,7 @@ div.nzAutoCompleterDialog div.row .elemento, #caixa_mapa .elemento {
   #display_mapa_filters {
     background-color:#50af62;
     position:relative;
-
+    float:left;
   }
 
 
@@ -114,14 +114,30 @@ div.nzAutoCompleterDialog div.row .elemento, #caixa_mapa .elemento {
     position: relative;
     top:10px;
     margin-bottom: 40px;
+    cursor:pointer;
   }
 
   #display_mapa_filters .filtros-add {
     position:absolute;
     bottom:10px;
-
-
+    cursor:pointer;
   }
+
+
+  #display_mapa_filters .filtros-add:hover , #display_mapa_filters .filtros-buscar:hover{
+      filter: alpha(opacity=100); /* internet explorer */
+      -khtml-opacity: 1;      /* khtml, old safari */
+      -moz-opacity: 1;       /* mozilla, netscape */
+      opacity: 1;           /* fx, safari, opera */      
+  }
+
+  #display_mapa_filters .filtros-add , #display_mapa_filters .filtros-buscar {
+      filter: alpha(opacity=80); /* internet explorer */
+      -khtml-opacity: 0.8;      /* khtml, old safari */
+      -moz-opacity: 0.8;       /* mozilla, netscape */
+      opacity: 0.8;           /* fx, safari, opera */      
+  }
+
   #display_mapa_filters .filtro {
     margin-left:10px;
   }
