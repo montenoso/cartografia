@@ -68,9 +68,10 @@ function interfazController() {
         $('#display_mapa').width( that.filtersWidth  );
         $('#display_mapa').css( 'margin-left', that.screenWidth - that.filtersWidth + 'px' );
         $('#map').width( that.screenWidth - that.filtersWidth );
-
       }
 
+      //$('#buscaRecursos').css( 'top',  $('#buscaRecursos').height() + 'px' );
+      //$('#buscaRecursos').css( 'right',  $('#buscaRecursos').width()-60 + 'px' );
 
     } 
     else 

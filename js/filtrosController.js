@@ -90,6 +90,11 @@ function filtrosController() {
 
   // Buscador
 
+  $('#display_mapa_filters div.filtros-buscar').click(function() {
+    $('#buscaRecursos').show();
+    $('#buscaRecursos').focus();
+
+  });
   that.buscador = new nzAutoCompleter ({
       divId: 'buscaRecursos',
       dialogId: 'buscaRecursosDialog',
