@@ -168,19 +168,12 @@ function mapController() {
 
 
     var iw = new google.maps.InfoWindow({
-          content: '<h3>'+row.titulo_registro+'</h3><div>superficie:'+row.superficie+' hectareas</div>'
+          content: '<h3>'+row.titulo_registro+'</h3><div>Superficie:'+row.superficie+' hectareas</div>'
       });
 
 
-
-    iw.open(mapa,
-        new google.maps.Marker({
-          position: pos,
-          map: mapa,
-          icon: icons_path + "point_selected.png",
-          anchor: new google.maps.Point(19,42)
-        })
-    );
+    iw.setPosition(pos);
+    iw.open(mapa   );
 
   }
 
