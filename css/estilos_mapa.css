@@ -69,12 +69,19 @@ div.nzAutoCompleterDialog div.row .elemento, #caixa_mapa .elemento {
   background-color:#eee;
 }
 
-  #caixa_mapa .elemento.comunidade{
+  #caixa_mapa .elemento.comunidade, .elemento.tipo_comunidade {
     font-weight: bold;
     height:30px;
     background-image:  url('/cartografia_nova/images/marcadores_cluster/point_small/bosque-pinar.png' );
     background-color:#AADE9E;
   }
+
+ div.nzAutoCompleterDialog div.elemento.tipo_comunidadeoff, #caixa_mapa .elemento.tipo_comunidadeoff { background-image: url('/cartografia_nova/images/marcadores_cluster/point_small/bosque-pinar_off.png' ); }
+ div.nzAutoCompleterDialog div.elemento.tipo_audio, #caixa_mapa .elemento.tipo_audio { background-image: url('/cartografia_nova/images/marcadores_cluster/point_small/audio.png' ); }
+ div.nzAutoCompleterDialog div.elemento.tipo_foto, #caixa_mapa .elemento.tipo_foto { background-image: url('/cartografia_nova/images/marcadores_cluster/point_small/foto.png' ); }
+ div.nzAutoCompleterDialog div.elemento.tipo_video, #caixa_mapa .elemento.tipo_video { background-image: url('/cartografia_nova/images/marcadores_cluster/point_small/video.png' ); }
+
+
 
   div.nzAutoCompleterDialog div.elemento:hover, #caixa_mapa .elemento.comunidade:hover { 
     background-color: #99C78E;

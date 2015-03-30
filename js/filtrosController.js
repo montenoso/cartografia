@@ -126,7 +126,7 @@ function filtrosController() {
         actionSelect: function( row ) { 
 
           if(row.id == false) {
-            console.log(row)
+            mapControl.notRegMvmc( row )
           }
           else {
             mapa_establece_url('#recurso/'+row.material_id)

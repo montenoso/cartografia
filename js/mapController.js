@@ -140,7 +140,7 @@ function mapController() {
           titulo_registro: e[0], 
           latitud: e[1],
           longitud: e[2],
-          selectedradio: 'comunidade'
+          selectedradio: 'comunidadeoff'
         }
       );
     });
@@ -158,6 +158,10 @@ function mapController() {
     if( mapa.getZoom() > 12 ){
       mapa.setZoom(12);  
     }
+  }
+
+  that.notRegMvmc = function(row){
+
   }
 
 
