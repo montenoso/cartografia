@@ -140,7 +140,8 @@ function mapController() {
           titulo_registro: e[0], 
           latitud: e[1],
           longitud: e[2],
-          selectedradio: 'comunidadeoff'
+          selectedradio: 'comunidadeoff',
+          superficie:e[3]
         }
       );
     });
@@ -161,6 +162,25 @@ function mapController() {
   }
 
   that.notRegMvmc = function(row){
+    var pos = {lat: parseFloat(row.latitud), lng: parseFloat(row.longitud) } ;
+    mapa.setCenter( pos )
+    mapa.setZoom(14);
+
+
+    var iw = new google.maps.InfoWindow({
+          content: '<h3>'+row.titulo_registro+'</h3><div>superficie:'+row.superficie+' hectareas</div>'
+      });
+
+
+
+    iw.open(mapa,
+        new google.maps.Marker({
+          position: pos,
+          map: mapa,
+          icon: icons_path + "point_selected.png",
+          anchor: new google.maps.Point(19,42)
+        })
+    );
 
   }
 
