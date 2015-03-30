@@ -44,6 +44,16 @@ $(document).ready(
     });*/
 
 
+    // mvmc centroids (puntos de comunidades que non están en montenoso)
+    $.ajax({
+      dataType: "json",
+      cache : true,
+      url: mvmc_url,
+      success: function(data){
+        mapControl.cargaMVMC(data);
+      }
+    });
+
    // cluster clusterer(map);
 
     // convertir id's string en integer

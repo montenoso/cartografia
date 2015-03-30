@@ -104,19 +104,37 @@ function filtrosController() {
   })
 
 
-  that.buscador = new nzAutoCompleter ({
-      divId: 'buscaRecursos',
-      dialogId: 'buscaRecursosDialog',
-      data: recursos,
-      searchIds: ['titulo_registro', 'selectedradio'],
-      //visiblePattern: ' "<img src=\'/images/marcadores_cluster/" + row.selectedradio + "_point_small.png\'>" +row.titulo_registro',
-      visiblePattern: ' "<div class=\'elemento recurso tipo_" + row.selectedradio + "\'>"+ row.titulo_registro+"</div>" ',
-      actionSelect: function( row ) { 
-        mapa_establece_url('#recurso/'+row.material_id)
-        $('#buscaRecursos').val('');
-        $('#buscaRecursos').hide();
-      }
-  });
 
+
+  that.iniciaBuscador = function( recursos_mvmc ) {
+
+//console.log(recursos_mvmc);
+//console.log(recursos);
+
+//r = $.merge(recursos, recursos_mvmc);
+  var r = $.merge([], recursos);
+  r = $.merge( r, recursos_mvmc );
+
+//console.log(r)
+    that.buscador = new nzAutoCompleter ({
+        divId: 'buscaRecursos',
+        dialogId: 'buscaRecursosDialog',
+        data: r,
+        searchIds: ['titulo_registro', 'selectedradio'],
+        //visiblePattern: ' "<img src=\'/images/marcadores_cluster/" + row.selectedradio + "_point_small.png\'>" +row.titulo_registro',
+        visiblePattern: ' "<div class=\'elemento recurso tipo_" + row.selectedradio + "\'>"+ row.titulo_registro+"</div>" ',
+        actionSelect: function( row ) { 
+
+          if(row.id == false) {
+            console.log(row)
+          }
+          else {
+            mapa_establece_url('#recurso/'+row.material_id)
+          }
+          $('#buscaRecursos').val('');
+          $('#buscaRecursos').hide();
+        }
+    });
+  }
   //console.log(recursos)
 }

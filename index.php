@@ -54,6 +54,8 @@ include("conecta.php");
         echo "var host_cartografia = '".$media_host."';";
         echo "var recursos = ".$markersJson.";";
 
+        echo "var mvmc_url='". $media_host ."/mvmc_centroids_min.json';";
+        echo "var micromarker_png='". $media_host ."/images/micromarker.png';";
       ?> 
 
     </script>

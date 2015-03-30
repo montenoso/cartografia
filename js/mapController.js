@@ -85,7 +85,7 @@ function mapController() {
     });
 
 
-    console.log(f.categories)
+    //console.log(f.categories)
 
     cl.filter( f );
   }
@@ -129,6 +129,26 @@ function mapController() {
     });
   }
 
+  that.cargaMVMC = function( lista_mvmc ) {
+
+    var obxectos_mvmc = [];
+    
+    $.each(lista_mvmc, function(i,e){
+      obxectos_mvmc.push( 
+        { 
+          id: false,
+          titulo_registro: e[0], 
+          latitud: e[1],
+          longitud: e[2],
+          selectedradio: 'comunidade'
+        }
+      );
+    });
+
+
+    filtrosControl.iniciaBuscador( obxectos_mvmc );
+  } 
+
 
   that.mapa_desselecciona = function() { 
     cl.marker_unselect();
@@ -139,4 +159,6 @@ function mapController() {
       mapa.setZoom(12);  
     }
   }
+
+
 }
