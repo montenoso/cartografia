@@ -314,7 +314,15 @@ smart_infowindow.prototype.SetPeak = function(v, h) {
     current_peak_container.css('height:default')
     current_peak_container.html(peak_img)
 
-    current_peak_container.find('img').rotate(180);
+    //current_peak_container.find('img').rotate(180);
+    var degree = 180;
+    current_peak_container.find('img').css({
+    '-webkit-transform': 'rotate(' + degree + 'deg)',
+    '-moz-transform': 'rotate(' + degree + 'deg)',
+    '-o-transform': 'rotate(' + degree + 'deg)',
+    '-ms-transform': 'rotate(' + degree + 'deg)',
+    'transform': 'rotate(' + degree + 'deg)'
+    });
   }
   else{
     var current_peak_container = $(this.div_).find('.bottom-space');
