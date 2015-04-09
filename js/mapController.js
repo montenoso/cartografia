@@ -131,6 +131,10 @@ function mapController() {
 
   that.cargaMVMC = function( lista_mvmc ) {
 
+ 
+
+
+
     var obxectos_mvmc = [];
     
     $.each(lista_mvmc, function(i,e){
