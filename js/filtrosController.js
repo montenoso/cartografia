@@ -47,7 +47,8 @@ function filtrosController() {
     }
     else {
       // is selected, then unselect
-      that.selectedCategories = jQuery.removeFromArray( cat, that.selectedCategories);
+      //that.selectedCategories = $.removeFromArray( cat, that.selectedCategories);
+      that.selectedCategories.splice($.inArray(cat, that.selectedCategories),1);
     }
 
     that.updateCategoryButtons();

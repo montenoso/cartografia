@@ -39,6 +39,12 @@ include("conecta.php");
     <script src="<?php echo $media_host;?>/js/main.js"></script>
 
 
+    <link rel="stylesheet" href="<?php echo $media_host;?>/css/styleIsotope.css">
+    <script src="<?php echo $media_host;?>/js/ga.js" async="" type="text/javascript"></script>
+    <script src="<?php echo $media_host;?>/js/jquery-latest.js" type="text/javascript"></script>
+    <script src="<?php echo $media_host;?>/js/jquery.js" type="text/javascript"></script> 
+
+
     <script type="text/javascript" >
     
       <?php
@@ -70,21 +76,98 @@ include("conecta.php");
         </div>
         <div id="display_mapa_content" style="display:none;"></div>
 
-        <div id="display_mapa_filters">          
+        <div id="display_mapa_filters" >          
           <div> <input id="buscaRecursos" type="text" class="caixaBusqueda" style="display:none;"></div>
-          <div class="filtro filtros-buscar boton-filtros"></div>
+          <div class="filtro filtros-buscar boton-filtros" ></div>
           <div class="filtro categorias"></div>
           <div class="filtro filtros-add boton-filtros" onclick="mapa_establece_url('#novo' );" ></div>
         </div>
-        <div id="display_destacados">
-          Aquí <br>
-          tes <br>
-          a <br>
-          túa <br>
-          magnífica <br>
-          barra <br>
-          de <br>
-          destacados <br>
+  
+          <div id="display_destacados" style="width:300px; ">
+   
+ <div class="portfolioFilter" style="width:300px; padding-top:4px;">
+
+  <div class"banner" style= "padding-top:4px;"
+  <a class="" href="#" data-filter=".persoas">PERSOAS</a>
+  <a class="" href="#" data-filter=".lugares">LUGARES</a>
+  <a class="" href="#" data-filter=".recursos">RECURSOS</a>
+ </div>
+
+
+<div style="position: relative; overflow: hidden; height: 856px; margin-top:5px;" class="portfolioContainer isotope">
+
+
+  <div style="position: absolute; left: 0px; top: 30x; transform: translate(0px, 0px) scale(1); opacity: 1;" class="isotope-item">
+    <img src="<?php echo $media_host;?>images/watch.jpg" alt="image">
+  </div>
+  
+  <div style="position: absolute; left: 0px; top: 0px; transform: translate(470px, 0px) scale(1); opacity: 1;" class="persoas lugares isotope-item">
+    <img src="<?php echo $media_host;?>images/surf.jpg" alt="image">
+  </div>  
+
+  <div style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 214px) scale(1); opacity: 1;" class="recursos lugares isotope-item">
+    <img src="<?php echo $media_host;?>images/burger.jpg" alt="image">
+  </div>
+  
+  <div style="position: absolute; left: 0px; top: 0px; transform: translate(470px, 214px) scale(1); opacity: 1;" class="persoas lugares isotope-item">
+    <img src="<?php echo $media_host;?>images/subway.jpg" alt="image">
+  </div>
+
+  <div style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 428px) scale(1); opacity: 1;" class="lugares isotope-item">
+    <img src="<?php echo $media_host;?>images/trees.jpg" alt="image">
+  </div>
+
+  <div style="position: absolute; left: 0px; top: 0px; transform: translate(470px, 428px) scale(1); opacity: 1;" class="persoas recursos isotope-item">
+    <img src="<?php echo $media_host;?>images/coffee.jpg" alt="image">
+  </div>
+
+  <div style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 642px) scale(1); opacity: 1;" class="recursos persoas isotope-item">
+    <img src="<?php echo $media_host;?>images/wine.jpg" alt="image">
+  </div>  
+  
+  <div style="position: absolute; left: 0px; top: 0px; transform: translate(470px, 642px) scale(1); opacity: 1;" class="recursos persoas isotope-item">
+    <img src="<?php echo $media_host;?>images/salad.jpg" alt="image">
+  </div>  
+  
+</div>
+
+
+</div>
+
+ 
+<script type="text/javascript">
+
+$(window).load(function(){
+    var $container = $('.portfolioContainer');
+    $container.isotope({
+        filter: '*',
+        animationOptions: {
+            duration: 750,
+            easing: 'linear',
+            resizable: true,
+            queue: false
+        }
+    });
+ 
+    $('.portfolioFilter a').click(function(){
+        $('.portfolioFilter .current').removeClass('current');
+        $(this).addClass('current');
+ 
+        var selector = $(this).attr('data-filter');
+        $container.isotope({
+            filter: selector,
+            animationOptions: {
+                duration: 750,
+                easing: 'linear',
+                queue: false
+            }
+         });
+         return false;
+    }); 
+});
+
+</script>
+
         </div>
       </div>
     </div>

@@ -1,8 +1,9 @@
 
 body {
   padding:0;
-  margin:0;
+  margin:0px !important;
   font-family:  Arial, sans-serif;
+
 }
 
 
@@ -19,6 +20,7 @@ div.container  {
 
 #espacio_mapa {
 /*  padding-top:12px;*/
+background-color: #e1ea35;
 
 }
 
@@ -46,11 +48,14 @@ div.container  {
 
 
 
+
 /***********************************************************************
                           INFOWINDOW MAPA
 ***********************************************************************/
 #caixa_mapa {
   color:black;
+  margin-top:2px;
+  margin-bottom:-3px;
 }
 
 div.nzAutoCompleterDialog div.row .elemento, #caixa_mapa .elemento {
@@ -101,7 +106,7 @@ div.nzAutoCompleterDialog div.row .elemento, #caixa_mapa .elemento {
     width:200px;
     color:#888;
     position:absolute;  
-    border:6px solid #50af62;
+    border:6px solid #e1ea35;
     border:right;
     top:2px;
     right:48px;
@@ -112,7 +117,7 @@ div.nzAutoCompleterDialog div.row .elemento, #caixa_mapa .elemento {
 
   /* BOTÓNS CATEGORÍAS */
   #display_mapa_filters {
-    background-color:#50af62;
+    background-color:#1c591c;
     position:relative;
     float:left;
   }
