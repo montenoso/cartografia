@@ -15,19 +15,19 @@ function garda_arquivo($arquivo) {
 
   preg_match('/\.[^\.]+$/i',$arquivo['name'],$ext);
 
-  $nome_final = sprintf('/%s%s',
+  $nome_final = sprintf('%s%s',
         sha1_file($arquivo['tmp_name']),
         $ext[0]
     );
 
-  $ruta = $CARTOGRAFIA_UPLOAD_DIR . $nome_final;
+  $ruta = $CARTOGRAFIA_UPLOAD_DIR . '/'.$nome_final;
 
   move_uploaded_file(
     $arquivo['tmp_name'],
     $ruta
   );
 
-  return $ruta;
+  return $nome_final;
 }
 
 function erros_en_arquivo($arquivo, $formatos_permitidos) {
@@ -205,6 +205,16 @@ else {
   if( $tipo_documento=='foto' ){
     $tipo_campo = 'nombre_archivo';
     $nome_documento = garda_arquivo($_FILES['documento_foto']);
+
+    // redimensiona imaxe
+    $im = new Imagick( 'uploads/'.$nome_documento  );
+
+    $im->scaleImage(1024, 1024, true); 
+    $im->writeImage('uploads/1024_'.$nome_documento);
+    $im->scaleImage(300, 300, true); 
+    $im->writeImage('uploads/300_'.$nome_documento);
+
+
   }
   else
   if( $tipo_documento=='texto' ){

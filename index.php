@@ -45,6 +45,7 @@ include("conecta.php");
     <script src="<?php echo $media_host;?>/js/jquery.js" type="text/javascript"></script> 
 
 
+<link rel='stylesheet' id='dashicons-css'  href='/cartografia_nova/css/styleIsotope.css' type='text/css' media='all' />
     <script type="text/javascript" >
     
       <?php
@@ -85,54 +86,43 @@ include("conecta.php");
   
           <div id="display_destacados" style="width:300px; ">
    
- <div class="portfolioFilter" style="width:300px; padding-top:4px;">
+            <div style="position: relative; overflow: hidden; height: 856px; margin-top:5px;" class="portfolioContainer isotope">
 
-  <div class"banner" style= "padding-top:4px;"
-  <a class="" href="#" data-filter=".persoas">PERSOAS</a>
-  <a class="" href="#" data-filter=".lugares">LUGARES</a>
-  <a class="" href="#" data-filter=".recursos">RECURSOS</a>
- </div>
+              <div style="position: absolute; left: 0px; top: 30x; transform: translate(0px, 0px) scale(1); opacity: 1;" class="isotope-item">
+                <img src="http://montenoso.net/cartografia_nova/images/watch.jpg" alt="image">
+              </div>
+              
+              <div style="position: absolute; left: 0px; top: 0px; transform: translate(470px, 0px) scale(1); opacity: 1;" class="persoas lugares isotope-item">
+                <img src="http://montenoso.net/cartografia_nova/images/surf.jpg" alt="image">
+              </div>  
 
+              <div style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 214px) scale(1); opacity: 1;" class="recursos lugares isotope-item">
+                <img src="http://montenoso.net/cartografia_nova/images/burger.jpg" alt="image">
+              </div>
+              
+              <div style="position: absolute; left: 0px; top: 0px; transform: translate(470px, 214px) scale(1); opacity: 1;" class="persoas lugares isotope-item">
+                <img src="http://montenoso.net/cartografia_nova/images/subway.jpg" alt="image">
+              </div>
 
-<div style="position: relative; overflow: hidden; height: 856px; margin-top:5px;" class="portfolioContainer isotope">
+              <div style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 428px) scale(1); opacity: 1;" class="lugares isotope-item">
+                <img src="http://montenoso.net/cartografia_nova/images/trees.jpg" alt="image">
+              </div>
 
+              <div style="position: absolute; left: 0px; top: 0px; transform: translate(470px, 428px) scale(1); opacity: 1;" class="persoas recursos isotope-item">
+                <img src="http://montenoso.net/cartografia_nova/images/coffee.jpg" alt="image">
+              </div>
 
-  <div style="position: absolute; left: 0px; top: 30x; transform: translate(0px, 0px) scale(1); opacity: 1;" class="isotope-item">
-    <img src="<?php echo $media_host;?>images/watch.jpg" alt="image">
-  </div>
-  
-  <div style="position: absolute; left: 0px; top: 0px; transform: translate(470px, 0px) scale(1); opacity: 1;" class="persoas lugares isotope-item">
-    <img src="<?php echo $media_host;?>images/surf.jpg" alt="image">
-  </div>  
+              <div style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 642px) scale(1); opacity: 1;" class="recursos persoas isotope-item">
+                <img src="http://montenoso.net/cartografia_nova/images/wine.jpg" alt="image">
+              </div>  
+              
+              <div style="position: absolute; left: 0px; top: 0px; transform: translate(470px, 642px) scale(1); opacity: 1;" class="recursos persoas isotope-item">
+                <img src="http://montenoso.net/cartografia_nova/images/salad.jpg" alt="image">
+              </div>  
+              
+            </div>
 
-  <div style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 214px) scale(1); opacity: 1;" class="recursos lugares isotope-item">
-    <img src="<?php echo $media_host;?>images/burger.jpg" alt="image">
-  </div>
-  
-  <div style="position: absolute; left: 0px; top: 0px; transform: translate(470px, 214px) scale(1); opacity: 1;" class="persoas lugares isotope-item">
-    <img src="<?php echo $media_host;?>images/subway.jpg" alt="image">
-  </div>
-
-  <div style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 428px) scale(1); opacity: 1;" class="lugares isotope-item">
-    <img src="<?php echo $media_host;?>images/trees.jpg" alt="image">
-  </div>
-
-  <div style="position: absolute; left: 0px; top: 0px; transform: translate(470px, 428px) scale(1); opacity: 1;" class="persoas recursos isotope-item">
-    <img src="<?php echo $media_host;?>images/coffee.jpg" alt="image">
-  </div>
-
-  <div style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 642px) scale(1); opacity: 1;" class="recursos persoas isotope-item">
-    <img src="<?php echo $media_host;?>images/wine.jpg" alt="image">
-  </div>  
-  
-  <div style="position: absolute; left: 0px; top: 0px; transform: translate(470px, 642px) scale(1); opacity: 1;" class="recursos persoas isotope-item">
-    <img src="<?php echo $media_host;?>images/salad.jpg" alt="image">
-  </div>  
-  
-</div>
-
-
-</div>
+          </div>
 
  
 <script type="text/javascript">
