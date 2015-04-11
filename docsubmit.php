@@ -207,6 +207,11 @@ else {
     $nome_documento = garda_arquivo($_FILES['documento_foto']);
 
     // redimensiona imaxe
+
+    require_once('redimensionaImaxe.php');
+    redimensionaImaxe('uploads/'.$nome_documento, 'uploads/300_'.$nome_documento, 300);
+
+/*
     $im = new Imagick( 'uploads/'.$nome_documento  );
 
     $im->scaleImage(1024, 1024, true); 
@@ -214,7 +219,7 @@ else {
     $im->scaleImage(300, 300, true); 
     $im->cropImage(300, 150, 0, 0);
     $im->writeImage('uploads/300_'.$nome_documento);
-
+*/
 
   }
   else
