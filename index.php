@@ -88,37 +88,7 @@ include("conecta.php");
    
             <div style="position: relative; overflow: hidden; height: 856px; margin-top:5px;" class="portfolioContainer isotope">
 
-              <div style="position: absolute; left: 0px; top: 30x; transform: translate(0px, 0px) scale(1); opacity: 1;" class="isotope-item">
-                <img src="http://montenoso.net/cartografia_nova/images/watch.jpg" alt="image">
-              </div>
-              
-              <div style="position: absolute; left: 0px; top: 0px; transform: translate(470px, 0px) scale(1); opacity: 1;" class="persoas lugares isotope-item">
-                <img src="http://montenoso.net/cartografia_nova/images/surf.jpg" alt="image">
-              </div>  
-
-              <div style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 214px) scale(1); opacity: 1;" class="recursos lugares isotope-item">
-                <img src="http://montenoso.net/cartografia_nova/images/burger.jpg" alt="image">
-              </div>
-              
-              <div style="position: absolute; left: 0px; top: 0px; transform: translate(470px, 214px) scale(1); opacity: 1;" class="persoas lugares isotope-item">
-                <img src="http://montenoso.net/cartografia_nova/images/subway.jpg" alt="image">
-              </div>
-
-              <div style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 428px) scale(1); opacity: 1;" class="lugares isotope-item">
-                <img src="http://montenoso.net/cartografia_nova/images/trees.jpg" alt="image">
-              </div>
-
-              <div style="position: absolute; left: 0px; top: 0px; transform: translate(470px, 428px) scale(1); opacity: 1;" class="persoas recursos isotope-item">
-                <img src="http://montenoso.net/cartografia_nova/images/coffee.jpg" alt="image">
-              </div>
-
-              <div style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 642px) scale(1); opacity: 1;" class="recursos persoas isotope-item">
-                <img src="http://montenoso.net/cartografia_nova/images/wine.jpg" alt="image">
-              </div>  
-              
-              <div style="position: absolute; left: 0px; top: 0px; transform: translate(470px, 642px) scale(1); opacity: 1;" class="recursos persoas isotope-item">
-                <img src="http://montenoso.net/cartografia_nova/images/salad.jpg" alt="image">
-              </div>  
+            <?php require_once('lista_recomendados.php');?>
               
             </div>
 

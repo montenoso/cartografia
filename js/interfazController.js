@@ -62,6 +62,7 @@ function interfazController() {
         $('#display_mapa').css( 'margin-left', that.screenWidth - that.filtersWidth - that.destacadosWidth + 'px' );
         $('#map').width( that.screenWidth - that.filtersWidth - that.destacadosWidth );
         $('#display_destacados').width( that.destacadosWidth  );
+        $('#display_destacados').height( altoReal  );
         $('#display_destacados').show()
       }
       else { // Sen barra de destacados

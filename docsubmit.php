@@ -212,6 +212,7 @@ else {
     $im->scaleImage(1024, 1024, true); 
     $im->writeImage('uploads/1024_'.$nome_documento);
     $im->scaleImage(300, 300, true); 
+    $im->cropImage(300, 150, 0, 0);
     $im->writeImage('uploads/300_'.$nome_documento);
 
 
@@ -226,7 +227,7 @@ else {
   // crea rexistro
   require_once("conecta.php");
   $retObj = false;
-  $queryFicha = " INSERT INTO documento (pai, titulo_registro, descripcion, URL, latitud, longitud, selectedradio, tag, categoria, fecha_inser  )
+  $queryFicha = " INSERT INTO documento (pai, titulo_registro, descripcion, ".$tipo_campo.", latitud, longitud, selectedradio, tag, categoria, fecha_inser  )
               VALUES (".$postPost['comunidade'].", '".$postPost['nome']."', '".$postPost['descripcion']."', '".$nome_documento."', '".$postPost['lat']."','".$postPost['lon']."', '".$tipo_documento."', '".$postPost['tags']."', '".$postPost['categorias']."', NOW() );";
 
   $result = mysql_query($queryFicha,$conexion);

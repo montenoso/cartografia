@@ -178,3 +178,6 @@ div.nzAutoCompleterDialog div.row .elemento, #caixa_mapa .elemento {
     }
   /* FINAL BOTÓNS CATEGORÍAS */
 
+
+
+#display_destacados { overflow: hidden; }
