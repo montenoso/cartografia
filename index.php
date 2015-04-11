@@ -84,9 +84,9 @@ include("conecta.php");
           <div class="filtro filtros-add boton-filtros" onclick="mapa_establece_url('#novo' );" ></div>
         </div>
   
-          <div id="display_destacados" style="width:300px; ">
+          <div id="display_destacados" style="width:300px; overflow: hidden; ">
    
-            <div style="position: relative; overflow: hidden; height: 856px; margin-top:5px;" class="portfolioContainer isotope">
+            <div style="position: relative; height: 856px; margin-top:5px; overflow:hidden;" class="portfolioContainer isotope">
 
             <?php require_once('lista_recomendados.php');?>
               
