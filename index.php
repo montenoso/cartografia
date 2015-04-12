@@ -72,7 +72,7 @@ include("conecta.php");
       <div id="cortina_mapa" style="display:none;"></div>
       <div id="display_mapa" >
         <div id="display_mapa_engadir" style="display:none;">
-          <iframe src="/cartografia_nova/doc.php" id="iframe_formulario" style="width:100%;border:0;"></iframe>
+          <iframe src="/web_nova/doc.php" id="iframe_formulario" style="width:100%;border:0;"></iframe>
 
         </div>
         <iframe id="display_mapa_content" style="display:none;" src=""></iframe>

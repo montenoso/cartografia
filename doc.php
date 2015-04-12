@@ -1,6 +1,13 @@
 <?php
 
-  //require_once("conf.php");
+  require( 'wp-load.php' );
+
+  if ( !is_user_logged_in() ) {
+    header("Location: ../web_nova/carto-login.php");
+    exit;
+    //require_once("conf.php");
+  }
+
 
   $postData = array(
     "comunidade" => false,
@@ -55,8 +62,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap -->
-    <link href="css/iconografias.css" rel="stylesheet">
-    <link href="js/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/cartografia_nova/css/iconografias.css" rel="stylesheet">
+    <link href="/cartografia_nova/js/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <style> 
       .help-block {visibility:hidden;height:0;width:0;padding:0;margin:0;} 
 
@@ -196,9 +203,9 @@
     </form>
 
 
-    <script src="js/vendor/jquery.min.js"></script>
-    <script src="js/vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="js/vendor/jquery.validate.js"></script>
+    <script src="/cartografia_nova/js/vendor/jquery.min.js"></script>
+    <script src="/cartografia_nova/js/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/cartografia_nova/js/vendor/jquery.validate.js"></script>
     <script type="text/javascript">
 
        $.validator.addMethod("valueNotEquals", function(value, element, arg){

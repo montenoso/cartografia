@@ -1,5 +1,15 @@
 <?php
 
+  require( 'wp-load.php' );
+
+  if ( !is_user_logged_in() ) {
+    header("Location: ../web_nova/carto-login.php");
+    exit;
+    //require_once("conf.php");
+  }
+
+
+
 function previr_inxeccion($data) {
   $data = trim($data);
   $data = stripslashes($data);
@@ -229,11 +239,14 @@ else {
   }
 
 
+  global $current_user;
+  get_currentuserinfo();
+
   // crea rexistro
   require_once("conecta.php");
   $retObj = false;
-  $queryFicha = " INSERT INTO documento (pai, titulo_registro, descripcion, ".$tipo_campo.", latitud, longitud, selectedradio, tag, categoria, fecha_inser  )
-              VALUES (".$postPost['comunidade'].", '".$postPost['nome']."', '".$postPost['descripcion']."', '".$nome_documento."', '".$postPost['lat']."','".$postPost['lon']."', '".$tipo_documento."', '".$postPost['tags']."', '".$postPost['categorias']."', NOW() );";
+  $queryFicha = " INSERT INTO documento (usuari, pai, titulo_registro, descripcion, ".$tipo_campo.", latitud, longitud, selectedradio, tag, categoria, fecha_inser  )
+              VALUES (" . $current_user->user_login .",".$postPost['comunidade'].", '".$postPost['nome']."', '".$postPost['descripcion']."', '".$nome_documento."', '".$postPost['lat']."','".$postPost['lon']."', '".$tipo_documento."', '".$postPost['tags']."', '".$postPost['categorias']."', NOW() );";
 
   $result = mysql_query($queryFicha,$conexion);
 

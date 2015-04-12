@@ -45,13 +45,13 @@ $registro= mysql_fetch_object($result);
 
 
 $titulo = $registro->titulo_registro;
-$descripción= $registro->descripcion;
-$tema = $registro-> tema;
+$descripcion= $registro->descripcion;
+//$tema = $registro-> tema;
 $tag = $registro-> tag;
 $URL = $registro-> URL;
 $nombre = $registro-> nombre_archivo;
 $tag = $registro-> tag;
-$extension = $registro-> extension;
+//$extension = $registro-> extension;
 $selectedRadio = $registro-> selectedradio;
 
 
@@ -79,7 +79,7 @@ if( $selectedRadio == 'comunidade')  {
 
 
 <?php if( $selectedRadio == 'comunidade') :?>
-
+<!--
     <h2><?php echo $titulo;?></h2>
     <div><?php echo $descripción; ?></div>
     <div><?php echo $URL; ?> <?php echo $URL; ?></a></div>
@@ -96,7 +96,9 @@ if( $selectedRadio == 'comunidade')  {
   </div>
 
   <div>
+-->
 
+  <?php require_once('fichaComunidade.php'); ?>
 <?php else:?>
 
 
