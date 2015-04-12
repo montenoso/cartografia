@@ -78,7 +78,8 @@ $(document).ready(
     });
 
     google.maps.event.addListener(mapa, 'click', function(){
-      if( $("#display_mapa_content").html() != '' )
+
+      if( $("#display_mapa_content").attr('src') != '' )
         mapControl.mapa_desselecciona();
     });
   }

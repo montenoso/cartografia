@@ -98,8 +98,7 @@ function mapController() {
 
       if ( recurso_data.material_id == id ) {
         //console.log(recurso_data.latitud, recurso_data.longitud)
-
-
+/*
         $.ajax({
 
           url: "/cartografia_nova/ficha.php" ,
@@ -123,8 +122,26 @@ function mapController() {
               }
             );
           }
-        });
+        });*/
 
+        $('#display_mapa_content').attr('src', '/cartografia_nova/ficha.php?id='+id);
+
+   
+        if(recurso_data.selectedradio == 'comunidade') {
+          interfazControl.setSidebarFichaComunidade();
+        }
+        else {
+          interfazControl.setSidebarFichaRecurso();
+        }
+        mapa.setCenter({lat: parseFloat(recurso_data.latitud), lng: parseFloat(recurso_data.longitud) } )
+        mapa.setZoom(14);
+        cl.marker_select(
+          id,
+          {
+            url: icons_path + "point_selected.png",
+            anchor: new google.maps.Point(19,42)
+          }
+        );
       }
     });
   }
@@ -156,9 +173,10 @@ function mapController() {
 
 
   that.mapa_desselecciona = function() { 
+
     cl.marker_unselect();
       window.location="#";
-    $("#display_mapa_content").html( "" );
+    $("#display_mapa_content").attr('src', '');
     interfazControl.setSidebarFiltros();
     if( mapa.getZoom() > 12 ){
       mapa.setZoom(12);  

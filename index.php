@@ -75,7 +75,7 @@ include("conecta.php");
           <iframe src="/cartografia_nova/doc.php" id="iframe_formulario" style="width:100%;border:0;"></iframe>
 
         </div>
-        <div id="display_mapa_content" style="display:none;"></div>
+        <iframe id="display_mapa_content" style="display:none;" src=""></iframe>
 
         <div id="display_mapa_filters" >          
           <div> <input id="buscaRecursos" type="text" class="caixaBusqueda" style="display:none;"></div>
@@ -84,7 +84,7 @@ include("conecta.php");
           <div class="filtro filtros-add boton-filtros" onclick="mapa_establece_url('#novo' );" ></div>
         </div>
   
-          <div id="display_destacados" style="width:300px; ">
+          <div id="display_destacados" style="width:300px; overflow:hidden;">
    
             <div style="position: relative; height: 856px; margin-top:5px; overflow:hidden;" class="portfolioContainer isotope">
 
