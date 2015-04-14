@@ -8,7 +8,8 @@
     //require_once("conf.php");
   }
 
-
+ global $CARTOGRAFIA_UPLOAD_DIR;
+ $CARTOGRAFIA_UPLOAD_DIR = '../cartografia_nova/uploads';
 
 function previr_inxeccion($data) {
   $data = trim($data);
@@ -19,9 +20,9 @@ function previr_inxeccion($data) {
 }
 
 function garda_arquivo($arquivo) {
-  $CARTOGRAFIA_UPLOAD_DIR = 'uploads';
 
 
+  global $CARTOGRAFIA_UPLOAD_DIR;
 
   preg_match('/\.[^\.]+$/i',$arquivo['name'],$ext);
 
@@ -217,9 +218,9 @@ else {
     $nome_documento = garda_arquivo($_FILES['documento_foto']);
 
     // redimensiona imaxe
-
+    global $CARTOGRAFIA_UPLOAD_DIR;
     require_once('redimensionaImaxe.php');
-    redimensionaImaxe('uploads/'.$nome_documento, 'uploads/300_'.$nome_documento, 300);
+    redimensionaImaxe( $CARTOGRAFIA_UPLOAD_DIR.'/'.$nome_documento,  $CARTOGRAFIA_UPLOAD_DIR.'/300_'.$nome_documento, 300);
 
 /*
     $im = new Imagick( 'uploads/'.$nome_documento  );
@@ -238,16 +239,21 @@ else {
     $nome_documento = garda_arquivo($_FILES['documento_texto']);
   }
 
+  $username='Anonymous';
 
+  
   global $current_user;
   get_currentuserinfo();
+  $username= $current_user->user_login;
 
   // crea rexistro
   require_once("conecta.php");
   $retObj = false;
   $queryFicha = " INSERT INTO documento (usuari, pai, titulo_registro, descripcion, ".$tipo_campo.", latitud, longitud, selectedradio, tag, categoria, fecha_inser  )
-              VALUES (" . $current_user->user_login .",".$postPost['comunidade'].", '".$postPost['nome']."', '".$postPost['descripcion']."', '".$nome_documento."', '".$postPost['lat']."','".$postPost['lon']."', '".$tipo_documento."', '".$postPost['tags']."', '".$postPost['categorias']."', NOW() );";
+              VALUES ('" . $username ."' ,".$postPost['comunidade'].", '".$postPost['nome']."', '".$postPost['descripcion']."', '".$nome_documento."', '".$postPost['lat']."','".$postPost['lon']."', '".$tipo_documento."', '".$postPost['tags']."', '".$postPost['categorias']."', '".date('Y-m-d H:i:s')."' );";
 
+//echo $queryFicha;
+//exit;
   $result = mysql_query($queryFicha,$conexion);
 
 
