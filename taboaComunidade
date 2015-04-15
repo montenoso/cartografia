@@ -1,0 +1,60 @@
+<html>
+	<head>
+		
+		<link rel="stylesheet" href="css/taboaComunidade.css" type="text/css"/>	
+	</head>
+
+	<body>
+	
+		<div class="tablinha" style="width:600px;height:150px;">
+			<table >
+				<tr> 
+					<td>
+						Title 1
+					</td>
+					<td >
+						Title 2
+					</td>
+					<td>
+						Title 3
+					</td>
+				</tr>
+				<tr>
+					<td >
+						Row 1
+					</td>
+					<td>
+						Row 1
+					</td>
+					<td>
+						Row 1
+					</td>
+				</tr>
+				<tr>
+					<td >
+						Row 2
+					</td>
+					<td>
+						Row 2
+					</td>
+					<td>
+						Row 2
+					</td>
+				</tr>
+				<tr>
+					<td >
+						Row 2
+					</td>
+					<td>
+						Row 2
+					</td>
+					<td>
+						Row 2
+					</td>
+				</tr>
+			</table>
+		</div>
+		
+	</body>
+	
+</html>
