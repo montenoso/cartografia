@@ -5,7 +5,7 @@
     <title>Ficha recurso</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link rel="stylesheet" type="text/css" href="/css/styleFichaRecurso.css">
+    <link rel="stylesheet" type="text/css" href="css/styleFichaRecurso.css">
 
     <style type="text/css">
 html, body {
@@ -40,9 +40,9 @@ html, body {
         Descripación: Un comuneiro de Argozón, o Roberto, contanos a súa experiencia cos lobos da zona e de como lles daba de comer
         </p>
           <p class="iconos">
-            <IMG SRC="http://www.montenoso.net/cartografia_nova/images/categorias/64x64/agricultura.png">
-            <IMG SRC="http://www.montenoso.net/cartografia_nova/images/categorias/64x64/bancoCoñecemento.png">
-            <IMG SRC="http://www.montenoso.net/cartografia_nova/images/categorias/64x64/comúns.png">
+            <IMG SRC="/cartografia_nova/images/categorias/64x64/agricultura.png">
+            <IMG SRC="/cartografia_nova/images/categorias/64x64/bancoCoñecemento.png">
+            <IMG SRC="/cartografia_nova/images/categorias/64x64/comúns.png">
         </p>
 
       </div>

@@ -23,14 +23,35 @@
 
     </div>
       <div class="transbox">
-        <p class="lead">
+        <!--p class="lead">
         Localización: Chantada, Lugo. 
         Dimensións: 175ha. 
-        </p>
+        </p-->
           <p class="iconos">
-            <IMG SRC="http://www.montenoso.net/cartografia_nova/images/categorias/64x64/agricultura.png">
-            <IMG SRC="http://www.montenoso.net/cartografia_nova/images/categorias/64x64/bancoCoñecemento.png">
-            <IMG SRC="http://www.montenoso.net/cartografia_nova/images/categorias/64x64/comúns.png">
+            <?php
+
+            if(isset($categorias) && sizeof($categorias) > 0 ) {
+
+              // tamaño de iconos de categoria
+              if( sizeof($categorias)  > 5 ) {
+                $categoria_size = "64x64";
+              }
+              else{
+                 $categoria_size = "32x32";
+              }
+
+
+              
+              foreach($categorias as $cat) {
+                if($cat != ""){
+                  echo '<IMG SRC="/cartografia_nova/images/categorias/'.$categoria_size.'/'.$cat.'.png">';
+
+                }
+              }
+            }
+
+            ?> 
+
         </p>
 
       </div>

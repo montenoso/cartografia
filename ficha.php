@@ -68,68 +68,21 @@ if( $selectedRadio == 'comunidade')  {
     $slider = "<h3>Relacionados<h3><ul>".$slider."</ul>";
   }
 
+  $queryCategorias = "SELECT group_concat(categoria) as categorias from documento where pai=$id group by pai;";
+
+  $result = mysql_fetch_object( mysql_query($queryCategorias,$conexion) );
+  if( $result ){
+    $categorias = array_unique( explode(",", $result->categorias) );
+  }
 }
 
-//
-//  Captación de datos finalizada :)
-//  Agora imos co corpo da páxina
-//
-?>
 
 
 
-<?php if( $selectedRadio == 'comunidade') :?>
-<!--
-    <h2><?php echo $titulo;?></h2>
-    <div><?php echo $descripción; ?></div>
-    <div><?php echo $URL; ?> <?php echo $URL; ?></a></div>
-    <div><?php echo $slider; ?></div>
-  <div>
-<?php 
-    global $typeform_export_path, $typeform_api_url, $typeform_correspondencias;
-    $fpath = $typeform_export_path.'/'.$typeform_correspondencias[$id].'.php' ;
-    if( file_exists( $fpath  ) ) {
-      echo "<h2>Máis datos</h2>";
-      require_once($fpath );
-    }
-?>
-  </div>
+if( $selectedRadio == 'comunidade') {
+  require_once('fichaComunidade.php');
+}
+else{
+  require_once('fichaRecurso.php');
 
-  <div>
--->
-
-  <?php require_once('fichaComunidade.php'); ?>
-<?php else:?>
-
-
-
-    <h2><?php echo $titulo;?></h2>
-    <div><?php echo $descripción; ?></div>
-    <div><?php echo $URL; ?> <?php echo $URL; ?></a></div>
-
-  <div>
-
-  </div>
-
-<?php
-   $nombre_fichero_sin_espacios=str_replace(" ","",$nombre);?> 
-            
-        <?php
-   if($extension == "image/jpeg" || $extension == "image/png" || $extension == "image/gif" || $extension == "image/tiff"){
-?> <img src="<?php echo $media_host; ?>uploads/<?php echo $nombre_fichero_sin_espacios; ?>"/>
-    <br>
-<?php }
-    if($extension == "audio/x-wav" || $extension =="audio/mpeg"){
-?>  <audio controls="controls" src="<?php echo $media_host; ?>uploads/<?php echo $nombre_fichero_sin_espacios; ?>"/></audio>
-    <br>
-<?php }
-    if($extension == "video/quicktime" || $extension == "video/mp4"){
-?> <video controls="controls" src="<?php echo $media_host; ?>uploads/<?php echo $nombre_fichero_sin_espacios; ?>" ></video>
-    <br>
-<?php }
-
-    echo "<div> ".$tag."</div>";
-?>
-<?php endif;?>
-
-
+}
