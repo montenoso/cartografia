@@ -102,7 +102,7 @@ $(window).load(function(){
     $container.isotope({
         filter: '*',
         animationOptions: {
-            duration: 750,
+            duration: 250,
             easing: 'linear',
             resizable: true,
             queue: false
@@ -117,7 +117,7 @@ $(window).load(function(){
         $container.isotope({
             filter: selector,
             animationOptions: {
-                duration: 750,
+                duration: 250,
                 easing: 'linear',
                 queue: false
             }
