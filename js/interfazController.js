@@ -7,8 +7,7 @@ function interfazController() {
   document.body.scroll = "no"; // ie only
 
 
-  that.headerHeight = $("#nav-topbar").outerHeight();
-  console.log(that.headerHeight);
+  that.headerHeight = $("#nav-topbar").outerHeight()-1;
   that.filtersWidth = 55;
   that.fichaWidth = 500;
   that.comunidadeWidth = 700;

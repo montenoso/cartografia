@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Ficha Comunidade></title>
+    <title>Ficha Comunidade</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="js/jquery-latest.js" type="text/javascript"></script> 
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" type="text/css" href="css/styleficha.css">
-    
+    <link rel="stylesheet" href="css/taboaComunidade.css" type="text/css"/> 
 </head>
 <body>
   <div class="site-wrapper">
@@ -18,7 +19,20 @@
         <p class="lead">
           <?php echo $descripcion;?> 
         </p>
-        <p class="lead"><a class="btn btn-lg btn-info" href="#">Ver todos os datos</a></p>
+        <p id="mostrartodo" class="lead"><a class="btn btn-lg btn-info" onclick="$('.tablinha').show();$('#mostrartodo').hide();$('#ocultartodo').show();" href="#">Mostrar datos extendidos</a></p>
+        <p id="ocultartodo" style="display:none;" class="lead"><a class="btn btn-lg btn-info" onclick="$('.tablinha').hide();$('#mostrartodo').show();$('#ocultartodo').hide();" href="#">Ocultar datos extendidos</a></p>
+      </div>
+
+      <div class="tablinha" style="display:none;">
+        <?php 
+        
+          include("conf.php");
+          global $typeform_correspondencias;
+
+          include("typeform_export/".$typeform_correspondencias[$id].".php");
+
+        ?> 
+
       </div>
 
     </div>

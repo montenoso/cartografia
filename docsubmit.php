@@ -220,7 +220,8 @@ else {
     // redimensiona imaxe
     global $CARTOGRAFIA_UPLOAD_DIR;
     require_once('redimensionaImaxe.php');
-    redimensionaImaxe( $CARTOGRAFIA_UPLOAD_DIR.'/'.$nome_documento,  $CARTOGRAFIA_UPLOAD_DIR.'/300_'.$nome_documento, 300);
+    redimensionaImaxe( $CARTOGRAFIA_UPLOAD_DIR.'/'.$nome_documento,  $CARTOGRAFIA_UPLOAD_DIR.'/200_'.$nome_documento, 200);
+    redimensionaImaxe( $CARTOGRAFIA_UPLOAD_DIR.'/'.$nome_documento,  $CARTOGRAFIA_UPLOAD_DIR.'/800_'.$nome_documento, 800);
 
 /*
     $im = new Imagick( 'uploads/'.$nome_documento  );

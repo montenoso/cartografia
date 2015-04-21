@@ -6,7 +6,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <link rel="stylesheet" type="text/css" href="css/styleFichaRecurso.css">
-
+    <link rel="stylesheet" type="text/css" href="css/taboaComunidade.css" /> 
     <style type="text/css">
 html, body {
   overflow: hidden;
@@ -40,7 +40,7 @@ html, body {
       }
       else 
       if( $selectedRadio == "foto" ) {
-        echo '<img src="/cartografia_nova/uploads/300_'.$nombre.'" alt="'.$titulo.'">';
+        echo '<img src="/cartografia_nova/uploads/800_'.$nombre.'" alt="'.$titulo.'">';
       }
       else
       if( $selectedRadio == "audio" ) {

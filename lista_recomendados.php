@@ -30,7 +30,7 @@ require_once("conecta.php");
              
                   <div onclick="mapControl.mapa_selecciona_elemento(<?php echo $resultado['material_id']; ?>);" style="position: absolute; left: 0px; top: 30x; transform: translate(0px, 0px) scale(1); opacity: 1;" class="isotope-item"></div>
                 <?php
-                echo '<div class="imaxe" style= "margin-top:0px;"> <img src="/cartografia_nova/uploads/300_'.$resultado['nombre_archivo'].'" alt="'.$resultado['titulo_registro'].'">';
+                echo '<div class="imaxe" style= "margin-top:0px;"> <img src="/cartografia_nova/uploads/200_'.$resultado['nombre_archivo'].'" alt="'.$resultado['titulo_registro'].'">';
 
                 echo '<div class="titulo" style= " margin-top:-43px;">'.$resultado['titulo_registro'].'</div>';
                 ?>
