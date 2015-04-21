@@ -1,5 +1,5 @@
 <?php
-
+/*
   require( 'wp-load.php' );
 
   if ( !is_user_logged_in() ) {
@@ -7,7 +7,7 @@
     exit;
     //require_once("conf.php");
   }
-
+*/
  global $CARTOGRAFIA_UPLOAD_DIR;
  $CARTOGRAFIA_UPLOAD_DIR = '../cartografia_nova/uploads';
 
@@ -242,9 +242,9 @@ else {
   $username='Anonymous';
 
   
-  global $current_user;
-  get_currentuserinfo();
-  $username= $current_user->user_login;
+  //global $current_user;
+  //get_currentuserinfo();
+  //$username= $current_user->user_login;
 
   // crea rexistro
   require_once("conecta.php");

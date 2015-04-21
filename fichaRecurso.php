@@ -15,39 +15,97 @@ html, body {
  
 </head>
 <body>
-     <div class="transbox2">
-  <h1 class="cover-heading" style="text-align:center; padding:20px;">Facéndose amigo dos lobos</h1>
-      </div>
+  <div class="transbox2">
+    <h1 class="cover-heading" style="text-align:center; padding:20px;"><?php echo $titulo;?></h1>
+  </div>
   <div class="site-wrapper" >      
-  <div class="site-wrapper-inner">
-  
-<div class="cajadevideo">
-        <div class="video">
-            <iframe src="https://player.vimeo.com/video/75956353"frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/75956353"></iframe>
+    <div class="site-wrapper-inner">
+    
+    <div class="cajadevideo">
+      <div class="video">
+      <?php 
 
+
+      if( $selectedRadio == "video" ) {
+
+        if( preg_match( "#(http|https)://(www\.)?vimeo\.com/(\d+)#",  $URL, $result) ){
+
+          echo '<iframe src="https://player.vimeo.com/video/'.$result[3].'"frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+
+        }
+        else
+        if( preg_match( "#(http|https)://(www\.)?youtube\.com\/watch\?v\=(.*)#",  $URL, $result)  ){
+          echo '<iframe width="560" height="315" src="https://www.youtube.com/embed/'.$result[3].'" frameborder="0" allowfullscreen></iframe>';
+        }
+      }
+      else 
+      if( $selectedRadio == "foto" ) {
+        echo '<img src="/cartografia_nova/uploads/300_'.$nombre.'" alt="'.$titulo.'">';
+      }
+      else
+      if( $selectedRadio == "audio" ) {
+        if( preg_match( "#(http|https)://(www\.)?soundcloud\.com\/(.*)#",  $URL, $result)  ){
+
+          //Get the JSON data of song details with embed code from SoundCloud oEmbed
+          $getValues=file_get_contents('http://soundcloud.com/oembed?format=js&url='.$URL.'&iframe=true');
+          //Clean the Json to decode
+          $decodeiFrame=substr($getValues, 1, -2);
+          //json decode to convert it as an array
+          $jsonObj = json_decode($decodeiFrame);
+
+          //Change the height of the embed player if you want else uncomment below line
+          echo  $jsonObj->html;
+        }
+      }
+      else
+      if( $selectedRadio == "documento" ) {
+        echo '<a href="/cartografia_nova/uploads/'.$nombre.'">DESCARGA</a>';
+      }
+
+
+
+      ?>
+      </div>
+
+        <div class="cover-container" >
+          <div class="inner cover">
+          </div>
         </div>
+          <div class="transbox">
+            <p class="lead">
+            Monte: <?php echo $nomePai;?>. 
+            Documentadorx: <?php echo $usuari;?>.
+            Descripación: <?php echo $descripcion;?>
+            </p>
+            <p class="iconos">
+                <?php
+
+                if(isset($categorias) && sizeof($categorias) > 0 ) {
+
+                  // tamaño de iconos de categoria
+                  if( sizeof($categorias)  > 5 ) {
+                    $categoria_size = "64x64";
+                  }
+                  else{
+                     $categoria_size = "32x32";
+                  }
+
+
+                  
+                  foreach($categorias as $cat) {
+                    if($cat != ""){
+                      echo '<IMG SRC="/cartografia_nova/images/categorias/'.$categoria_size.'/'.$cat.'.png">';
+
+                    }
+                  }
+                }
+
+                ?> 
+
+            </p>
 
     </div>
-
-    <div class="cover-container" >
-      <div class="inner cover">
-      </div>
-    </div>
-      <div class="transbox">
-        <p class="lead">
-        Monte: O Faro de Argozón. 
-        Documentadorx: AAOO.
-        Descripación: Un comuneiro de Argozón, o Roberto, contanos a súa experiencia cos lobos da zona e de como lles daba de comer
-        </p>
-          <p class="iconos">
-            <IMG SRC="/cartografia_nova/images/categorias/64x64/agricultura.png">
-            <IMG SRC="/cartografia_nova/images/categorias/64x64/bancoCoñecemento.png">
-            <IMG SRC="/cartografia_nova/images/categorias/64x64/comúns.png">
-        </p>
-
-      </div>
-</div>
-</div>
+  </div>
   <script type="text/javascript">
   
   </script>

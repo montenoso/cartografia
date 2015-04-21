@@ -38,19 +38,23 @@ $result = mysql_query($queryFicha,$conexion);
 
 if(!$result) {
   ocorreuUnErro();
+  exit;
 }
 
    
 $registro= mysql_fetch_object($result); 
-
+if(!$registro){
+  exit;
+}
 
 $titulo = $registro->titulo_registro;
 $descripcion= $registro->descripcion;
 //$tema = $registro-> tema;
-$tag = $registro-> tag;
+$usuari = $registro-> usuari;
 $URL = $registro-> URL;
 $nombre = $registro-> nombre_archivo;
 $tag = $registro-> tag;
+$pai = $registro-> pai;
 //$extension = $registro-> extension;
 $selectedRadio = $registro-> selectedradio;
 
@@ -73,6 +77,23 @@ if( $selectedRadio == 'comunidade')  {
   $result = mysql_fetch_object( mysql_query($queryCategorias,$conexion) );
   if( $result ){
     $categorias = array_unique( explode(",", $result->categorias) );
+  }
+}
+else {
+  $queryCategorias = "SELECT categoria as categorias from documento where material_id=$id;";
+
+  $result = mysql_fetch_object( mysql_query($queryCategorias,$conexion) );
+
+  if( $result ){
+    $categorias = array_unique( explode(",", $result->categorias) );
+  }
+
+  $queryComunidade = "SELECT titulo_registro as nome from documento where material_id=394;";
+
+  $result = mysql_fetch_object( mysql_query($queryComunidade,$conexion) );
+
+  if( $result ){
+    $nomePai = $result->nome ;
   }
 }
 
