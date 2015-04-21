@@ -1,5 +1,5 @@
 <?php
-/*
+
   require( 'wp-load.php' );
 
   if ( !is_user_logged_in() ) {
@@ -7,7 +7,7 @@
     exit;
     //require_once("conf.php");
   }
-*/
+
 
   $postData = array(
     "comunidade" => false,
