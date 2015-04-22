@@ -1,8 +1,9 @@
 .tablinha{
-	margin:0px;padding:0px;
+	margin-left:-30px;
+	padding:0px;
 	width:100%;
-	box-shadow: 10px 10px 5px #888888;
-	border:1px solid #000000;
+	
+
 	
 	-moz-border-radius-bottomleft:0px;
 	-webkit-border-bottom-left-radius:0px;
@@ -20,6 +21,7 @@
 	-webkit-border-top-left-radius:0px;
 	border-top-left-radius:0px;
 }.tablinha table{
+	margin-left:-30px;
     border-collapse: collapse;
         border-spacing: 0;
 	width:100%;
@@ -72,7 +74,7 @@
 	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#01591c", endColorstr="#06af50");	background: -o-linear-gradient(top,#01591c,06af50);
 
 	background-color:#01591c;
-	border:0px solid #000000;
+
 	text-align:center;
 	border-width:0px 0px 1px 1px;
 	font-size:14px;
