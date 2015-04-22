@@ -79,6 +79,7 @@ body {
   margin-top: 3%;
   margin-right: auto;
   margin-left: auto;
+  position:absolute;
 }
 
 /* Padding for spacing */
@@ -152,7 +153,8 @@ h1, .h1 {
 
 div.transbox
 {
-  margin-top: -31%;
+  position:absolute;
+  margin-top: 400px;
   margin-left: 0px;
   margin-right: 0px;
   background-color: #ffffff;
@@ -189,23 +191,24 @@ div.transbox2 p
     width:100%;
     margin:auto;
     margin-top: -7%;
-
+    position:relative;
 }
 
 .video{
 
+
     height:0px;
     width:100%;
    
-    padding-top:56.25%;
-    position:relative;
+
+    position:absolute;
 
 }
 
 iframe{
 
     position:absolute;
-    height:50%;
+    height: 400px;
     width:100%;
     top:0px;
     left:0px;
