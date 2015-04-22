@@ -10,7 +10,9 @@
     <link rel="stylesheet" href="css/taboaComunidade.css" type="text/css"/> 
 </head>
 <body>
-  <div class="site-wrapper">
+  <div class="site-wrapper" style="overflow:hidden">
+  <div id="container"></div>
+  <p id="container" class="lead"><a class="btn btn-lg btn-info" style="margin:5px;" onclick="$('#display_mapa_content').hide();">X</a></p>
   <div class="site-wrapper-inner">
     <div class="cover-container">
       <div class="inner cover">
@@ -19,8 +21,8 @@
         <p class="lead">
           <?php echo $descripcion;?> 
         </p>
-        <p id="mostrartodo" class="lead"><a class="btn btn-lg btn-info" onclick="$('.tablinha').show();$('#mostrartodo').hide();$('#ocultartodo').show();" href="#">Mostrar datos extendidos</a></p>
-        <p id="ocultartodo" style="display:none;" class="lead"><a class="btn btn-lg btn-info" onclick="$('.tablinha').hide();$('#mostrartodo').show();$('#ocultartodo').hide();" href="#">Ocultar datos extendidos</a></p>
+        <p id="mostrartodo" class="lead"><a class="btn btn-lg btn-info" onclick="$('.tablinha').show();$('#mostrartodo').hide();$('#ocultartodo').show();" href="#">Amosar datos</a></p>
+        <p id="ocultartodo" style="display:none;" class="lead"><a class="btn btn-lg btn-info" onclick="$('.tablinha').hide();$('#mostrartodo').show();$('#ocultartodo').hide();" href="#">Ocultar datos</a></p>
       </div>
 
       <div class="tablinha" style="display:none;">
