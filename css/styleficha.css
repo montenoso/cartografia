@@ -45,6 +45,7 @@ body {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+   
   
   height: 100%;
   background-color: #060;
@@ -76,6 +77,16 @@ body {
 /* Padding for spacing */
 .inner {
   padding: 30px;
+  text-shadow: -2px -2px 2px #000;
+}
+.cover-heading {
+  margin-top: 15%;
+}
+
+
+
+.lead{
+  text-shadow: -2px -2px 2px #000;
 }
 
 
@@ -139,8 +150,9 @@ body {
 
 div.transbox
 {
-  margin-top: 18%;
-  margin-left: 0px;
+  margin-top: 35%;
+  text-shadow: -5px -5px 5px #aaa;
+  margin-left: -55px;
   margin-right: 0px;
   background-color: #ffffff;
   opacity:0.6;
@@ -149,6 +161,7 @@ div.transbox
 div.transbox p
 {
   padding: 1%;
+  margin-left: 30px;
   font-weight: bold;
   color: #000000;
 }
