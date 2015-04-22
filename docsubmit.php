@@ -268,7 +268,7 @@ else {
     <body>
       <?php echo "Redirixindo ..."; ?>
       <script>
-        parent.window.location = '/cartografia_nova';
+        parent.window.location = 'http://montenoso.net/web_nova/?page_id=66';
       </script>
 
     </body>

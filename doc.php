@@ -191,7 +191,7 @@
         <div class="form-group pull-right" >
           <div class="col-xs-4  ">
             <div class="input-group">
-              <button  onclick="parent.mapa_establece_url('portada');" class="btn btn-danger">Cancelar</button>
+              <button  onclick="parent.window.location='http://montenoso.net/web_nova/?page_id=66'" class="btn btn-danger">Cancelar</button>
             </div>
           </div>
           <div class="col-xs-1">

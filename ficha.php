@@ -88,12 +88,13 @@ else {
     $categorias = array_unique( explode(",", $result->categorias) );
   }
 
-  $queryComunidade = "SELECT titulo_registro as nome from documento where material_id=394;";
+  $queryComunidade = "SELECT titulo_registro as nome from documento where material_id=".$pai.";";
 
-  $result = mysql_fetch_object( mysql_query($queryComunidade,$conexion) );
+  $result = mysql_query($queryComunidade,$conexion) ;
 
-  if( $result ){
-    $nomePai = $result->nome ;
+  $nomePai = "Ningún";
+  if( $result && $p = mysql_fetch_object($result)  ){
+    $nomePai = $p->nome ;
   }
 }
 
