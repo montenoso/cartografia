@@ -1,24 +1,35 @@
 body {
     font-family: Arial;
     font-size: 12px;
-    margin-top: 5px;
+    margin-top: 0px;
+    margin: 0px;
+    margin-left: 10px;
 }
 
 .portfolioFilter a { 
     margin-right: 0px; 
-	color:#666;
 	text-decoration:none;
     font-size: 12px;
+    margin: 0px;
 }
 
 .portfolioFilter a.current { 
     font-weight:bold;
     font-size: 12px;
+    margin: 0px;
+    margin-top: 5px;
+ 
 }
 .portfolioContainer {
+color: #ffffff;
+padding-top: 10px;
+padding-bottom: 10px;
+text-shadow: 2px 2px 3px #1c591c, -2px -2px 3px #1c591c;
+background-color: #50af62;
 position: relative; 
 margin-left:50px; 
-font-size: 12px;
+font-size: 13px;
+margin: 0px;
 
 
 
