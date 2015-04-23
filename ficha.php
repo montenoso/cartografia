@@ -51,6 +51,7 @@ $titulo = $registro->titulo_registro;
 $descripcion= $registro->descripcion;
 //$tema = $registro-> tema;
 $usuari = $registro-> usuari;
+if ($usuari == "") $usuari="Montenoso";
 $URL = $registro-> URL;
 $nombre = $registro-> nombre_archivo;
 $tag = $registro-> tag;

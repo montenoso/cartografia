@@ -40,7 +40,7 @@ html, body {
       }
       else 
       if( $selectedRadio == "foto" ) {
-        echo '<img src="/cartografia_nova/uploads/800_'.$nombre.'" alt="'.$titulo.'">';
+        echo '<img src="/cartografia_nova/uploads/500_'.$nombre.'" alt="'.$titulo.'">';
       }
       else
       if( $selectedRadio == "audio" ) {

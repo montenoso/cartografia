@@ -98,8 +98,8 @@ include("conecta.php");
 <script type="text/javascript">
 
 $(window).load(function(){
-    var $container = $('.portfolioContainer');
-    $container.isotope({
+
+    $('.portfolioContainer').isotope({
         filter: '*',
         animationOptions: {
             duration: 250,
@@ -108,23 +108,29 @@ $(window).load(function(){
             queue: false
         }
     });
+
+    var containerSortBy = "random";
  
-    $('.portfolioFilter a').click(function(){
-        $('.portfolioFilter .current').removeClass('current');
-        $(this).addClass('current');
- 
-        var selector = $(this).attr('data-filter');
-        $container.isotope({
-            filter: selector,
-            animationOptions: {
-                duration: 250,
-                easing: 'linear',
-                queue: false
-            }
-         });
-         return false;
-    }); 
+    setInterval(function(){
+
+      if( containerSortBy == "random" ) {
+        containerSortBy = "symbol";
+      } 
+      else {
+        containerSortBy = "random";
+      }
+
+      $('.portfolioContainer').isotope({ sortBy : containerSortBy });
+
+    }, 9000);
+
+
+
 });
+
+
+
+
 
 </script>
 
