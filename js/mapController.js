@@ -25,7 +25,7 @@ function mapController() {
         data_structure: {id: 'material_id', lat: 'latitud', lng: 'longitud'},
         zoom_range : [9,25],
         zIndex: 1 ,
-        cluster_radious: 20,
+        cluster_radious: 40,
         //show_disabled_points: false, 
         //nocluster_zoom_range: [13,25],
         hover_event: function(marker, data) {
