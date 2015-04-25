@@ -12,7 +12,7 @@
 <body>
   <div class="site-wrapper" style="overflow:hidden">
   <div id="container"></div>
-  <p id="container" class="lead"><a class="btn btn-lg btn-info" style="margin:5px;" onclick="parent.mapControl.mapa_desselecciona();">X</a></p>
+  <p id="container" class="lead"><a class="btn btn-lg btn-info" style="margin:5px;" onclick="parent.mapControl.mapa_desselecciona(true);">X</a></p>
   <div class="site-wrapper-inner">
     <div class="cover-container">
       <div class="inner cover">

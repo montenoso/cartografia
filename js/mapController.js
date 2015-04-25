@@ -175,7 +175,9 @@ function mapController() {
   that.mapa_desselecciona = function() { 
 
     cl.marker_unselect();
-      window.location="#";
+    console.log( $(window.location).attr("origin") + $(window.location).attr("pathname") + "#" );
+    window.location=$(window.location).attr("origin") + $(window.location).attr("pathname") + $(window.location).attr("search") +"#";
+
     $("#display_mapa_content").attr('src', '');
     interfazControl.setSidebarFiltros();
     if( mapa.getZoom() > 12 ){

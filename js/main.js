@@ -37,11 +37,11 @@ $(document).ready(
 
 
     // layer simple desde vista
-   /* cartodb.createLayer(mapa, 'http://montenoso2.cartodb.com/api/v2/viz/d5f2c756-182a-11e4-9427-0e73339ffa50/viz.json', { legends: false })
+    cartodb.createLayer(mapa, 'http://montenoso2.cartodb.com/api/v2/viz/d5f2c756-182a-11e4-9427-0e73339ffa50/viz.json', { legends: false })
     .addTo(mapa)
     .on('done', function(layer) {
       //console.log(layer);
-    });*/
+    });
 
 
     // mvmc centroids (puntos de comunidades que non están en montenoso)
