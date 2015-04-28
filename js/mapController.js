@@ -13,9 +13,9 @@ function mapController() {
     });
 
     return new marker_clusterer(
-      { icon_path: icons_path, anchor: [12,28] }, // pequenos
-      { icon_path: icons_path, anchor: [12,28] },// medianos
-      { icon_path: icons_path, anchor:[16,36] }, // ghrandes
+      { icon_path: icons_path, anchor: [30,53] }, // pequenos
+      { icon_path: icons_path, anchor: [30,53] },// medianos
+      { icon_path: icons_path, anchor:[30,53] }, // ghrandes
       { }, // disabled
       { }, // selected
 
@@ -25,7 +25,7 @@ function mapController() {
         data_structure: {id: 'material_id', lat: 'latitud', lng: 'longitud'},
         zoom_range : [9,25],
         zIndex: 1 ,
-        cluster_radious: 20,
+        cluster_radious: 40,
         //show_disabled_points: false, 
         //nocluster_zoom_range: [13,25],
         hover_event: function(marker, data) {
