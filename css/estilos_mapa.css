@@ -53,48 +53,82 @@ background-color: #e1ea35;
                           INFOWINDOW MAPA
 ***********************************************************************/
 #caixa_mapa {
+  /*
   color:black;
   margin-top:2px;
   margin-bottom:10px;
   text-align: center;
   font-size: 14;
-
+*/
+  margin-top:3px;
 
 }
 
-div.nzAutoCompleterDialog div.row .elemento, #caixa_mapa .elemento {
-  height:35px !important;
+div.nzAutoCompleterDialog div.row .elemento, 
+#caixa_mapa .elemento {
+
+  height:40px !important;
+  padding-bottom:10px;
+  padding-top:10px;
+  padding-left:10px;
+ /* height:35px !important;
   padding-top:7px;
   padding-bottom:10px;
   cursor:pointer;
-  padding-left:40px;
+
   line-height: 25px;
   overflow: hidden;
   background-repeat: no-repeat;
-  background-position: 10px 10px;
+  background-position: 10px 10px;*/
+  background-repeat: no-repeat;
+  font-size:17px;
+  cursor:pointer;
 }
 
 #caixa_mapa .elemento:hover { 
-  background-color:#eee;
+  background-color:#6CCE91;
 }
 
+
+  div.nzAutoCompleterDialog div.row .elemento .icona, 
+  #caixa_mapa .elemento .icona { 
+    width:43px;
+    height:41px;
+    float:left;
+    border-radius: 50%;
+    background-repeat: no-repeat;
+    background-position: center center;
+  }
+  div.nzAutoCompleterDialog div.row .elemento .tit, 
+  #caixa_mapa .elemento .tit { 
+    margin-left:10px;
+    margin-top:4px;
+    float:left;
+    width:300px;
+    overflow:hidden;
+    white-space:nowrap;
+    text-overflow: ellipsis;
+  }
+
   #caixa_mapa .elemento.comunidade, .elemento.tipo_comunidade {
-    font-weight: bold;
+  
+  /*  font-weight: bold;
     height:50px;
     background-image: url('/cartografia_nova/images/marcadores_cluster/point_medium/bosque-pinar.png' ); 
     background-color:#AADE9E;
-
+*/
   }
 
- div.nzAutoCompleterDialog div.elemento.tipo_comunidadeoff, #caixa_mapa .elemento.tipo_comunidadeoff { margin:10px; height:50px; background-image: url('/cartografia_nova/images/marcadores_cluster/point_big/bosque-pinar_off.png'); }
- div.nzAutoCompleterDialog div.elemento.tipo_audio, #caixa_mapa .elemento.tipo_audio { background-image: url('/cartografia_nova/images/tipoDocumento/32x32/audio.png' ); }
- div.nzAutoCompleterDialog div.elemento.tipo_foto, #caixa_mapa .elemento.tipo_foto {  background-image: url('/cartografia_nova/images/tipoDocumento/32x32//foto.png' ); }
- div.nzAutoCompleterDialog div.elemento.tipo_video, #caixa_mapa .elemento.tipo_video {  background-image: url('/cartografia_nova/images/tipoDocumento/32x32/video.png' ); }
+ div.nzAutoCompleterDialog div.elemento.tipo_audio .icona, #caixa_mapa .elemento.tipo_audio .icona { background-image: url('/cartografia_nova/images/tipoDocumento/32x32/audio_inv.png' ); }  
+ div.nzAutoCompleterDialog div.elemento.tipo_foto .icona, #caixa_mapa .elemento.tipo_foto .icona {  background-image: url('/cartografia_nova/images/tipoDocumento/32x32//foto_inv.png' ); }
+ div.nzAutoCompleterDialog div.elemento.tipo_video .icona, #caixa_mapa .elemento.tipo_video .icona {  background-image: url('/cartografia_nova/images/tipoDocumento/32x32/video_inv.png' ); }
+ div.nzAutoCompleterDialog div.elemento.tipo_texto .icona, #caixa_mapa .elemento.tipo_texto .icona {  background-image: url('/cartografia_nova/images/tipoDocumento/32x32/texto_inv.png' ); }
 
+ div.nzAutoCompleterDialog div.elemento.tipo_comunidade .icona, #caixa_mapa .elemento.tipo_comunidade .icona {  background-image: url('/cartografia_nova/images/tipoDocumento/32x32/comunidade_inv.png' ); }
 
 
   div.nzAutoCompleterDialog div.elemento:hover, #caixa_mapa .elemento.comunidade:hover { 
-    background-color: #99C78E;
+   /* background-color: #99C78E;*/
     
   }
 

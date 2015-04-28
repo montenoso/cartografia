@@ -49,11 +49,12 @@ include("conecta.php");
     <script type="text/javascript" >
     
       <?php
-        $sql = "SELECT material_id, longitud, latitud, selectedradio, titulo_registro, tag  FROM documento ORDER BY fecha_inser DESC";
+        $sql = "SELECT material_id, longitud, latitud, selectedradio, titulo_registro, tag, categoria  FROM documento ORDER BY fecha_inser DESC";
         $consulta = mysql_query($sql) or die ("No se pudo ejecutar la consulta");
         $datos = mysql_query($sql, $conexion);
         $markers= array();
         while ($resultado = mysql_fetch_assoc($datos)) {
+          $resultado["categoria"] = explode(",",$resultado["categoria"]  ) ;
           $markers[]=$resultado;
         }
         $markersJson=json_encode($markers);

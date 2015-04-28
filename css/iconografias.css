@@ -91,3 +91,22 @@
 /* Couriñas de filtros */
 .filtros-buscar {   height:32px; width:32px;  background: url('/cartografia_nova/images/search_filters_n.png') no-repeat; }
 .filtros-add {   height:32px; width:32px;  background: url('/cartografia_nova/images/add_filters.png') no-repeat; }
+
+
+
+/* Cores categoráis */
+.bgcolor-actividades {  background-color:#D93158;  }
+.bgcolor-agriucltura {  background-color:#27AD54;  }
+.bgcolor-bancoConecemento {  background-color:#AC114A;  }
+.bgcolor-comuns {  background-color:#B8E133;  }
+.bgcolor-comunidades {  background-color:#0C3E27;  }
+.bgcolor-ecoloxia {  background-color:#97DA31;  }
+.bgcolor-gandeiria {  background-color:#5631A2;  }
+.bgcolor-instalacions {  background-color:#3F0B6C;  }
+.bgcolor-lexislacion {  background-color:#A00905;  }
+.bgcolor-mancomun {  background-color:#0C3E27;  }
+.bgcolor-monteMadeirable {  background-color:#ECB536;  }
+.bgcolor-transfeminismos {  background-color:#8D259B;  }
+.bgcolor-xestion {  background-color:#EC7A36;  }
+
+.bgcolor-comunidade {  background-color:#27AB58;  }

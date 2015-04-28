@@ -6,9 +6,9 @@ function mapController() {
     var iwindow = new smart_infowindow({
       map:mapa,
       box_id: 'caixa_mapa',
-      width: 300,
+      width: 400,
       box_padding:0,
-      max_height:250,
+      max_height:240,
       marker_distance: [0,-10], // [top, bottom]
     });
 
@@ -35,15 +35,29 @@ function mapController() {
 
           $(data).each( function(i,e) {
 
+            if(e.categoria.length > 0) {
+              var categoria = e.categoria[0];
+            }
+            else {
+              var categoria = "";
+            }
 
             var evento_click = "onclick=\'mapa_establece_url( \"#recurso/" + e.material_id + "\" );\'";
 
             if( e.titulo_registro != '') {
               if( e.selectedradio == 'comunidade' ) {
-                comunidade = comunidade + "<div class='elemento comunidade' " + evento_click + "  >" + e.titulo_registro + "</div>" ;
+                comunidade = comunidade + 
+                  "<div class='elemento tipo_comunidade' " + evento_click + "  >" + 
+                    "<div class='icona bgcolor-comunidade'></div>" + 
+                    "<div class='tit'>" + e.titulo_registro + "</div>" + 
+                  "</div>";
               }
               else {
-                recursos = recursos + "<div class='elemento recurso tipo_"+e.selectedradio+"'  " +evento_click + " >" + e.titulo_registro + "</div>";
+                recursos = recursos + 
+                  "<div class='elemento recurso tipo_"+e.selectedradio+"'  " +evento_click + " >" + 
+                    "<div class='icona bgcolor-"+categoria+"'></div>" + 
+                    "<div class='tit'>" + e.titulo_registro + "</div>" + 
+                  "</div>";
               }
             }
           });
