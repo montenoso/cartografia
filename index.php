@@ -87,9 +87,9 @@ include("conecta.php");
   
           <div id="display_destacados" style="width:300px; overflow:hidden;">
    
-            <div style="position: relative; height: 856px; margin-top:5px; overflow:hidden;" class="portfolioContainer isotope">
+            <div style="position: relative; height: 856px; overflow:hidden;" class="portfolioContainer isotope">
 
-            <?php require_once('lista_recomendados.php');?>
+              <?php require_once('lista_recomendados.php');?>
               
             </div>
 
@@ -121,7 +121,7 @@ $(window).load(function(){
         containerSortBy = "random";
       }
 
-      $('.portfolioContainer').isotope({ sortBy : containerSortBy });
+        $('.portfolioContainer').isotope({ sortBy : containerSortBy });
 
     }, 9000);
 

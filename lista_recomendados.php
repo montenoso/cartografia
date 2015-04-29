@@ -1,22 +1,4 @@
- <style>
-div.titulo
-{
 
-  background-color: #ffffff;
-  opacity:0.5;
-  filter:alpha(opacity=50); /* For IE8 and earlier */
-}
-div.titulo
-{
-opacity:100%;
-  font-weight: bold;
-  color: #000000;
-  padding-left: 5px;
-  text-shadow: 5px 5px 5px #aaa;
-}
-
-
-</style>
       <?php
 
 
@@ -29,11 +11,11 @@ require_once("conecta.php");
       
               while ($resultado = mysql_fetch_assoc($datos)) {
                 ?>
-                  <div onclick="mapControl.mapa_selecciona_elemento(<?php echo $resultado['material_id']; ?>);" style="position: absolute; left: 0px; top: 30x; transform: translate(0px, 0px) scale(1); opacity: 1;" class="isotope-item">
+                  <div onclick="mapControl.mapa_selecciona_elemento(<?php echo $resultado['material_id']; ?>);" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px) scale(1); opacity: 1;" class="isotope-item">
               <?php
                 if( $resultado["selectedradio"] == "foto" ) {
                   echo '<img src="/cartografia_nova/uploads/200_'.$resultado['nombre_archivo'].'" alt="'.$resultado['titulo_registro'].'">';
-                  echo '<div class="titulo" style="margin-top:-5px;">'.$resultado['titulo_registro'].'</div>';
+                  echo '<div class="titulo" style="margin-top:-10px;">'.$resultado['titulo_registro'].'</div>';
                 }
                 else
                 if( $resultado["selectedradio"] == "video" ) {
@@ -42,7 +24,7 @@ require_once("conecta.php");
                     $imaxe_video = "http://img.youtube.com/vi/".$result[3]."/mqdefault.jpg";
 
                     echo '<img width="200" height="113" src="'.$imaxe_video.'" alt="'.$resultado['titulo_registro'].'">';
-                    echo '<div class="titulo" style="margin-top:-5px;">'.$resultado['titulo_registro'].'</div>';
+                    echo '<div class="titulo" style="margin-top:-10px;">'.$resultado['titulo_registro'].'</div>';
                   }
 
                 }

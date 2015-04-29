@@ -1,10 +1,4 @@
-body {
-    font-family: Arial;
-    font-size: 12px;
-    margin-top: 0px;
-    margin: 0px;
-    margin-left: 10px;
-}
+
 
 .portfolioFilter a { 
     margin-right: 0px; 
@@ -17,13 +11,10 @@ body {
     font-weight:bold;
     font-size: 12px;
     margin: 0px;
-    margin-top: 5px;
  
 }
 .portfolioContainer {
 color: #ffffff;
-padding-top: 10px;
-padding-bottom: 10px;
 text-shadow: 2px 2px 3px #1c591c, -2px -2px 3px #1c591c;
 background-color: #50af62;
 position: relative; 

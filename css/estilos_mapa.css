@@ -93,7 +93,7 @@ div.nzAutoCompleterDialog div.row .elemento,
   div.nzAutoCompleterDialog div.row .elemento .icona, 
   #caixa_mapa .elemento .icona { 
     width:43px;
-    height:41px;
+    height:43px;
     float:left;
     border-radius: 50%;
     background-repeat: no-repeat;
@@ -102,7 +102,6 @@ div.nzAutoCompleterDialog div.row .elemento,
   div.nzAutoCompleterDialog div.row .elemento .tit, 
   #caixa_mapa .elemento .tit { 
     margin-left:10px;
-    margin-top:4px;
     float:left;
     width:300px;
     overflow:hidden;
@@ -117,6 +116,7 @@ div.nzAutoCompleterDialog div.row .elemento,
     background-image: url('/cartografia_nova/images/marcadores_cluster/point_medium/bosque-pinar.png' ); 
     background-color:#AADE9E;
 */
+    background-color:#F5FD5C;
   }
 
  div.nzAutoCompleterDialog div.elemento.tipo_audio .icona, #caixa_mapa .elemento.tipo_audio .icona { background-image: url('/cartografia_nova/images/tipoDocumento/32x32/audio_inv.png' ); }  
@@ -217,3 +217,20 @@ div.nzAutoCompleterDialog div.row .elemento,
     }
   /* FINAL BOTÓNS CATEGORÍAS */
 
+
+.portfolioContainer div {cursor:pointer;}
+.portfolioContainer div.titulo
+{
+
+  background-color: #ffffff;
+  opacity:0.5;
+  filter:alpha(opacity=50); /* For IE8 and earlier */
+}
+.portfolioContainer div.titulo
+{
+opacity:100%;
+  font-weight: bold;
+  color: #000000;
+  padding-left: 5px;
+  text-shadow: 5px 5px 5px #aaa;
+}
