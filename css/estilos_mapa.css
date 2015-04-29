@@ -94,6 +94,7 @@ div.nzAutoCompleterDialog div.row .elemento,
   #caixa_mapa .elemento .icona { 
     width:43px;
     height:43px;
+
     float:left;
     border-radius: 50%;
     background-repeat: no-repeat;
@@ -116,6 +117,7 @@ div.nzAutoCompleterDialog div.row .elemento,
     background-image: url('/cartografia_nova/images/marcadores_cluster/point_medium/bosque-pinar.png' ); 
     background-color:#AADE9E;
 */
+
     background-color:#F5FD5C;
   }
 
@@ -157,7 +159,7 @@ div.nzAutoCompleterDialog div.row .elemento,
 
   /* BOTÓNS CATEGORÍAS */
   #display_mapa_filters {
-    background-color:#1c591c;
+    background-color:#02722C;
     position:relative;
     float:left;
   }
