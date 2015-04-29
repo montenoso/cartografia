@@ -15,9 +15,8 @@ html, body {
  
 </head>
 <body>
-  <div class="transbox2">
-    <h1 class="cover-heading" style="text-align:center; padding:20px;"><?php echo $titulo;?></h1>
-  </div>
+  <a class="btn btn-lg btn-info" style="margin:5px; margin-left:-440px;" onclick="parent.mapControl.mapa_desselecciona();">X</a>
+    <h2 class="cover-heading" style="text-align:center; padding:20px;"><?php echo $titulo;?></h2>
   <div class="site-wrapper" >      
     <div class="site-wrapper-inner">
     

@@ -152,7 +152,7 @@ div.transbox
 {
   margin-top: 35%;
   text-shadow: -5px -5px 5px #aaa;
-  margin-left: -55px;
+  margin-left: -17%;
   margin-right: 0px;
   background-color: #ffffff;
   opacity:0.6;
@@ -166,6 +166,9 @@ div.transbox p
   color: #000000;
 }
 
+p.iconos{
+  margin:0px;
+}
 /*
  * Footer
  */
