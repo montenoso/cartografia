@@ -13,9 +13,9 @@ function mapController() {
     });
 
     return new marker_clusterer(
-      { icon_path: icons_path, anchor: [30,53] }, // pequenos
-      { icon_path: icons_path, anchor: [30,53] },// medianos
-      { icon_path: icons_path, anchor:[30,53] }, // ghrandes
+      { icon_path: icons_path, anchor: [16,52] }, // pequenos
+      { icon_path: icons_path, anchor: [16,52] },// medianos
+      { icon_path: icons_path, anchor:[16,52] }, // ghrandes
       { }, // disabled
       { }, // selected
 
@@ -35,12 +35,16 @@ function mapController() {
 
           $(data).each( function(i,e) {
 
-            if(e.categoria.length > 0) {
-              var categoria = e.categoria[0];
-            }
-            else {
-              var categoria = "";
-            }
+
+          var categorias = [];
+
+          $.each(e.categoria, function(i2,e2){
+             categorias += '<div class="cat bgcolor-'+e2+'"><IMG SRC="/cartografia_nova/images/categorias/16x16/'+e2+'_inv.png"></div>';
+
+             ;
+          });
+
+
 
             var evento_click = "onclick=\'mapa_establece_url( \"#recurso/" + e.material_id + "\" );\'";
 
@@ -55,8 +59,9 @@ function mapController() {
               else {
                 recursos = recursos + 
                   "<div class='elemento recurso tipo_"+e.selectedradio+"'  " +evento_click + " >" + 
-                    "<div class='icona bgcolor-"+categoria+"'></div>" + 
+                    "<div class='icona bgcolor-documento'></div>" + 
                     "<div class='tit'>" + e.titulo_registro + "</div>" + 
+                    "<div class='categoria'>" + categorias + "</div>" + 
                   "</div>";
               }
             }

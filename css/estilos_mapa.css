@@ -60,7 +60,8 @@ background-color: #e1ea35;
   text-align: center;
   font-size: 14;
 */
-  margin-top:3px;
+  margin-top:6px;
+  margin-bottom:-6px;
 
 }
 
@@ -109,6 +110,28 @@ div.nzAutoCompleterDialog div.row .elemento,
     white-space:nowrap;
     text-overflow: ellipsis;
   }
+
+  div.nzAutoCompleterDialog div.row .elemento .categoria, 
+  #caixa_mapa .elemento .categoria { 
+    margin-left:10px;
+    float:left;
+    width:300px;
+    overflow:hidden;
+    height:20px;
+    margin-top:-3px;
+  }
+
+    div.nzAutoCompleterDialog div.row .elemento .categoria .cat, 
+    #caixa_mapa .elemento .categoria .cat { 
+      width:20px;
+      height:20px;
+      margin-right:4px;
+      float:left;
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      background-position: top center;
+      text-align:center;
+    }
 
   #caixa_mapa .elemento.comunidade, .elemento.tipo_comunidade {
   
