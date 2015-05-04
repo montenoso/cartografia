@@ -25,6 +25,7 @@ function mapController() {
         data_structure: {id: 'material_id', lat: 'latitud', lng: 'longitud'},
         zoom_range : [9,25],
         zIndex: 1 ,
+        marker_big_elements: 3,
         cluster_radious: 40,
         //show_disabled_points: false, 
         //nocluster_zoom_range: [13,25],
@@ -158,7 +159,7 @@ function mapController() {
           id,
           {
             url: icons_path + "point_selected.png",
-            anchor: new google.maps.Point(19,42)
+            anchor: new google.maps.Point(16,52)
           }
         );
       }

@@ -91,7 +91,7 @@ div.nzAutoCompleterDialog div.row .elemento,
 }
 
 
-  div.nzAutoCompleterDialog div.row .elemento .icona, 
+  div.nzAutoCompleterDialog div.row  .icona, 
   #caixa_mapa .elemento .icona { 
     width:43px;
     height:43px;
@@ -101,7 +101,7 @@ div.nzAutoCompleterDialog div.row .elemento,
     background-repeat: no-repeat;
     background-position: center center;
   }
-  div.nzAutoCompleterDialog div.row .elemento .tit, 
+  div.nzAutoCompleterDialog div.row  .tit, 
   #caixa_mapa .elemento .tit { 
     margin-left:10px;
     float:left;
@@ -111,7 +111,7 @@ div.nzAutoCompleterDialog div.row .elemento,
     text-overflow: ellipsis;
   }
 
-  div.nzAutoCompleterDialog div.row .elemento .categoria, 
+  div.nzAutoCompleterDialog div.row  .categoria, 
   #caixa_mapa .elemento .categoria { 
     margin-left:10px;
     float:left;
@@ -121,7 +121,7 @@ div.nzAutoCompleterDialog div.row .elemento,
     margin-top:-3px;
   }
 
-    div.nzAutoCompleterDialog div.row .elemento .categoria .cat, 
+    div.nzAutoCompleterDialog div.row  .categoria .cat, 
     #caixa_mapa .elemento .categoria .cat { 
       width:20px;
       height:20px;
