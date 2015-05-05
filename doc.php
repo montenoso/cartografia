@@ -66,12 +66,17 @@
     <link href="/cartografia_nova/js/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <style> 
       .help-block {visibility:hidden;height:0;width:0;padding:0;margin:0;} 
+      #form{
+
+        background-image: url("http://montenoso.net/web_nova/wp-content/uploads/2014/10/repper_pattern4.png"); !important;
+        background-repeat: repeat-y ; !important;
+      }
 
     </style>
   </head>
   <body>
-
-    <form action="docsubmit.php" method="POST" enctype="multipart/form-data">
+  <div id="form">
+    <form action="docsubmit.php" method="POST" enctype="multipart/form-data" >
 
 
 
@@ -201,7 +206,7 @@
           </div>
         </div>
     </form>
-
+   
 
     <script src="/cartografia_nova/js/vendor/jquery.min.js"></script>
     <script src="/cartografia_nova/js/vendor/bootstrap/js/bootstrap.min.js"></script>
@@ -256,5 +261,6 @@
 
 
     </script>
+    </div>
   </body>
 </html>
