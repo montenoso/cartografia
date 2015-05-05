@@ -16,7 +16,7 @@
 .portfolioContainer {
 color: #ffffff;
 text-shadow: 2px 2px 3px #1c591c, -2px -2px 3px #1c591c;
-background-color: #50af62;
+background-color: #fff !important;
 position: relative; 
 margin-left:50px; 
 font-size: 13px;

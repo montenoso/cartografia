@@ -134,15 +134,14 @@ div.nzAutoCompleterDialog div.row .elemento,
     }
 
   #caixa_mapa .elemento.comunidade, .elemento.tipo_comunidade {
-  
-  /*  font-weight: bold;
-    height:50px;
-    background-image: url('/cartografia_nova/images/marcadores_cluster/point_medium/bosque-pinar.png' ); 
-    background-color:#AADE9E;
-*/
 
     background-color:#F5FD5C;
   }
+    #caixa_mapa .elemento.comunidade .tit, .elemento.tipo_comunidade .tit { 
+      margin-top:7px;
+      font-size:20px;
+    }
+
 
  div.nzAutoCompleterDialog div.elemento.tipo_audio .icona, #caixa_mapa .elemento.tipo_audio .icona { background-image: url('/cartografia_nova/images/tipoDocumento/32x32/audio_inv.png' ); }  
  div.nzAutoCompleterDialog div.elemento.tipo_foto .icona, #caixa_mapa .elemento.tipo_foto .icona {  background-image: url('/cartografia_nova/images/tipoDocumento/32x32//foto_inv.png' ); }
@@ -182,7 +181,8 @@ div.nzAutoCompleterDialog div.row .elemento,
 
   /* BOTÓNS CATEGORÍAS */
   #display_mapa_filters {
-    background-color:#02722C;
+   /* background-color:#02722C;*/
+    background-color:#303128;
     position:relative;
     float:left;
   }
@@ -267,7 +267,8 @@ div.nzAutoCompleterDialog div.row .elemento,
 
 .portfolioContainer div.titulo
 {
-  opacity: 0.2;
+  padding-top:7px;
+  opacity: 0.5;
   font-weight: bold;
   bottom:0;
   position:absolute;
