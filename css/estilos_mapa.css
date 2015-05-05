@@ -244,18 +244,36 @@ div.nzAutoCompleterDialog div.row .elemento,
 
 
 .portfolioContainer div {cursor:pointer;}
-.portfolioContainer div.titulo
-{
+.portfolioContainer div:hover * {
 
-  background-color: #ffffff;
-  opacity:0.5;
-  filter:alpha(opacity=50); /* For IE8 and earlier */
+  color:#fff !important;
+
+  background-color: rgba(0, 0, 0, 0.5);
+    opacity: 1 !important;
+} 
+
+
+.portfolioContainer div .tipo {
+  position:absolute; 
+  top:10px;
+  right:7px;
+  width:22px;
+  height:22px;
+  background-color:#303128 !important;
+  background-position: center center;
+  border-radius: 50%;
 }
+
+
 .portfolioContainer div.titulo
 {
-opacity:100%;
+  opacity: 0.2;
   font-weight: bold;
-  color: #000000;
-  padding-left: 5px;
-  text-shadow: 5px 5px 5px #aaa;
+  bottom:0;
+  position:absolute;
+  width:100%;
+  line-height: 14px;
+  padding:3px;
+  text-shadow:none;
 }
+

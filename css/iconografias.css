@@ -57,6 +57,12 @@
 .documento-texto-16 {  height:16px; width:16px;  background: url('/cartografia_nova/images/tipoDocumento/16x16/texto.png') no-repeat; }
 .documento-video-16 {  height:16px; width:16px;  background: url('/cartografia_nova/images/tipoDocumento/16x16/video.png') no-repeat; }
 
+.documento-audio-16.inv {  height:16px; width:16px;  background: url('/cartografia_nova/images/tipoDocumento/16x16/audio_inv.png') no-repeat; }
+.documento-foto-16.inv {  height:16px; width:16px;  background: url('/cartografia_nova/images/tipoDocumento/16x16/foto_inv.png') no-repeat; }
+.documento-texto-16.inv {  height:16px; width:16px;  background: url('/cartografia_nova/images/tipoDocumento/16x16/texto_inv.png') no-repeat; }
+.documento-video-16.inv {  height:16px; width:16px;  background: url('/cartografia_nova/images/tipoDocumento/16x16/video_inv.png') no-repeat; }
+
+
 /* doocumentos 32x32*/ 
 .documento-audio-32 {  height:32px; width:32px;  background: url('/cartografia_nova/images/tipoDocumento/32x32/audio.png') no-repeat; }
 .documento-foto-32 {  height:32px; width:32px;  background: url('/cartografia_nova/images/tipoDocumento/32x32/foto.png') no-repeat; }
