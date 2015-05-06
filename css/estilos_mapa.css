@@ -19,7 +19,6 @@ div.container  {
 
 #espacio_mapa {
 /*  padding-top:12px;*/
-background-color: #e1ea35;
 
 }
 
@@ -65,9 +64,11 @@ background-color: #e1ea35;
 
 }
 
-div.nzAutoCompleterDialog div.row .elemento, 
-#caixa_mapa .elemento {
+div.nzAutoCompleterDialog {right:300px;}
 
+div.nzAutoCompleterDialog div.row, 
+#caixa_mapa .elemento {
+  z-index:1000;
   height:40px !important;
   padding-bottom:10px;
   padding-top:10px;
@@ -86,7 +87,8 @@ div.nzAutoCompleterDialog div.row .elemento,
   cursor:pointer;
 }
 
-#caixa_mapa .elemento:hover { 
+#caixa_mapa .elemento:hover,
+div.nzAutoCompleterDialog div.row:hover { 
   background-color:#6CCE91;
 }
 
@@ -95,7 +97,6 @@ div.nzAutoCompleterDialog div.row .elemento,
   #caixa_mapa .elemento .icona { 
     width:43px;
     height:43px;
-
     float:left;
     border-radius: 50%;
     background-repeat: no-repeat;
@@ -121,7 +122,6 @@ div.nzAutoCompleterDialog div.row .elemento,
     margin-top:-3px;
   }
 
-    div.nzAutoCompleterDialog div.row  .categoria .cat, 
     #caixa_mapa .elemento .categoria .cat { 
       width:20px;
       height:20px;
@@ -134,21 +134,23 @@ div.nzAutoCompleterDialog div.row .elemento,
     }
 
   #caixa_mapa .elemento.comunidade, .elemento.tipo_comunidade {
-
     background-color:#F5FD5C;
   }
-    #caixa_mapa .elemento.comunidade .tit, .elemento.tipo_comunidade .tit { 
+    #caixa_mapa .elemento.comunidade .tit { 
       margin-top:7px;
       font-size:20px;
     }
+    div.nzAutoCompleterDialog div.row  .tit {
+      margin-top:7px;
+      font-size:15px;
+    }
 
+ div.nzAutoCompleterDialog .tipo_audio .icona, #caixa_mapa .elemento.tipo_audio .icona { background-image: url('/cartografia_nova/images/tipoDocumento/32x32/audio_inv.png' ); }  
+ div.nzAutoCompleterDialog .tipo_foto .icona, #caixa_mapa .elemento.tipo_foto .icona {  background-image: url('/cartografia_nova/images/tipoDocumento/32x32//foto_inv.png' ); }
+ div.nzAutoCompleterDialog .tipo_video .icona, #caixa_mapa .elemento.tipo_video .icona {  background-image: url('/cartografia_nova/images/tipoDocumento/32x32/video_inv.png' ); }
+ div.nzAutoCompleterDialog .tipo_texto .icona, #caixa_mapa .elemento.tipo_texto .icona {  background-image: url('/cartografia_nova/images/tipoDocumento/32x32/texto_inv.png' ); }
 
- div.nzAutoCompleterDialog div.elemento.tipo_audio .icona, #caixa_mapa .elemento.tipo_audio .icona { background-image: url('/cartografia_nova/images/tipoDocumento/32x32/audio_inv.png' ); }  
- div.nzAutoCompleterDialog div.elemento.tipo_foto .icona, #caixa_mapa .elemento.tipo_foto .icona {  background-image: url('/cartografia_nova/images/tipoDocumento/32x32//foto_inv.png' ); }
- div.nzAutoCompleterDialog div.elemento.tipo_video .icona, #caixa_mapa .elemento.tipo_video .icona {  background-image: url('/cartografia_nova/images/tipoDocumento/32x32/video_inv.png' ); }
- div.nzAutoCompleterDialog div.elemento.tipo_texto .icona, #caixa_mapa .elemento.tipo_texto .icona {  background-image: url('/cartografia_nova/images/tipoDocumento/32x32/texto_inv.png' ); }
-
- div.nzAutoCompleterDialog div.elemento.tipo_comunidade .icona, #caixa_mapa .elemento.tipo_comunidade .icona {  background-image: url('/cartografia_nova/images/tipoDocumento/32x32/comunidade_inv.png' ); }
+ div.nzAutoCompleterDialog .tipo_comunidade .icona,div.nzAutoCompleterDialog .tipo_comunidadeoff .icona, #caixa_mapa .elemento.tipo_comunidade .icona {  background-image: url('/cartografia_nova/images/tipoDocumento/32x32/comunidade_inv.png' ); }
 
 
   div.nzAutoCompleterDialog div.elemento:hover, #caixa_mapa .elemento.comunidade:hover { 
@@ -170,7 +172,7 @@ div.nzAutoCompleterDialog div.row .elemento,
     width:200px;
     color:#888;
     position:absolute;  
-    border:6px solid #e1ea35;
+    border:6px solid #303128;
     border:right;
     top:2px;
     right:48px;

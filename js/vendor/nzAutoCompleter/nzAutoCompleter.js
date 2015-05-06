@@ -24,7 +24,7 @@ function nzAutoCompleter( opts ) {
     var searchH = $( '#' + that.options.divId ).height();
     $('#'+that.options.dialogId).css('position', 'absolute');
     $('#'+that.options.dialogId).css('top', searchPos.top + searchH );
-    $('#'+that.options.dialogId).css('left', searchPos.left );
+    $('#'+that.options.dialogId).css('left', searchPos.left-100 );
 
   }
 
@@ -48,7 +48,7 @@ function nzAutoCompleter( opts ) {
           that.options.actionSelect(that.options.data[ $(e.target).attr('rowId') ]);
         }
         else {
-          that.options.actionSelect(that.options.data[ $(e.target).parent().attr('rowId') ]);
+          that.options.actionSelect(that.options.data[ $(e.target).parent().parent().attr('rowId') ]);
         }
       });
     
@@ -121,7 +121,7 @@ function nzAutoCompleter( opts ) {
 
     var res = that.searchCoincidences( $(that.options.divId).val() );
 
-    if( res.length > 0 && $( '#' + that.options.divId ).val() != '' ) {
+    if( res.length > 4 && $( '#' + that.options.divId ).val() != '' ) {
       that.openDialog( res );
     }
     else {

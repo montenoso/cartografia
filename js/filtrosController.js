@@ -123,7 +123,7 @@ function filtrosController() {
         data: r,
         searchIds: ['titulo_registro', 'selectedradio'],
         //visiblePattern: ' "<img src=\'/images/marcadores_cluster/" + row.selectedradio + "_point_small.png\'>" +row.titulo_registro',
-        visiblePattern: ' "<div class=\'elemento recurso tipo_" + row.selectedradio + "\'>"+ row.titulo_registro+"</div>" ',
+        visiblePattern:  '"<div class=\'elemento recurso tipo_"+row.selectedradio+"\' >" + "<div class=\'icona bgcolor-"+row.selectedradio+"\'></div>" + "<div class=\'tit\'>" + row.titulo_registro + "</div>" + "<div class=\'categoria\'></div>" + "</div>"',
         actionSelect: function( row ) { 
 
           if(row.id == false) {
@@ -139,3 +139,5 @@ function filtrosController() {
   }
   //console.log(recursos)
 }
+
+
