@@ -246,7 +246,7 @@ div.nzAutoCompleterDialog div.row:hover {
 
 
 .portfolioContainer div {cursor:pointer;}
-.portfolioContainer div:hover * {
+.portfolioContainer div:hover .titulo{
 
   color:#fff !important;
 
@@ -280,3 +280,24 @@ div.nzAutoCompleterDialog div.row:hover {
   text-shadow:none;
 }
 
+
+
+.portfolioContainer .categorias {
+  position:absolute;
+  top:10px;
+  left:7px;
+  width:100px;
+  height:20px;
+}
+
+
+    .portfolioContainer .categorias  .cat { 
+      width:20px;
+      height:20px;
+      margin-right:4px;
+      float:left;
+      border-radius: 50%;
+      background-repeat: no-repeat;
+      background-position: top center;
+      text-align:center;
+    }
