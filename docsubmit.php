@@ -3,7 +3,7 @@
   require( 'wp-load.php' );
 
   if ( !is_user_logged_in() ) {
-    header("Location: ../web_nova/carto-login.php");
+    header("Location: carto-login.php");
     exit;
     //require_once("conf.php");
   }
@@ -269,7 +269,7 @@ else {
     <body>
       <?php echo "Redirixindo ..."; ?>
       <script>
-        parent.window.location = 'http://montenoso.net/web_nova/?page_id=66';
+        parent.window.location = 'http://montenoso.net/cartografias';
       </script>
 
     </body>

@@ -3,7 +3,7 @@
   require( 'wp-load.php' );
 
   if ( !is_user_logged_in() ) {
-    header("Location: ../web_nova/carto-login.php");
+    header("Location: carto-login.php");
     exit;
     //require_once("conf.php");
   }
@@ -68,7 +68,7 @@
       .help-block {visibility:hidden;height:0;width:0;padding:0;margin:0;} 
       #form{
 
-        background-image: url("http://montenoso.net/web_nova/wp-content/uploads/2014/10/repper_pattern4.png"); !important;
+        background-image: url("http://montenoso.net/wp-content/uploads/2014/10/repper_pattern4.png"); !important;
         background-repeat: repeat-y ; !important;
       }
 
@@ -196,7 +196,7 @@
         <div class="form-group pull-right" >
           <div class="col-xs-4  ">
             <div class="input-group">
-              <button  onclick="parent.window.location='http://montenoso.net/web_nova/?page_id=66'" class="btn btn-danger">Cancelar</button>
+              <button  onclick="parent.window.location='http://montenoso.net/cartografias'" class="btn btn-danger">Cancelar</button>
             </div>
           </div>
           <div class="col-xs-1">
