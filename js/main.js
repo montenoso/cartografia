@@ -18,7 +18,7 @@ $(document).ready(
     
 
 
-    var url = 'http://montenoso2.cartodb.com/api/v2/viz/9ad57d16-0552-11e4-8ccb-0e10bcd91c2b/viz.json';
+    //var url = 'http://montenoso2.cartodb.com/api/v2/viz/9ad57d16-0552-11e4-8ccb-0e10bcd91c2b/viz.json';
 
     icons_path = '/cartografia_nova/images/marcadores_cluster/';
     cl = false;
@@ -36,12 +36,89 @@ $(document).ready(
     mapa = new google.maps.Map(document.getElementById('map'), mapOptions);
 
 
+/*
+
+    var customParams = [
+      "LAYERS=Montenoso:mvmc10"
+    ];
+
+loadWMS(mapa, "http://213.60.67.111:8080/geoserver/Montenoso/wms", customParams);
+*/
+
+  var indianaCountiesOptions = {
+
+      getTileUrl: function(coord, zoom) {
+
+//         var pr = mapa.getProjection();
+//var b1 = pr.fromPointToLatLng(coord);
+//var b2 = pr.fromPointToLatLng( {x:coord.x+256, y:coord.y+256} ); 
+
+        var s = Math.pow(2, zoom); 
+        var twidth = 256;
+        var theight = 256;
+ 
+        //latlng bounds of the 4 corners of the google tile
+        //Note the coord passed in represents the top left hand (NW) corner of the tile.
+        var gBl = mapa.getProjection().fromPointToLatLng(
+          new google.maps.Point(coord.x * twidth / s, (coord.y + 1) * theight / s)); // bottom left / SW
+        var gTr = mapa.getProjection().fromPointToLatLng(
+          new google.maps.Point((coord.x + 1) * twidth / s, coord.y * theight / s)); // top right / NE
+ 
+        // Bounding box coords for tile in WMS pre-1.3 format (x,y)
+        var bbox = gBl.lng() + "," + gBl.lat() + "," + gTr.lng() + "," + gTr.lat();
+ 
+        var url = "http://213.60.67.111:8080/geoserver/Montenoso/wms?";
+
+        url += "service=WMS";           //WMS service
+        url += "&version=1.1.0";         //WMS version
+        url += "&request=GetMap";        //WMS operation
+        url += "&layers=Montenoso:mvmc10"; //WMS layers to draw
+        url += "&styles=";               //use default style
+        url += "&format=image/png";      //image format
+        url += "&TRANSPARENT=TRUE";      //only draw areas where we have data
+        url += "&srs=EPSG:4326";         //projection WGS84
+        url += "&bbox=" + bbox;          //set bounding box for tile
+        url += "&width=256";             //tile size used by google
+        url += "&height=256";
+        //url += "&tiled=true";
+
+
+
+        //console.log(mapa.getBounds().getNorthEast().lat(),mapa.getBounds().getNorthEast().lng(), mapa.getBounds().getSouthWest().lat(),mapa.getBounds().getSouthWest().lng() );
+        //return "http://213.60.67.111:8080/geoserver/Montenoso/wms?LAYERS=Montenoso:mvmc10&STYLES=&transparent=true&FORMAT=image/png&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&SRS=EPSG:23029&BBOX=521131.00584847,4704432.6312255,622788.37010629,4813549.1312255&WIDTH=477&HEIGHT=512";
+console.log(url);
+        return url;
+
+      },
+
+      tileSize: new google.maps.Size(256, 256),
+      isPng: true,
+      opacity: 1
+
+    };
+
+ 
+   var customMapType = new google.maps.ImageMapType(indianaCountiesOptions);
+   mapa.overlayMapTypes.insertAt(0, customMapType);
+
+
+    //loadWMS(mapa, "http://spatial.ala.org.au/geoserver/wms?", customParams);
+/*
+        var customParams = [
+      "FORMAT=image/jpeg",
+      "LAYERS=Montenoso:mvmc10"
+    ];
+
+
+    loadWMS(mapa, "http://213.60.67.111:8080/geoserver/Montenoso/wms", customParams);
+
+    */
     // layer simple desde vista
-    cartodb.createLayer(mapa, 'http://montenoso2.cartodb.com/api/v2/viz/d5f2c756-182a-11e4-9427-0e73339ffa50/viz.json', { legends: false })
+    /*cartodb.createLayer(mapa, 'http://montenoso2.cartodb.com/api/v2/viz/d5f2c756-182a-11e4-9427-0e73339ffa50/viz.json', { legends: false })
     .addTo(mapa)
     .on('done', function(layer) {
       //console.log(layer);
-    });
+    });*/
 
 
     // mvmc centroids (puntos de comunidades que non están en montenoso)
