@@ -113,25 +113,25 @@ function filtrosController() {
 //console.log(recursos);
 
 //r = $.merge(recursos, recursos_mvmc);
-  var r = $.merge([], recursos);
-  r = $.merge( r, recursos_mvmc );
+  //var r = $.merge([], recursos);
+  r = $.merge( [], recursos_mvmc );
 
-//console.log(r)
+  //console.log(r);
+
     that.buscador = new nzAutoCompleter ({
         divId: 'buscaRecursos',
         dialogId: 'buscaRecursosDialog',
         data: r,
-        searchIds: ['titulo_registro', 'selectedradio'],
+        searchIds: ['nome', 'pertence', 'concello', 'distrito'],
         //visiblePattern: ' "<img src=\'/images/marcadores_cluster/" + row.selectedradio + "_point_small.png\'>" +row.titulo_registro',
-        visiblePattern:  '"<div class=\'elemento recurso tipo_"+row.selectedradio+"\' >" + "<div class=\'icona bgcolor-"+row.selectedradio+"\'></div>" + "<div class=\'tit\'>" + row.titulo_registro + "</div>" + "<div class=\'categoria\'></div>" + "</div>"',
+        visiblePattern:  '"<div class=\'elemento recurso tipo_"+row.selectedradio+"\' >" + "<div class=\'icona bgcolor-"+row.selectedradio+"\'></div>" + "<div class=\'tit\'>" + row.nome + "</div>" + "<div class=\'categoria\'>Concello:"+row.concello+" ("+row.distrito+")</div>" + "</div>"',
         actionSelect: function( row ) { 
 
-          if(row.id == false) {
+          if( row.id ) {
             mapControl.notRegMvmc( row )
+            console.log(row);
           }
-          else {
-            mapa_establece_url('#recurso/'+row.material_id)
-          }
+
           $('#buscaRecursos').val('');
           $('#buscaRecursos').hide();
         }

@@ -177,12 +177,14 @@ function mapController() {
     $.each(lista_mvmc, function(i,e){
       obxectos_mvmc.push( 
         { 
-          id: false,
-          titulo_registro: e[0], 
-          latitud: e[1],
-          longitud: e[2],
-          selectedradio: 'comunidadeoff',
-          superficie:e[3]
+          id: e[0],
+          nome: e[1], 
+          pertence: e[2],
+          concello: e[3],
+          distrito: e[4],
+          lat: e[6],
+          lon: e[5],
+          selectedradio: 'comunidadeoff'
         }
       );
     });
@@ -206,13 +208,14 @@ function mapController() {
   }
 
   that.notRegMvmc = function(row){
-    var pos = {lat: parseFloat(row.latitud), lng: parseFloat(row.longitud) } ;
+
+    var pos = {lat: parseFloat(row.lat), lng: parseFloat(row.lon) } ;
     mapa.setCenter( pos )
     mapa.setZoom(14);
 
 
     var iw = new google.maps.InfoWindow({
-          content: '<h3>'+row.titulo_registro+'</h3><div>Superficie:'+row.superficie+' hectareas</div>'
+          content: '<h3>'+row.nome+'</h3></div>'
       });
 
 
