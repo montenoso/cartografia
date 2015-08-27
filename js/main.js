@@ -36,6 +36,11 @@ $(document).ready(
     mapa = new google.maps.Map(document.getElementById('map'), mapOptions);
 
 
+    // recomendados
+    google.maps.event.addListener(mapa,'idle',function(){
+      actualiza_recomendados();
+    });
+
 /*
 
     var customParams = [
@@ -86,7 +91,7 @@ loadWMS(mapa, "http://213.60.67.111:8080/geoserver/Montenoso/wms", customParams)
 
         //console.log(mapa.getBounds().getNorthEast().lat(),mapa.getBounds().getNorthEast().lng(), mapa.getBounds().getSouthWest().lat(),mapa.getBounds().getSouthWest().lng() );
         //return "http://213.60.67.111:8080/geoserver/Montenoso/wms?LAYERS=Montenoso:mvmc10&STYLES=&transparent=true&FORMAT=image/png&SERVICE=WMS&VERSION=1.1.1&REQUEST=GetMap&SRS=EPSG:23029&BBOX=521131.00584847,4704432.6312255,622788.37010629,4813549.1312255&WIDTH=477&HEIGHT=512";
-console.log(url);
+//console.log(url);
         return url;
 
       },
@@ -209,4 +214,26 @@ mapa_establece_url = function(uri) {
     formControl.showForm();
     window.location = host_cartografia;  
   }
+}
+
+
+function actualiza_recomendados() {
+
+
+  $.ajax({
+    type: "POST",
+    url: "/cartografia_nova/lista_recomendados.php",
+    data: {
+      sw_lng: mapa.getBounds().getSouthWest().lng(),
+      sw_lat: mapa.getBounds().getSouthWest().lat(),
+      ne_lng: mapa.getBounds().getNorthEast().lng(),
+      ne_lat: mapa.getBounds().getNorthEast().lat()
+
+    },
+    success: function(result) {
+      $("#display_destacados_contido").html(result);
+
+    }
+  });
+
 }

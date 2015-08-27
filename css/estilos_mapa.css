@@ -254,6 +254,16 @@ div.nzAutoCompleterDialog div.row:hover {
     opacity: 1 !important;
 } 
 
+.portfolioContainer div.item {
+
+
+  position:relative; opacity: 1;
+  height:110px;
+}
+
+.portfolioContainer div.item:hover {
+
+}
 
 .portfolioContainer div .tipo {
   position:absolute; 
@@ -270,7 +280,7 @@ div.nzAutoCompleterDialog div.row:hover {
 .portfolioContainer div.titulo
 {
   padding-top:7px;
-  opacity: 0.5;
+  opacity: 0.7;
   font-weight: bold;
   bottom:0;
   position:absolute;
@@ -278,6 +288,7 @@ div.nzAutoCompleterDialog div.row:hover {
   line-height: 14px;
   padding:3px;
   text-shadow:none;
+  font-size:12px;
 }
 
 

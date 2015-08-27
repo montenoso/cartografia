@@ -2,9 +2,31 @@
       <?php
 
 
-require_once("conecta.php");
+  $ne_lng = $_POST["ne_lng"];
+  $ne_lat = $_POST["ne_lat"];
+  $sw_lng = $_POST["sw_lng"];
+  $sw_lat = $_POST["sw_lat"];
 
-              $sql = "SELECT material_id, selectedradio, titulo_registro, nombre_archivo, url ,categoria FROM documento where  true AND selectedradio!='texto' AND selectedradio!='audio' ORDER BY  RAND() LIMIT 28";
+
+  if(! is_numeric($ne_lng) || ! is_numeric($ne_lat) || ! is_numeric($sw_lng) || ! is_numeric($sw_lat)  ){
+    die("NOT LOADED");
+  }
+
+
+
+  require_once("conecta.php");
+
+              $sql = "SELECT material_id, selectedradio, titulo_registro, nombre_archivo, url ,categoria FROM documento 
+                where  
+                  latitud  > $sw_lat AND
+                  longitud > $sw_lng AND
+                  latitud < $ne_lat AND
+                  longitud < $ne_lng AND
+                  selectedradio!='texto' AND 
+                  selectedradio!='audio' 
+                ORDER BY  RAND() LIMIT 28";
+ 
+
               $consulta = mysql_query($sql) or die ("No se pudo ejecutar la consulta");
               $datos = mysql_query($sql, $conexion);
               $markers= array();
@@ -13,7 +35,7 @@ require_once("conecta.php");
                 ?>
               <?php
                 if( $resultado["selectedradio"] == "foto" ) {
-                  echo '<div onclick="mapControl.mapa_selecciona_elemento('. $resultado['material_id'].');" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px) scale(1); opacity: 1;height:110px;" class="isotope-item">';
+                  echo '<div onclick="mapControl.mapa_selecciona_elemento('. $resultado['material_id'].');"  class="item">';
                   echo '<div class="tipo inv documento-foto-16" ></div>';
                   echo '<div class="categorias">';
                   
@@ -43,7 +65,7 @@ require_once("conecta.php");
 
                   if( preg_match( "#(http|https)://(www\.)?youtube\.com\/watch\?v\=(.*)#",  $resultado['url'], $result)  ){
                     $imaxe_video = "http://img.youtube.com/vi/".$result[3]."/mqdefault.jpg";
-                    echo '<div onclick="mapControl.mapa_selecciona_elemento('. $resultado['material_id'].');" style="position: absolute; left: 0px; top: 0px; transform: translate(0px, 0px) scale(1); opacity: 1;height:110px;" class="isotope-item">';
+                    echo '<div onclick="mapControl.mapa_selecciona_elemento('. $resultado['material_id'].');"  class="item">';
                     echo '<div class="tipo inv documento-video-16" ></div>';
                    echo '<div class="categorias">';
                   

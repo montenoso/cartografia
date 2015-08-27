@@ -45,7 +45,7 @@ function interfazController() {
 
     // establece altos
     var altoReal = that.screenHeight - that.headerHeight;
-    
+    $('#espacio_mapa').width(  that.screenWidth+ "px" );
     $('#display_mapa').height( altoReal );
     //$('#display_mapa_content').css('top', 0);
     //$('#display_mapa_content').css('margin-top', that.headerHeight+'px');
@@ -62,6 +62,7 @@ function interfazController() {
         $('#map').width( that.screenWidth - that.filtersWidth - that.destacadosWidth );
         $('#display_destacados').width( that.destacadosWidth  );
         $('#display_destacados').height( altoReal  );
+        $('#display_destacados').css( "left", that.screenWidth-that.destacadosWidth  +"px"  );
         $('#display_destacados').show()
       }
       else { // Sen barra de destacados

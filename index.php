@@ -23,6 +23,8 @@ include("conecta.php");
     <script src="<?php echo $media_host;?>/js/vendor/tiny_map_utilities/smart_infowindow/vendor/jQueryRotate.js"></script>
     <script src="<?php echo $media_host;?>/js/vendor/tiny_map_utilities/smart_infowindow/smart_infowindow.js"></script>      
     <script src="<?php echo $media_host;?>/js/vendor/nzAutoCompleter/nzAutoCompleter.js"></script> 
+    <script src="<?php echo $media_host;?>/js/vendor/proj4js.js"></script> 
+
 
     <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
     <link rel="stylesheet" href="<?php echo $media_host;?>/css/estilos_mapa.css" />
@@ -38,14 +40,10 @@ include("conecta.php");
     <script src="<?php echo $media_host;?>/js/mapController.js"></script>
     <script src="<?php echo $media_host;?>/js/main.js"></script>
 
-
-    <link rel="stylesheet" href="<?php echo $media_host;?>/css/styleIsotope.css">
     <script src="<?php echo $media_host;?>/js/ga.js" async="" type="text/javascript"></script>
     <script src="<?php echo $media_host;?>/js/jquery-latest.js" type="text/javascript"></script>
     <script src="<?php echo $media_host;?>/js/jquery.js" type="text/javascript"></script> 
 
-
-<link rel='stylesheet' id='dashicons-css'  href='/cartografia_nova/css/styleIsotope.css' type='text/css' media='all' />
     <script type="text/javascript" >
     
       <?php
@@ -68,7 +66,7 @@ include("conecta.php");
 
     </script>
 
-    <div id="espacio_mapa" >
+    <div id="espacio_mapa" style="position:absolute;" >
       <div id="map"></div> 
       <div id="cortina_mapa" style="display:none;"></div>
       <div id="display_mapa" >
@@ -85,59 +83,20 @@ include("conecta.php");
           <div class="filtro filtros-add boton-filtros" onclick="mapa_establece_url('#novo' );" ></div>
         </div>
   
-          <div id="display_destacados" style="width:300px; overflow:hidden;">
-   
-            <div style="position: relative; height: 856px; overflow:hidden;" class="portfolioContainer isotope">
+        <div id="display_destacados" style="width:300px; overflow:hidden; position:absolute;top:0;left:1200px;">
+ 
+          <div id ="display_destacados_contido" style="position: relative; height: 856px; overflow:hidden;" class="portfolioContainer">
 
-              <?php require_once('lista_recomendados.php');?>
-              
-            </div>
-
+            <?php //require_once('lista_recomendados.php');?>
+            
           </div>
 
- 
-<script type="text/javascript">
-
-$(window).load(function(){
-
-    $('.portfolioContainer').isotope({
-        filter: '*',
-        animationOptions: {
-            duration: 250,
-            easing: 'linear',
-            resizable: true,
-            queue: false
-        }
-    });
-
-    var containerSortBy = "random";
- 
-    setInterval(function(){
-
-      if( containerSortBy == "random" ) {
-        containerSortBy = "symbol";
-      } 
-      else {
-        containerSortBy = "random";
-      }
-
-        $('.portfolioContainer').isotope({ sortBy : containerSortBy });
-
-    }, 9000);
-
-
-
-});
-
-
-
-
-
-</script>
-
         </div>
+
+
       </div>
     </div>
+
 
 <!--
 

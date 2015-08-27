@@ -9,7 +9,7 @@
   }
 
  global $CARTOGRAFIA_UPLOAD_DIR;
- $CARTOGRAFIA_UPLOAD_DIR = '../cartografia_nova/uploads';
+ $CARTOGRAFIA_UPLOAD_DIR = 'cartografia_nova/uploads';
 
 function previr_inxeccion($data) {
   $data = trim($data);
