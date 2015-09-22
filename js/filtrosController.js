@@ -2,15 +2,15 @@
 
 function filtrosController() {
   var that = this;
-  that.categoriasMapa = {};
+  that.tipodocumentoMapa = {};
   that.selectedCategories = [];
 
 
   that.buscadorDiv = '#display_mapa_filters .buscador';
-  that.categoriasDiv = '#display_mapa_filters .categorias';
+  that.tipodocumentoDiv = '#display_mapa_filters .tipodocumento';
 
 
-  that.categoriasFiltros = {
+  that.tipodocumentoFiltros = {
     comunidade: 'Comunidades',    
     foto: 'Fotografías',
     video: 'Vídeos',
@@ -19,19 +19,19 @@ function filtrosController() {
 
   };
 
-  that.setCategorias = function() {
-    that.categoriasMapa =  getAllCategories();
+  that.settipodocumento = function() {
+    that.tipodocumentoMapa =  getAllCategories();
 
-    $.each(that.categoriasFiltros, function(i,e){
-      $( that.categoriasDiv ).append('<div class="cat selected inv documento-'+i+'-32"  categoria="' + i + '" ><!--img src="/cartografia_nova/images/marcadores_cluster/filters/' + i + '.png"-->  </div>');
+    $.each(that.tipodocumentoFiltros, function(i,e){
+      $( that.tipodocumentoDiv ).append('<div class="cat selected inv documento-'+i+'-32"  categoria="' + i + '" ><!--img src="/cartografia_nova/images/marcadores_cluster/filters/' + i + '.png"-->  </div>');
       that.selectedCategories.push(i);
     });
 
 
-    $( that.categoriasDiv ).find('.cat img').click( function( elemento ){
+    $( that.tipodocumentoDiv ).find('.cat img').click( function( elemento ){
       that.toogleCategoria( $(elemento.target).parent() );
     });
-    $( that.categoriasDiv ).find('.cat').click( function( elemento ){
+    $( that.tipodocumentoDiv ).find('.cat').click( function( elemento ){
       that.toogleCategoria( $(elemento.target) );
     });
   }
@@ -56,9 +56,9 @@ function filtrosController() {
 
 
   that.updateCategoryButtons = function() {
-    $( that.categoriasDiv ).find('.cat').removeClass('selected');
+    $( that.tipodocumentoDiv ).find('.cat').removeClass('selected');
 
-    $.each( $( that.categoriasDiv ).find('.cat'), function(i,e) {
+    $.each( $( that.tipodocumentoDiv ).find('.cat'), function(i,e) {
       var cat = $(e).attr('categoria');
       if( $.inArray( cat, that.selectedCategories )  != -1 ) {
         $(e).addClass('selected');
@@ -72,10 +72,10 @@ function filtrosController() {
   that.filterSelectedCategories = function() {
     var enabledPoints = [];
 
-    $.each( that.categoriasMapa, function( i, e ) {
+    $.each( that.tipodocumentoMapa, function( i, e ) {
       if( $.inArray( i,  that.selectedCategories )  != -1  ) {
 
-        eval( 'enabledPoints = $.merge( enabledPoints, that.categoriasMapa.' + i + '.elements);');
+        eval( 'enabledPoints = $.merge( enabledPoints, that.tipodocumentoMapa.' + i + '.elements);');
       }
     });
 
@@ -87,7 +87,7 @@ function filtrosController() {
   //
   
   // categorías
-  that.setCategorias();
+  that.settipodocumento();
 
   // Buscador
 

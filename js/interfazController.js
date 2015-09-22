@@ -8,7 +8,7 @@ function interfazController() {
 
 
   that.headerHeight = $("#nav-topbar").outerHeight()-1;
-  that.filtersWidth = 55;
+  that.filtersWidth = 100;
   that.fichaWidth = 500;
   that.comunidadeWidth = 700;
   that.engadirWidth = 600;
