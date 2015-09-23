@@ -7,8 +7,15 @@ function filtrosController() {
 
 
   that.buscadorDiv = '#display_mapa_filters .buscador';
+  that.categoriaDiv = '#display_mapa_filters .categoria';
   that.tipodocumentoDiv = '#display_mapa_filters .tipodocumento';
 
+
+  that.categoriasFiltros = {
+    mancomun: 'Mancomún',    
+    feminismos: 'Feminismos'
+
+  };
 
   that.tipodocumentoFiltros = {
     comunidade: 'Comunidades',    
@@ -21,6 +28,8 @@ function filtrosController() {
 
   that.settipodocumento = function() {
     that.tipodocumentoMapa =  getAllCategories();
+
+
 
     $.each(that.tipodocumentoFiltros, function(i,e){
       $( that.tipodocumentoDiv ).append('<div class="cat selected inv documento-'+i+'-32"  categoria="' + i + '" ><!--img src="/cartografia_nova/images/marcadores_cluster/filters/' + i + '.png"-->  </div>');
