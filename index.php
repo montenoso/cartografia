@@ -66,52 +66,51 @@ include("conecta.php");
 
     </script>
 
-    <div id="espacio_mapa" style="position:absolute;" >
-      <div id="map"></div> 
+    <div id="espacio_mapa" style="" >
       <div id="cortina_mapa" style="display:none;"></div>
+
+      <div id="map"></div> 
+      <div id="display_mapa_filters" >
+<!--          
+        <div> <input id="buscaRecursos" type="text" class="caixaBusqueda" style="display:none;"></div>
+        <div class="filtro filtros-buscar boton-filtros" ></div>
+        <div class="tit">Categoría:</div>
+        <div class="filtro categoria">
+          <div class="cat bgcolor-actividades selected"><img src="/cartografia_nova/images/categorias/32x32/actividades_inv.png"></div>
+          <div class="cat bgcolor-agricultura selected"><img src="/cartografia_nova/images/categorias/32x32/agricultura_inv.png"></div>
+          <div class="cat bgcolor-bancoConecemento selected"><img src="/cartografia_nova/images/categorias/32x32/bancoConecemento_inv.png"></div>
+          <div class="cat bgcolor-comuns selected"><img src="/cartografia_nova/images/categorias/32x32/comuns_inv.png"></div>
+          <div class="cat bgcolor-comunidades selected"><img src="/cartografia_nova/images/categorias/32x32/comunidades_inv.png"></div>
+          <div class="cat bgcolor-ecoloxia selected"><img src="/cartografia_nova/images/categorias/32x32/ecoloxia_inv.png"></div>
+          <div class="cat bgcolor-gandeiria selected"><img src="/cartografia_nova/images/categorias/32x32/gandeiria_inv.png"></div>
+          <div class="cat bgcolor-instalacions selected"><img src="/cartografia_nova/images/categorias/32x32/instalacions_inv.png"></div>
+          <div class="cat bgcolor-lexislacion selected"><img src="/cartografia_nova/images/categorias/32x32/lexislacion_inv.png"></div>
+          <div class="cat bgcolor-mancomun selected"><img src="/cartografia_nova/images/categorias/32x32/mancomun_inv.png"></div>
+          <div class="cat bgcolor-monteMadeirable selected"><img src="/cartografia_nova/images/categorias/32x32/monteMadeirable_inv.png"></div>
+          <div class="cat bgcolor-transfeminismos selected"><img src="/cartografia_nova/images/categorias/32x32/transfeminismos_inv.png"></div>
+          <div class="cat bgcolor-xestion selected"><img src="/cartografia_nova/images/categorias/32x32/xestion_inv.png"></div>
+        </div>
+        <div class="tit">Tipo:</div>
+        <div class="filtro tipodocumento"></div>
+        <div class="filtro filtros-add boton-filtros" onclick="mapa_establece_url('#novo' );" ></div>
+-->          
+      </div>
+
+      <div id="display_destacados" >
+        <div id ="display_destacados_contido" class="portfolioContainer">
+          <?php //require_once('lista_recomendados.php');?>
+        </div>
+      </div>
+
+
+
       <div id="display_mapa" >
+
         <div id="display_mapa_engadir" style="display:none;">
           <iframe src="/doc.php" id="iframe_formulario" style="width:100%;border:0;"></iframe>
 
         </div>
         <iframe id="display_mapa_content" style="display:none;" src=""></iframe>
-
-        <div id="display_mapa_filters" >          
-          <div> <input id="buscaRecursos" type="text" class="caixaBusqueda" style="display:none;"></div>
-          <div class="filtro filtros-buscar boton-filtros" ></div>
-          <div class="tit">Categoría:</div>
-          <div class="filtro categoria">
-            <div class="cat bgcolor-actividades selected"><img src="/cartografia_nova/images/categorias/32x32/actividades_inv.png"></div>
-            <div class="cat bgcolor-agricultura selected"><img src="/cartografia_nova/images/categorias/32x32/agricultura_inv.png"></div>
-            <div class="cat bgcolor-bancoConecemento selected"><img src="/cartografia_nova/images/categorias/32x32/bancoConecemento_inv.png"></div>
-            <div class="cat bgcolor-comuns selected"><img src="/cartografia_nova/images/categorias/32x32/comuns_inv.png"></div>
-            <div class="cat bgcolor-comunidades selected"><img src="/cartografia_nova/images/categorias/32x32/comunidades_inv.png"></div>
-            <div class="cat bgcolor-ecoloxia selected"><img src="/cartografia_nova/images/categorias/32x32/ecoloxia_inv.png"></div>
-            <div class="cat bgcolor-gandeiria selected"><img src="/cartografia_nova/images/categorias/32x32/gandeiria_inv.png"></div>
-            <div class="cat bgcolor-instalacions selected"><img src="/cartografia_nova/images/categorias/32x32/instalacions_inv.png"></div>
-            <div class="cat bgcolor-lexislacion selected"><img src="/cartografia_nova/images/categorias/32x32/lexislacion_inv.png"></div>
-            <div class="cat bgcolor-mancomun selected"><img src="/cartografia_nova/images/categorias/32x32/mancomun_inv.png"></div>
-            <div class="cat bgcolor-monteMadeirable selected"><img src="/cartografia_nova/images/categorias/32x32/monteMadeirable_inv.png"></div>
-            <div class="cat bgcolor-transfeminismos selected"><img src="/cartografia_nova/images/categorias/32x32/transfeminismos_inv.png"></div>
-            <div class="cat bgcolor-xestion selected"><img src="/cartografia_nova/images/categorias/32x32/xestion_inv.png"></div>
-
-
-          </div>
-          <div class="tit">Tipo:</div>
-          <div class="filtro tipodocumento"></div>
-          <div class="filtro filtros-add boton-filtros" onclick="mapa_establece_url('#novo' );" ></div>
-        </div>
-  
-        <div id="display_destacados" style="width:300px; overflow:hidden; position:absolute;top:0;left:1200px;">
- 
-          <div id ="display_destacados_contido" style="position: relative; height: 856px; overflow:hidden;" class="portfolioContainer">
-
-            <?php //require_once('lista_recomendados.php');?>
-            
-          </div>
-
-        </div>
-
 
       </div>
     </div>

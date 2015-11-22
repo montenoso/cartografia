@@ -27,7 +27,7 @@ function interfazController() {
   }
 
   that.showCortina = function() {
-
+/*
     $('#cortina_mapa').css('background-color', '#000');
     $('#cortina_mapa').css('position', 'absolute');
     $('#cortina_mapa').css({ opacity: 0.5 });
@@ -36,9 +36,11 @@ function interfazController() {
     $('#cortina_mapa').width( $('#map').width() );
 
     $('#cortina_mapa').show();
+*/
   }
 
   that.setScreenSizes = function(){
+/*
     that.screenWidth = $(window).width();
     that.screenHeight = $(window).height();
 
@@ -97,6 +99,7 @@ function interfazController() {
 
     if(typeof mapa != 'undefined')
       google.maps.event.trigger(mapa, 'resize')
+*/
   }
 
 
