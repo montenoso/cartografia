@@ -5,16 +5,17 @@ function interfazController() {
 
   document.documentElement.style.overflow = 'hidden';  // firefox, chrome
   document.body.scroll = "no"; // ie only
+ 
+console.log($("header.home-header").outerHeight());
 
+  that.headerHeight = $("header.home-header").outerHeight()
 
-  that.headerHeight = $("#nav-topbar").outerHeight()-1;
-  that.filtersWidth = 100;
   that.fichaWidth = 500;
   that.comunidadeWidth = 700;
   that.engadirWidth = 600;
 
-  that.destacadosWidth = 200;
-  that.destacados_a_partir_de = 800; // tamaño a partir do que se mostrará a barra de destacados
+  that.destacadosHeight = $("#display_destacados").height();
+  that.filtersHeight = $("#display_mapa_filters").height();
 
   that.screenWidth = false;
   that.screenHeight = false;
@@ -40,11 +41,21 @@ function interfazController() {
   }
 
   that.setScreenSizes = function(){
-/*
+
     that.screenWidth = $(window).width();
     that.screenHeight = $(window).height();
 
 
+
+
+    $('#espacio_mapa').css("margin-top", that.headerHeight +"px");
+    $('#espacio_mapa').height(that.screenHeight- that.headerHeight );
+    $('#espacio_mapa').width(that.screenWidth);
+
+    $("#map").width(that.screenWidth +"px" );
+    $("#map").height(that.screenHeight-that.headerHeight-that.destacadosHeight-that.filtersHeight);
+
+/*
     // establece altos
     var altoReal = that.screenHeight - that.headerHeight;
     $('#espacio_mapa').width(  that.screenWidth+ "px" );
@@ -54,10 +65,10 @@ function interfazController() {
     $('#display_mapa_content').height( altoReal );
     $('#display_mapa_filters').height( altoReal );
     $('#map').height( altoReal);
-
+*/
     // establece anchos
     if( that.sidebarStatus == 'filtros' ) {
-
+/*
       if( that.screenWidth >= this.destacados_a_partir_de ) {// con barra de destacados
         $('#display_mapa').width( that.filtersWidth  );
         $('#display_mapa').css( 'margin-left', that.screenWidth - that.filtersWidth - that.destacadosWidth + 'px' );
@@ -75,7 +86,7 @@ function interfazController() {
 
       //$('#buscaRecursos').css( 'top',  $('#buscaRecursos').height() + 'px' );
       //$('#buscaRecursos').css( 'right',  $('#buscaRecursos').width()-60 + 'px' );
-
+*/
     } 
     else 
     if( that.sidebarStatus == 'ficha_recurso' ) {
@@ -99,7 +110,7 @@ function interfazController() {
 
     if(typeof mapa != 'undefined')
       google.maps.event.trigger(mapa, 'resize')
-*/
+
   }
 
 
