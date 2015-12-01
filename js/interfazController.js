@@ -17,6 +17,7 @@ console.log($("header.home-header").outerHeight());
   that.destacadosHeight = $("#display_destacados").height();
   that.filtersHeight = $("#display_mapa_filters").height();
 
+
   that.screenWidth = false;
   that.screenHeight = false;
 
@@ -50,10 +51,10 @@ console.log($("header.home-header").outerHeight());
 
     $('#espacio_mapa').css("margin-top", that.headerHeight +"px");
     $('#espacio_mapa').height(that.screenHeight- that.headerHeight );
-    $('#espacio_mapa').width(that.screenWidth);
 
-    $("#map").width(that.screenWidth +"px" );
     $("#map").height(that.screenHeight-that.headerHeight-that.destacadosHeight-that.filtersHeight);
+
+    $("#display_destacados").css("top", ($("#map").height()+that.filtersHeight+that.headerHeight)+"px" );
 
 /*
     // establece altos
@@ -66,6 +67,12 @@ console.log($("header.home-header").outerHeight());
     $('#display_mapa_filters').height( altoReal );
     $('#map').height( altoReal);
 */
+
+
+
+    var leftSideWidth = that.screenWidth;
+
+
     // establece anchos
     if( that.sidebarStatus == 'filtros' ) {
 /*
@@ -90,27 +97,54 @@ console.log($("header.home-header").outerHeight());
     } 
     else 
     if( that.sidebarStatus == 'ficha_recurso' ) {
-      $('#display_mapa').width( that.fichaWidth );
-      $('#display_mapa').css( 'margin-left', that.screenWidth - that.fichaWidth + 'px' );
-      $('#map').width( that.screenWidth - that.fichaWidth );
+      //$('#display_mapa').width( that.fichaWidth );
+      $('#display_mapa_content').css( 'position', "absolute");
+      $('#display_mapa_content').css( 'top', that.headerHeight +"px");
+      $('#display_mapa_content').css( 'width', that.fichaWidth +"px");
+      $('#display_mapa_content').css( 'left', that.screenWidth - that.fichaWidth + 'px' );
+      $('#display_mapa_content').height(that.screenHeight-that.headerHeight)
+      $("#map").height( that.screenHeight - that.headerHeight);
+      leftSideWidth = that.screenWidth - that.fichaWidth;
     }
     else
     if( that.sidebarStatus == 'ficha_comunidade' ) {
-      $('#display_mapa').width( that.comunidadeWidth );
-      $('#display_mapa').css( 'margin-left', that.screenWidth - that.comunidadeWidth + 'px' );
-      $('#map').width( that.screenWidth - that.comunidadeWidth );
+
+      $('#display_mapa_content').css( 'position', "absolute");
+      $('#display_mapa_content').css( 'top', that.headerHeight +"px");
+      $('#display_mapa_content').css( 'width', that.comunidadeWidth +"px");
+      $('#display_mapa_content').css( 'left', that.screenWidth - that.comunidadeWidth + 'px' );
+      $('#display_mapa_content').height(that.screenHeight-that.headerHeight)
+
+      $("#map").height( that.screenHeight - that.headerHeight);
+
+      leftSideWidth = that.screenWidth - that.comunidadeWidth;
+
+
+
     }
     else
     if( that.sidebarStatus == 'engadir' ) {
-      $('#display_mapa').width( that.engadirWidth );
+      //$('#display_mapa').width( that.engadirWidth );
       $('#display_mapa').css( 'margin-left', that.screenWidth - that.engadirWidth + 'px' );
-      $('#map').width( that.screenWidth - that.engadirWidth );
       $('#display_mapa_engadir iframe').css('height', altoReal-10);
+      leftSideWidth = that.screenWidth - that.engadirWidth;
     }
 
-    if(typeof mapa != 'undefined')
-      google.maps.event.trigger(mapa, 'resize')
 
+
+    // LEFT SIDE WIDTH
+    $('#espacio_mapa').width(leftSideWidth);
+    $("#display_destacados").width(leftSideWidth);
+    $("#display_mapa_filters").width(leftSideWidth);
+    $("#map").width(leftSideWidth);
+
+
+    if(typeof mapa != 'undefined') {
+      setTimeout(function(){
+        google.maps.event.trigger(mapa, 'resize');
+      }, 1000); 
+
+    }
   }
 
 
@@ -136,7 +170,7 @@ console.log($("header.home-header").outerHeight());
     that.sidebarStatus = 'filtros';
     $('#display_mapa_content').hide();
     $('#display_mapa_engadir').hide();
-    $('#display_destacados').hide();
+    $('#display_destacados').show();
     $('#display_mapa_filters').show();
     that.setScreenSizes();
   }

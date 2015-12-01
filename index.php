@@ -96,6 +96,9 @@ include("conecta.php");
         
       </div>
 
+
+    </div>
+    <div id="displays">
       <div id="display_destacados" >
         <div id ="display_destacados_contido" class="portfolioContainer">
           <?php //require_once('lista_recomendados.php');?>

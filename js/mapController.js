@@ -153,8 +153,13 @@ function mapController() {
         else {
           interfazControl.setSidebarFichaRecurso();
         }
-        mapa.setCenter({lat: parseFloat(recurso_data.latitud), lng: parseFloat(recurso_data.longitud) } )
-        mapa.setZoom(14);
+
+        setTimeout(function(){
+          mapa.setCenter({lat: parseFloat(recurso_data.latitud), lng: parseFloat(recurso_data.longitud) } )
+          mapa.setZoom(14);
+        }, 1000); 
+
+
         cl.marker_select(
           id,
           {
@@ -210,8 +215,12 @@ function mapController() {
   that.notRegMvmc = function(row){
 
     var pos = {lat: parseFloat(row.lat), lng: parseFloat(row.lon) } ;
-    mapa.setCenter( pos )
-    mapa.setZoom(14);
+
+
+    setTimeout(function(){
+      mapa.setCenter( pos )
+      mapa.setZoom(14);
+    }, 1000); 
 
 
     var iw = new google.maps.InfoWindow({
