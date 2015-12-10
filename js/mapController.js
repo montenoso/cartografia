@@ -1,6 +1,8 @@
 function mapController() {
   var that = this;
 
+  that.lastCenter = false;
+
   that.clusterer = function( mapa , resources) {
 
     var iwindow = new smart_infowindow({
@@ -155,6 +157,7 @@ function mapController() {
         }
 
         setTimeout(function(){
+          that.lastCenter = {lat: parseFloat(recurso_data.latitud), lng: parseFloat(recurso_data.longitud) };
           mapa.setCenter({lat: parseFloat(recurso_data.latitud), lng: parseFloat(recurso_data.longitud) } )
           mapa.setZoom(14);
         }, 1000); 
@@ -207,9 +210,17 @@ function mapController() {
 
     $("#display_mapa_content").attr('src', '');
     interfazControl.setSidebarFiltros();
-    if( mapa.getZoom() > 12 ){
-      mapa.setZoom(12);  
-    }
+
+    setTimeout(function(){
+
+      if( mapa.getZoom() > 12 ){
+        mapa.setZoom(12);  
+        if( that.lastCenter ) 
+          mapa.setCenter( that.lastCenter );
+      }
+      
+    }, 1000); 
+
   }
 
   that.notRegMvmc = function(row){
