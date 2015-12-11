@@ -152,7 +152,7 @@ smart_infowindow.prototype.open = function( marker, evento, content ) {
 
 
 smart_infowindow.prototype.close = function( ) {
-  $(this.div_).hide();
+  //$(this.div_).hide();
 }
 
 

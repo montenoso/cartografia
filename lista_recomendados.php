@@ -56,7 +56,7 @@
 
                   echo '</div>';
                   echo '<div class="titulo" >'.$resultado['titulo_registro'].'</div>';
-                  echo '<img src="/cartografia_nova/uploads/200_'.$resultado['nombre_archivo'].'" alt="'.$resultado['titulo_registro'].'">';
+                  echo '<img width="270" src="/cartografia_nova/uploads/500_'.$resultado['nombre_archivo'].'" alt="'.$resultado['titulo_registro'].'">';
                   echo '</div>';
 
                 }
@@ -86,7 +86,7 @@
 
                   echo '</div>';
                     echo '<div class="titulo" >'.$resultado['titulo_registro'].'</div>';
-                    echo '<img width="200" height="113" src="'.$imaxe_video.'" alt="'.$resultado['titulo_registro'].'">';
+                    echo '<img width="270"  src="'.$imaxe_video.'" alt="'.$resultado['titulo_registro'].'">';
                     echo '</div>';
                   }
 

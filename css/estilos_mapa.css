@@ -43,9 +43,9 @@ div.container  {
 
     }
     #display_destacados {
-      background-color: #8F9277;
+      background-color: #000;
       position:absolute;
-      height:113px;
+      height:150px;
       width:100%;
       overflow:
       hidden;
