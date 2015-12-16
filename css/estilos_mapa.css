@@ -330,7 +330,7 @@ div.nzAutoCompleterDialog div.row:hover {
   padding-top:7px;
   opacity: 0;
   font-weight: bold;
-  top:91px;
+  bottom:-50px;
   position:absolute;
   width:100%;
   line-height: 14px;
