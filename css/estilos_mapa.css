@@ -59,7 +59,8 @@ div.container  {
                           INFOWINDOW MAPA
 ***********************************************************************/
 #caixa_mapa {
-
+  position:relative;
+  top:4px;
 }
 
 div.nzAutoCompleterDialog {right:300px;}
@@ -67,23 +68,15 @@ div.nzAutoCompleterDialog {right:300px;}
 div.nzAutoCompleterDialog div.row, 
 #caixa_mapa .elemento {
   z-index:1000;
-  height:40px !important;
+  height:63px !important;
   padding-bottom:10px;
-  padding-top:10px;
+  padding-top:5px;
   padding-left:10px;
- /* height:35px !important;
-  padding-top:7px;
-  padding-bottom:10px;
-  cursor:pointer;
-
-  line-height: 25px;
-  overflow: hidden;
-  background-repeat: no-repeat;
-  background-position: 10px 10px;*/
   background-repeat: no-repeat;
   font-size:17px;
   cursor:pointer;
 }
+
 
 #caixa_mapa .elemento:hover,
 div.nzAutoCompleterDialog div.row:hover { 
@@ -100,6 +93,8 @@ div.nzAutoCompleterDialog div.row:hover {
     background-repeat: no-repeat;
     background-position: center center;
   }
+
+
   div.nzAutoCompleterDialog div.row  .tit, 
   #caixa_mapa .elemento .tit { 
     margin-left:10px;
@@ -110,19 +105,21 @@ div.nzAutoCompleterDialog div.row:hover {
     text-overflow: ellipsis;
   }
 
+
   div.nzAutoCompleterDialog div.row  .categoria, 
   #caixa_mapa .elemento .categoria { 
     margin-left:10px;
     float:left;
     width:300px;
     overflow:hidden;
-    height:20px;
-    margin-top:-3px;
+    height:27px;
+    margin-top:-4px;
   }
 
+
     #caixa_mapa .elemento .categoria .cat { 
-      width:20px;
-      height:20px;
+      width:27px;
+      height:27px;
       margin-right:4px;
       float:left;
       border-radius: 50%;
@@ -130,6 +127,7 @@ div.nzAutoCompleterDialog div.row:hover {
       background-position: top center;
       text-align:center;
     }
+
 
   #caixa_mapa .elemento.comunidade, .elemento.tipo_comunidade {
     background-color:#F5FD5C;
@@ -142,6 +140,9 @@ div.nzAutoCompleterDialog div.row:hover {
       margin-top:7px;
       font-size:15px;
     }
+
+
+ #caixa_mapa  .icona {margin-top:5px;}
 
  div.nzAutoCompleterDialog .tipo_audio .icona, #caixa_mapa .elemento.tipo_audio .icona { background-image: url('/cartografia_nova/images/tipoDocumento/32x32/audio_inv.png' ); }  
  div.nzAutoCompleterDialog .tipo_foto .icona, #caixa_mapa .elemento.tipo_foto .icona {  background-image: url('/cartografia_nova/images/tipoDocumento/32x32//foto_inv.png' ); }
