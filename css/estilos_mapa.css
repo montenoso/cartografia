@@ -192,6 +192,10 @@ div.nzAutoCompleterDialog div.row:hover {
 
   .boton-filtros {
     position:absolute;
+  
+  }
+
+  .filtros-buscar {
     top:20px;
     right:20px;
     border-radius: 50%;
@@ -199,15 +203,8 @@ div.nzAutoCompleterDialog div.row:hover {
     width:40px !important;
     height:40px !important;
     z-index:201;
-  }
 
-  .filtros-buscar {
-    /*position: relative;
-    top:10px;
-    margin-bottom: 40px;
-    cursor:pointer;*/
 
-    float:left;
   }
 
   #display_mapa_filters .filtros-add {
@@ -215,6 +212,10 @@ div.nzAutoCompleterDialog div.row:hover {
     position:absolute;f
     bottom:10px;
     cursor:pointer;*/
+    float:right;
+    position:relative;
+    margin-right:10px;
+    margin-top:3px;
   }
 
 

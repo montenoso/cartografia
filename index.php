@@ -71,7 +71,7 @@ include("conecta.php");
 
       <div id="map"></div> 
       <div id="display_mapa_filters" >
-
+        <div class="filtro filtros-add boton-filtros" onclick="mapa_establece_url('#novo' );" > </div> 
 
         <!--div class="tit">Categoría:</div-->
         <div class="filtro categoria" style="display:none;">
@@ -91,7 +91,7 @@ include("conecta.php");
         </div>
         <!--div class="tit">Tipo:</div-->
         <div class="filtro tipodocumento" style="display:none;"></div>
-        <div class="filtro filtros-add boton-filtros" onclick="mapa_establece_url('#novo' );" style="display:none;" ></div>
+
         
       </div>
       <div> <input id="buscaRecursos" type="text" class="caixaBusqueda" style="display:none;"></div>
