@@ -72,8 +72,7 @@ include("conecta.php");
       <div id="map"></div> 
       <div id="display_mapa_filters" >
 
-        <div> <input id="buscaRecursos" type="text" class="caixaBusqueda" style="display:none;"></div>
-        <div class="filtro filtros-buscar boton-filtros"  style="display:none;"></div>
+
         <!--div class="tit">Categoría:</div-->
         <div class="filtro categoria" style="display:none;">
           <div class="cat bgcolor-actividades selected"><img src="/cartografia_nova/images/categorias/32x32/actividades_inv.png"></div>
@@ -95,7 +94,8 @@ include("conecta.php");
         <div class="filtro filtros-add boton-filtros" onclick="mapa_establece_url('#novo' );" style="display:none;" ></div>
         
       </div>
-
+      <div> <input id="buscaRecursos" type="text" class="caixaBusqueda" style="display:none;"></div>
+      <div class="filtro filtros-buscar boton-filtros" ></div>
 
     </div>
     <div id="displays">

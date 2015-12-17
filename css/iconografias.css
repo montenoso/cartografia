@@ -95,7 +95,7 @@
 
 
 /* Couriñas de filtros */
-.filtros-buscar {   height:32px; width:32px;  background: url('/cartografia_nova/images/search_filters_n.png') no-repeat; }
+.filtros-buscar {   height:40px; width:40px;  background: url('/cartografia_nova/images/search_filters_n.png') no-repeat center center; }
 .filtros-add {   height:32px; width:32px;  background: url('/cartografia_nova/images/add_filters.png') no-repeat; }
 
 

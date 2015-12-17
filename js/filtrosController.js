@@ -100,7 +100,8 @@ function filtrosController() {
 
   // Buscador
 
-  $('#display_mapa_filters div.filtros-buscar').click(function() {
+  $('div.filtros-buscar').click(function() {
+
     $('#buscaRecursos').show( "slow" );
     $('#buscaRecursos').focus();
 
