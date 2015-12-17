@@ -24,10 +24,13 @@ function formController() {
     interfazControl.showCortina();
 
     // Oculta markers e establece zoom en mapa a toda galicia
-
-    mapa.setCenter({lat: 42.7956247, lng: -7.9483766 } )
-    mapa.setZoom(8);
+    setTimeout(function(){
+      mapa.setCenter({lat: 42.7956247, lng: -7.9483766 } )
+      mapa.setZoom(8);
+    }, 1000); 
     cl.hide_all_markers();
+
+    
   }
 
 

@@ -125,9 +125,20 @@ console.log($("header.home-header").outerHeight());
     else
     if( that.sidebarStatus == 'engadir' ) {
       //$('#display_mapa').width( that.engadirWidth );
-      $('#display_mapa').css( 'margin-left', that.screenWidth - that.engadirWidth + 'px' );
+  /*    $('#display_mapa').css( 'margin-left', that.screenWidth - that.engadirWidth + 'px' );
       $('#display_mapa_engadir iframe').css('height', altoReal-10);
-      leftSideWidth = that.screenWidth - that.engadirWidth;
+      leftSideWidth = that.screenWidth - that.engadirWidth;*/
+
+      $('#display_mapa_engadir').css( 'position', "absolute");
+      $('#display_mapa_engadir').css( 'top', that.headerHeight +"px");
+      $('#display_mapa_engadir').css( 'width', that.comunidadeWidth +"px");
+      $('#display_mapa_engadir').css( 'left', that.screenWidth - that.comunidadeWidth + 'px' );
+      $('#display_mapa_engadir').height(that.screenHeight-that.headerHeight)
+
+      $("#map").height( that.screenHeight - that.headerHeight);
+
+      leftSideWidth = that.screenWidth - that.comunidadeWidth;
+
     }
 
 
