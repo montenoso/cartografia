@@ -134,6 +134,7 @@ console.log($("header.home-header").outerHeight());
       $('#display_mapa_engadir').css( 'width', that.comunidadeWidth +"px");
       $('#display_mapa_engadir').css( 'left', that.screenWidth - that.comunidadeWidth + 'px' );
       $('#display_mapa_engadir').height(that.screenHeight-that.headerHeight)
+      $('#iframe_formulario').height(that.screenHeight-that.headerHeight)
 
       $("#map").height( that.screenHeight - that.headerHeight);
 
