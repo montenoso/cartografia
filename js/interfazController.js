@@ -75,6 +75,8 @@ console.log($("header.home-header").outerHeight());
 
     // establece anchos
     if( that.sidebarStatus == 'filtros' ) {
+
+      $("#filtros_cat").css( { marginLeft : (that.screenWidth/2 - $("#filtros_cat").width()/2)+"px" });
 /*
       if( that.screenWidth >= this.destacados_a_partir_de ) {// con barra de destacados
         $('#display_mapa').width( that.filtersWidth  );

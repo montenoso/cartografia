@@ -74,7 +74,7 @@ include("conecta.php");
         <div class="filtro filtros-add boton-filtros" onclick="mapa_establece_url('#novo' );" > </div> 
 
         <!--div class="tit">Categoría:</div-->
-        <div class="filtro categoria" style="display:none;">
+        <div class="filtro categoria" id="filtros_cat">
           <div class="cat bgcolor-actividades selected"><img src="/cartografia_nova/images/categorias/32x32/actividades_inv.png"></div>
           <div class="cat bgcolor-agricultura selected"><img src="/cartografia_nova/images/categorias/32x32/agricultura_inv.png"></div>
           <div class="cat bgcolor-bancoConecemento selected"><img src="/cartografia_nova/images/categorias/32x32/bancoConecemento_inv.png"></div>
@@ -89,6 +89,8 @@ include("conecta.php");
           <div class="cat bgcolor-transfeminismos selected"><img src="/cartografia_nova/images/categorias/32x32/transfeminismos_inv.png"></div>
           <div class="cat bgcolor-xestion selected"><img src="/cartografia_nova/images/categorias/32x32/xestion_inv.png"></div>
         </div>
+
+
         <!--div class="tit">Tipo:</div-->
         <div class="filtro tipodocumento" style="display:none;"></div>
 

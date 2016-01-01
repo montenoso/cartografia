@@ -1,56 +1,122 @@
 var estilos_mapa = 
  [
     {
-        "featureType": "administrative",
-        "stylers": [
-            {
-                "visibility": "off"
-            }
-        ]
-    },
-    {
-        "featureType": "poi",
-        "stylers": [
-            {
-                "visibility": "simplified"
-            }
-        ]
-    },
-    {
-        "featureType": "road",
-        "elementType": "labels",
-        "stylers": [
-            {
-                "visibility": "simplified"
-            }
-        ]
-    },
-    {
         "featureType": "water",
+        "elementType": "geometry",
         "stylers": [
             {
-                "visibility": "simplified"
-            }
-        ]
-    },
-    {
-        "featureType": "transit",
-        "stylers": [
+                "color": "#376F8D"
+            },
             {
-                "visibility": "simplified"
+                "lightness": 17
             }
         ]
     },
     {
         "featureType": "landscape",
+        "elementType": "geometry",
         "stylers": [
             {
-                "visibility": "simplified"
+                "color": "#ffffff"
+            },
+            {
+                "lightness": 20
             }
         ]
     },
     {
         "featureType": "road.highway",
+        "elementType": "geometry.fill",
+        "stylers": [
+            {
+                "color": "#dedede"
+            },
+            {
+                "lightness": 17
+            }
+        ]
+    },
+    {
+        "featureType": "road.highway",
+        "elementType": "geometry.stroke",
+        "stylers": [
+            {
+                "color": "#dedede"
+            },
+            {
+                "lightness": 29
+            },
+            {
+                "weight": 0.2
+            }
+        ]
+    },
+    {
+        "featureType": "road.arterial",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#dedede"
+            },
+            {
+                "lightness": 18
+            }
+        ]
+    },
+    {
+        "featureType": "road.local",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#ffffff"
+            },
+            {
+                "lightness": 16
+            }
+        ]
+    },
+    {
+        "featureType": "poi",
+        "elementType": "geometry",
+        "stylers": [
+            {
+                "color": "#f1f1f1"
+            },
+            {
+                "lightness": 21
+            }
+        ]
+    },
+    {
+        "elementType": "labels.text.stroke",
+        "stylers": [
+            {
+                "visibility": "on"
+            },
+            {
+                "color": "#ffffff"
+            },
+            {
+                "lightness": 16
+            }
+        ]
+    },
+    {
+        "elementType": "labels.text.fill",
+        "stylers": [
+            {
+                "saturation": 36
+            },
+            {
+                "color": "#333333"
+            },
+            {
+                "lightness": 40
+            }
+        ]
+    },
+    {
+        "elementType": "labels.icon",
         "stylers": [
             {
                 "visibility": "off"
@@ -58,51 +124,42 @@ var estilos_mapa =
         ]
     },
     {
-        "featureType": "road.local",
-        "stylers": [
-            {
-                "visibility": "on"
-            }
-        ]
-    },
-    {
-        "featureType": "road.highway",
+        "featureType": "transit",
         "elementType": "geometry",
         "stylers": [
             {
-                "visibility": "on"
-            }
-        ]
-    },
-    {
-        "featureType": "water",
-        "stylers": [
-            {
-                "color": "#84afa3"
+                "color": "#f2f2f2"
             },
             {
-                "lightness": 52
+                "lightness": 19
             }
         ]
     },
     {
+        "featureType": "administrative",
+        "elementType": "geometry.fill",
         "stylers": [
             {
-                "saturation": -17
+                "color": "#fefefe"
             },
             {
-                "gamma": 0.36
+                "lightness": 20
             }
         ]
     },
     {
-        "featureType": "transit.line",
-        "elementType": "geometry",
+        "featureType": "administrative",
+        "elementType": "geometry.stroke",
         "stylers": [
             {
-                "color": "#3f518c"
+                "color": "#fefefe"
+            },
+            {
+                "lightness": 17
+            },
+            {
+                "weight": 1.2
             }
         ]
     }
-
 ];
