@@ -7,8 +7,8 @@ function filtrosController() {
 
 
   that.buscadorDiv = '#display_mapa_filters .buscador';
-  that.categoriaDiv = '#display_mapa_filters .categoria';
-  that.tipodocumentoDiv = '#display_mapa_filters .tipodocumento';
+  //that.categoriaDiv = '#display_mapa_filters .categoria';
+  that.tipodocumentoDiv = '#display_mapa_filters .categoria';
 
 
   that.categoriasFiltros = {
@@ -18,12 +18,26 @@ function filtrosController() {
   };
 
   that.tipodocumentoFiltros = {
-    comunidade: 'Comunidades',    
+/*    comunidade: 'Comunidades',    
     foto: 'Fotografías',
     video: 'Vídeos',
     audio: 'Audios',
-    texto: 'Audios'
+    texto: 'Audios'*/
 
+
+    actividades: "Actividades",
+    agricultura: "Agricultura",
+    bancoConecemento: "Banco de Coñecemento",
+    comuns: "Comuns",
+    comunidades: "Comunidades",
+    ecoloxia: "Ecoloxía",
+    gandeiria: "Gandeiría",
+    instalacions: "Instalacións",
+    lexislacion: "Lexislación",
+    mancomun: "Mancomún",
+    monteMadeirable: "Monte Madeirable",
+    transfeminismos: "Transfeminismos",
+    xestion: "Xestión"
   };
 
   that.settipodocumento = function() {
@@ -32,7 +46,8 @@ function filtrosController() {
 
 
     $.each(that.tipodocumentoFiltros, function(i,e){
-      $( that.tipodocumentoDiv ).append('<div class="cat selected inv documento-'+i+'-32"  categoria="' + i + '" ><!--img src="/cartografia_nova/images/marcadores_cluster/filters/' + i + '.png"-->  </div>');
+      //$( that.tipodocumentoDiv ).append('<div class="cat selected inv documento-'+i+'-32"  categoria="' + i + '" ><!--img src="/cartografia_nova/images/marcadores_cluster/filters/' + i + '.png"-->  </div>');
+      $( that.tipodocumentoDiv ).append('<div class="cat bgcolor-'+i+' selected"><img src="/cartografia_nova/images/categorias/32x32/'+i+'_inv.png"></div>');
       that.selectedCategories.push(i);
     });
 

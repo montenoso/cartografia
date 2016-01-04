@@ -76,7 +76,10 @@ console.log($("header.home-header").outerHeight());
     // establece anchos
     if( that.sidebarStatus == 'filtros' ) {
 
+
+      $('#display_tooltip').css( { left: (that.screenWidth/2)+"px", top: ($("#map").height()-40)+"px"} )
       $("#filtros_cat").css( { marginLeft : (that.screenWidth/2 - $("#filtros_cat").width()/2)+"px" });
+
 /*
       if( that.screenWidth >= this.destacados_a_partir_de ) {// con barra de destacados
         $('#display_mapa').width( that.filtersWidth  );
@@ -197,4 +200,14 @@ console.log($("header.home-header").outerHeight());
     $('#display_mapa_engadir').show();
     that.setScreenSizes();
   }
+
+  that.showTooltip = function( text ) {
+    $('#display_tooltip').html(text);    
+    $('#display_tooltip').css( { marginLeft : (-$('#display_tooltip').width()/2)+"px" });
+    $('#display_tooltip').show();
+  }
+  that.hideTooltip = function( ) {
+    $('#display_tooltip').hide();
+  }
+
 }

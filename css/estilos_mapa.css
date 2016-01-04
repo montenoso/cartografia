@@ -207,6 +207,14 @@ div.nzAutoCompleterDialog div.row:hover {
 
   }
 
+  #display_tooltip {
+    position:absolute;
+    z-index:201;
+    padding:7px;
+    background-color:#5C5E4D ;
+    color:#fff;
+  }
+
   #display_mapa_filters .filtros-add {
     /*
     position:absolute;f
