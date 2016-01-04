@@ -111,12 +111,16 @@ function filtrosController() {
     var enabledPoints = [];
 
     $.each( that.tipodocumentoMapa, function( i, e ) {
+
+      console.log(e);
+      eval( 'enabledPoints = $.merge( enabledPoints, that.tipodocumentoMapa.' + i + '.elements);');
+
+      /*
       if( $.inArray( i,  that.selectedCategories )  != -1  ) {
 
         eval( 'enabledPoints = $.merge( enabledPoints, that.tipodocumentoMapa.' + i + '.elements);');
-      }
+      }*/
     });
-
     mapControl.setFilters( enabledPoints );
   }
 
