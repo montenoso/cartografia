@@ -76,9 +76,10 @@ console.log($("header.home-header").outerHeight());
     // establece anchos
     if( that.sidebarStatus == 'filtros' ) {
 
-
-      $('#display_tooltip').css( { left: (that.screenWidth/2)+"px", top: ($("#map").height()-40)+"px"} )
-      $("#filtros_cat").css( { marginLeft : (that.screenWidth/2 - $("#filtros_cat").width()/2)+"px" });
+      setTimeout(function(){
+        $('#display_tooltip').css( { left: (that.screenWidth/2)+"px", top: ($("#map").height()-40)+"px"} )
+        $("#filtros_cat").css( { marginLeft : (that.screenWidth/2 - $("#filtros_cat").width()/2)+"px" });
+      }, 1000); 
 
 /*
       if( that.screenWidth >= this.destacados_a_partir_de ) {// con barra de destacados

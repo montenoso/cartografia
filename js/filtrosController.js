@@ -43,7 +43,7 @@ function filtrosController() {
   that.settipodocumento = function() {
     that.tipodocumentoMapa =  getAllCategories();
 
-
+console.log(that.tipodocumentoMapa)
 
     $.each(that.tipodocumentoFiltros, function(i,e){
       //$( that.tipodocumentoDiv ).append('<div class="cat selected inv documento-'+i+'-32"  categoria="' + i + '" ><!--img src="/cartografia_nova/images/marcadores_cluster/filters/' + i + '.png"-->  </div>');
@@ -113,7 +113,7 @@ function filtrosController() {
     $.each( that.tipodocumentoMapa, function( i, e ) {
 
       //console.log(e);
-      //eval( 'enabledPoints = $.merge( enabledPoints, that.tipodocumentoMapa.' + i + '.elements);');
+      eval( 'enabledPoints = $.merge( enabledPoints, that.tipodocumentoMapa.' + i + '.elements);');
 
       /*
       if( $.inArray( i,  that.selectedCategories )  != -1  ) {
