@@ -112,8 +112,8 @@ function filtrosController() {
 
     $.each( that.tipodocumentoMapa, function( i, e ) {
 
-      console.log(e);
-      eval( 'enabledPoints = $.merge( enabledPoints, that.tipodocumentoMapa.' + i + '.elements);');
+      //console.log(e);
+      //eval( 'enabledPoints = $.merge( enabledPoints, that.tipodocumentoMapa.' + i + '.elements);');
 
       /*
       if( $.inArray( i,  that.selectedCategories )  != -1  ) {
