@@ -70,8 +70,8 @@ include("conecta.php");
       <div id="cortina_mapa" style="display:none;"></div>
 
       <div id="map"></div> 
-      <div id="display_tooltip"> Texto </div>
-      <div id="display_mapa_filters" >
+      <div id="display_tooltip" style="display:none;">  </div>
+      <div id="display_mapa_filters"  >
         <div class="filtro filtros-add boton-filtros" onclick="mapa_establece_url('#novo' );" > </div> 
 
         <!--div class="tit">Categoría:</div-->

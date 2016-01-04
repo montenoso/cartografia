@@ -28,7 +28,7 @@ function filtrosController() {
     actividades: "Actividades",
     agricultura: "Agricultura",
     bancoConecemento: "Banco de Coñecemento",
-    comuns: "Comuns",
+    comuns: "Comúns",
     comunidades: "Comunidades",
     ecoloxia: "Ecoloxía",
     gandeiria: "Gandeiría",
@@ -47,7 +47,7 @@ function filtrosController() {
 
     $.each(that.tipodocumentoFiltros, function(i,e){
       //$( that.tipodocumentoDiv ).append('<div class="cat selected inv documento-'+i+'-32"  categoria="' + i + '" ><!--img src="/cartografia_nova/images/marcadores_cluster/filters/' + i + '.png"-->  </div>');
-      $( that.tipodocumentoDiv ).append('<div class="cat bgcolor-'+i+' selected"><img src="/cartografia_nova/images/categorias/32x32/'+i+'_inv.png"></div>');
+      $( that.tipodocumentoDiv ).append('<div categoria="' + i + '"  class="cat bgcolor-'+i+' selected"><img src="/cartografia_nova/images/categorias/32x32/'+i+'_inv.png"></div>');
       that.selectedCategories.push(i);
     });
 
@@ -57,6 +57,15 @@ function filtrosController() {
     });
     $( that.tipodocumentoDiv ).find('.cat').click( function( elemento ){
       that.toogleCategoria( $(elemento.target) );
+    });
+
+
+    $( that.tipodocumentoDiv ).find('.cat img').hover( function( elemento ){
+      var cat = $(elemento.target).parent().attr('categoria');
+      eval('interfazControl.showTooltip( that.tipodocumentoFiltros.'+cat+' );');
+    });
+    $( that.tipodocumentoDiv ).find('.cat').mouseout( function( elemento ){
+      interfazControl.hideTooltip();
     });
   }
 
@@ -85,7 +94,12 @@ function filtrosController() {
     $.each( $( that.tipodocumentoDiv ).find('.cat'), function(i,e) {
       var cat = $(e).attr('categoria');
       if( $.inArray( cat, that.selectedCategories )  != -1 ) {
+        $(e).removeClass('unselected');
         $(e).addClass('selected');
+      }
+      else {
+        $(e).removeClass('selected');
+        $(e).addClass('unselected');
       }
     });
 

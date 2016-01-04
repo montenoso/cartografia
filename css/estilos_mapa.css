@@ -265,10 +265,6 @@ div.nzAutoCompleterDialog div.row:hover {
       cursor:pointer;
       color:#888;
       float:left;
-      filter: alpha(opacity=40); /* internet explorer */
-      -khtml-opacity: 0.4;      /* khtml, old safari */
-      -moz-opacity: 0.4;       /* mozilla, netscape */
-      opacity: 0.4;           /* fx, safari, opera */    
 
      /* border-radius: 50%;*/
       background-position: center center;
@@ -278,6 +274,14 @@ div.nzAutoCompleterDialog div.row:hover {
     }
     #display_mapa_filters .categoria {}
     #display_mapa_filters .categoria .cat  img {margin-left:3px;margin-top:3px;}
+
+    #display_mapa_filters .categoria .cat.unselected  { 
+      filter: alpha(opacity=10); /* internet explorer */
+      -khtml-opacity: 0.1;      /* khtml, old safari */
+      -moz-opacity: 0.1;       /* mozilla, netscape */
+      opacity: 0.1;           /* fx, safari, opera */      
+
+    }
 
 
     #display_mapa_filters .tipodocumento { }
