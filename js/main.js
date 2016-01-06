@@ -177,6 +177,34 @@ function getAllCategories() {
 
   $(recursos).each( function(i,e){
 
+
+    $.each(e.categoria, function(i2,ct){
+      if(ct !="") {
+        eval(
+          "if( typeof tipos." + ct + "  == 'undefined' ){ " +
+          "  tipos." + ct + " = {id:'" + ct + "', elements:[], hide:false };" +
+          "}" +
+          "tipos." + ct + ".elements.push(" + e.material_id + ");"
+        );
+      }
+    });
+
+
+  });
+
+
+  return tipos;
+}
+
+
+// Devolve todas as categorías diferentes
+
+function getAllDocTypes() {
+
+  var tipos = {}
+
+  $(recursos).each( function(i,e){
+
     if(e.selectedradio == 'comunidade') {
       var importante = 'true';
     }
@@ -193,6 +221,7 @@ function getAllCategories() {
   });
 
   return tipos;
+
 }
 
 mapa_establece_url = function(uri) {

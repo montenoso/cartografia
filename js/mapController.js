@@ -95,7 +95,7 @@ function mapController() {
       });
     }
 
-    tipos = getAllCategories();
+    tipos = getAllDocTypes();
 
     var f = {
       enabled_list: listaActivados,

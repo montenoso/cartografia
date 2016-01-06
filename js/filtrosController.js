@@ -2,8 +2,9 @@
 
 function filtrosController() {
   var that = this;
-  that.tipodocumentoMapa = {};
+  that.categoriasMapa = {};
   that.selectedCategories = [];
+  that.comunidadesList = [];
 
 
   that.buscadorDiv = '#display_mapa_filters .buscador';
@@ -41,9 +42,9 @@ function filtrosController() {
   };
 
   that.settipodocumento = function() {
-    that.tipodocumentoMapa =  getAllCategories();
+    that.comunidadesList = getAllDocTypes().comunidade.elements;
+    that.categoriasMapa =  getAllCategories();
 
-console.log(that.tipodocumentoMapa)
 
     $.each(that.tipodocumentoFiltros, function(i,e){
       //$( that.tipodocumentoDiv ).append('<div class="cat selected inv documento-'+i+'-32"  categoria="' + i + '" ><!--img src="/cartografia_nova/images/marcadores_cluster/filters/' + i + '.png"-->  </div>');
@@ -110,16 +111,18 @@ console.log(that.tipodocumentoMapa)
   that.filterSelectedCategories = function() {
     var enabledPoints = [];
 
-    $.each( that.tipodocumentoMapa, function( i, e ) {
+    // allways show comunities
+    enabledPoints = $.merge( enabledPoints, that.comunidadesList);
+
+
+    $.each( that.categoriasMapa, function( i, e ) {
 
       //console.log(e);
-      eval( 'enabledPoints = $.merge( enabledPoints, that.tipodocumentoMapa.' + i + '.elements);');
-
-      /*
+      
       if( $.inArray( i,  that.selectedCategories )  != -1  ) {
 
-        eval( 'enabledPoints = $.merge( enabledPoints, that.tipodocumentoMapa.' + i + '.elements);');
-      }*/
+        eval( 'enabledPoints = $.merge( enabledPoints, that.categoriasMapa.' + i + '.elements);');
+      }
     });
     mapControl.setFilters( enabledPoints );
   }
