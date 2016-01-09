@@ -28,7 +28,8 @@ $(document).ready(
       center: new google.maps.LatLng(42.7956247,-7.9483766),
       mapTypeId: google.maps.MapTypeId.ROADMAP,
       zoomControl:true,
-      zoomControlOptions: { style:google.maps.ZoomControlStyle.SMALL },
+      zoomControlOptions: { style:google.maps.ZoomControlStyle.SMALL},
+      mapTypeControl:false, 
       streetViewControl:false,
       panControl:false,
       styles: estilos_mapa
@@ -78,7 +79,7 @@ loadWMS(mapa, "http://213.60.67.111:8080/geoserver/Montenoso/wms", customParams)
         url += "&version=1.1.0";         //WMS version
         url += "&request=GetMap";        //WMS operation
         url += "&layers=Montenoso:mvmc"; //WMS layers to draw
-        url += "&styles=";               //use default style
+        url += "&styles=mvmc_web_montenoso";               //use default style
         url += "&format=image/png";      //image format
         url += "&TRANSPARENT=TRUE";      //only draw areas where we have data
         url += "&srs=EPSG:4326";         //projection WGS84

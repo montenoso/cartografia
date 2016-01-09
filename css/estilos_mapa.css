@@ -207,6 +207,21 @@ div.nzAutoCompleterDialog div.row:hover {
 
   }
 
+  .filtros-capas {
+    top:20px;
+    left:20px;
+    border-radius: 50%;
+    background-color:#5C5E4D !important;
+    width:40px !important;
+    height:40px !important;
+    z-index:201;
+
+    
+
+
+  }
+
+
   #display_tooltip {
     position:absolute;
     z-index:201;

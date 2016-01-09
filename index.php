@@ -100,6 +100,9 @@ include("conecta.php");
       <div> <input id="buscaRecursos" type="text" class="caixaBusqueda" style="display:none;"></div>
       <div class="filtro filtros-buscar boton-filtros" ></div>
 
+
+      <div> <input id="capas" type="text" class="caixaCapas" style="display:none;"></div>
+      <div class="filtro filtros-capas boton-filtros" ></div>
     </div>
     <div id="displays">
       <div id="display_destacados" >
