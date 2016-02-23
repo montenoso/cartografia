@@ -78,7 +78,7 @@ loadWMS(mapa, "http://213.60.67.111:8080/geoserver/Montenoso/wms", customParams)
         url += "service=WMS";           //WMS service
         url += "&version=1.1.0";         //WMS version
         url += "&request=GetMap";        //WMS operation
-        url += "&layers=Montenoso:mvmc"; //WMS layers to draw
+        url += "&layers=Montenoso:mvmc_web"; //WMS layers to draw
         url += "&styles=mvmc_web_montenoso";               //use default style
         url += "&format=image/png";      //image format
         url += "&TRANSPARENT=TRUE";      //only draw areas where we have data

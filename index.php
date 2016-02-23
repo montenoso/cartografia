@@ -21,9 +21,9 @@ include("conecta.php");
     <script src="<?php echo $media_host;?>/js/vendor/tiny_map_utilities/marker_clusterer/vendor/rbush.js"></script>
     <script src="<?php echo $media_host;?>/js/vendor/tiny_map_utilities/marker_clusterer/marker_clusterer.js"></script>
     <script src="<?php echo $media_host;?>/js/vendor/tiny_map_utilities/smart_infowindow/vendor/jQueryRotate.js"></script>
-    <script src="<?php echo $media_host;?>/js/vendor/tiny_map_utilities/smart_infowindow/smart_infowindow.js"></script>      
-    <script src="<?php echo $media_host;?>/js/vendor/nzAutoCompleter/nzAutoCompleter.js"></script> 
-    <script src="<?php echo $media_host;?>/js/vendor/proj4js.js"></script> 
+    <script src="<?php echo $media_host;?>/js/vendor/tiny_map_utilities/smart_infowindow/smart_infowindow.js"></script>
+    <script src="<?php echo $media_host;?>/js/vendor/nzAutoCompleter/nzAutoCompleter.js"></script>
+    <script src="<?php echo $media_host;?>/js/vendor/proj4js.js"></script>
 
 
     <link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/themes/css/cartodb.css" />
@@ -42,12 +42,22 @@ include("conecta.php");
 
     <script src="<?php echo $media_host;?>/js/ga.js" async="" type="text/javascript"></script>
     <script src="<?php echo $media_host;?>/js/jquery-latest.js" type="text/javascript"></script>
-    <script src="<?php echo $media_host;?>/js/jquery.js" type="text/javascript"></script> 
+    <script src="<?php echo $media_host;?>/js/jquery.js" type="text/javascript"></script>
 
     <script type="text/javascript" >
-    
+
       <?php
-        $sql = "SELECT material_id, longitud, latitud, selectedradio, titulo_registro, tag, categoria  FROM documento ORDER BY fecha_inser DESC";
+        $sql = "
+        SELECT
+         material_id,
+         longitud,
+         latitud,
+         selectedradio,
+         titulo_registro,
+         tag,
+         IF(selectedradio = 'comunidade', (select group_concat(doc.categoria) from documento AS doc where doc.pai=documento.material_id  ), categoria) as categoria
+        FROM documento  ORDER BY fecha_inser DESC
+        ";
         $consulta = mysql_query($sql) or die ("No se pudo ejecutar la consulta");
         $datos = mysql_query($sql, $conexion);
         $markers= array();
@@ -62,17 +72,17 @@ include("conecta.php");
 
         echo "var mvmc_url='". $media_host ."/mvmc_centroids_min.json';";
         echo "var micromarker_png='". $media_host ."/images/micromarker.png';";
-      ?> 
+      ?>
 
     </script>
 
     <div id="espacio_mapa" style="" >
       <div id="cortina_mapa" style="display:none;"></div>
 
-      <div id="map"></div> 
+      <div id="map"></div>
       <div id="display_tooltip" style="display:none;">  </div>
       <div id="display_mapa_filters"  >
-        <div class="filtro filtros-add boton-filtros" onclick="mapa_establece_url('#novo' );" > </div> 
+        <div class="filtro filtros-add boton-filtros" onclick="mapa_establece_url('#novo' );" > </div>
 
         <!--div class="tit">Categoría:</div-->
         <!--div class="filtro categoria" id="filtros_cat">
@@ -95,7 +105,7 @@ include("conecta.php");
         <!--div class="tit">Tipo:</div-->
         <div class="filtro categoria" id="filtros_cat" style=""></div>
 
-        
+
       </div>
       <div> <input id="buscaRecursos" type="text" class="caixaBusqueda" style="display:none;"></div>
       <div class="filtro filtros-buscar boton-filtros" ></div>

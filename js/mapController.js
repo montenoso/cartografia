@@ -29,7 +29,7 @@ function mapController() {
         zIndex: 1 ,
         marker_big_elements: 3,
         cluster_radious: 40,
-        //show_disabled_points: false, 
+        //show_disabled_points: false,
         //nocluster_zoom_range: [13,25],
         hover_event: function(marker, data) {
 
@@ -53,18 +53,18 @@ function mapController() {
 
             if( e.titulo_registro != '') {
               if( e.selectedradio == 'comunidade' ) {
-                comunidade = comunidade + 
-                  "<div class='elemento tipo_comunidade' " + evento_click + "  >" + 
-                    "<div class='icona bgcolor-comunidade'></div>" + 
-                    "<div class='tit'>" + e.titulo_registro + "</div>" + 
+                comunidade = comunidade +
+                  "<div class='elemento tipo_comunidade' " + evento_click + "  >" +
+                    "<div class='icona bgcolor-comunidade'></div>" +
+                    "<div class='tit'>" + e.titulo_registro + "</div>" +
                   "</div>";
               }
               else {
-                recursos = recursos + 
-                  "<div class='elemento recurso tipo_"+e.selectedradio+"'  " +evento_click + " >" + 
-                    "<div class='icona bgcolor-documento'></div>" + 
-                    "<div class='tit'>" + e.titulo_registro + "</div>" + 
-                    "<div class='categoria'>" + categorias + "</div>" + 
+                recursos = recursos +
+                  "<div class='elemento recurso tipo_"+e.selectedradio+"'  " +evento_click + " >" +
+                    "<div class='icona bgcolor-documento'></div>" +
+                    "<div class='tit'>" + e.titulo_registro + "</div>" +
+                    "<div class='categoria'>" + categorias + "</div>" +
                   "</div>";
               }
             }
@@ -73,7 +73,7 @@ function mapController() {
           iwindow.open(marker, 'mouseover' , comunidade + recursos );
         }
 
-        
+
         //debug:true // abre ventana debug de cluster icons
       }
     );
@@ -126,7 +126,7 @@ function mapController() {
           url: "/cartografia_nova/ficha.php" ,
           data: {id:id},
           success: function(datos) {
-            
+
             if(recurso_data.selectedradio == 'comunidade') {
               interfazControl.setSidebarFichaComunidade();
             }
@@ -148,7 +148,7 @@ function mapController() {
 
         $('#display_mapa_content').attr('src', '/cartografia_nova/ficha.php?id='+id);
 
-   
+
         if(recurso_data.selectedradio == 'comunidade') {
           interfazControl.setSidebarFichaComunidade();
         }
@@ -160,7 +160,7 @@ function mapController() {
           that.lastCenter = {lat: parseFloat(recurso_data.latitud), lng: parseFloat(recurso_data.longitud) };
           mapa.setCenter({lat: parseFloat(recurso_data.latitud), lng: parseFloat(recurso_data.longitud) } )
           mapa.setZoom(14);
-        }, 1000); 
+        }, 1000);
 
 
         cl.marker_select(
@@ -176,33 +176,33 @@ function mapController() {
 
   that.cargaMVMC = function( lista_mvmc ) {
 
- 
+
 
 
 
     var obxectos_mvmc = [];
-    
+
     $.each(lista_mvmc, function(i,e){
-      obxectos_mvmc.push( 
-        { 
+      obxectos_mvmc.push(
+        {
           id: e[0],
-          nome: e[1], 
+          nome: e[1],
           pertence: e[2],
           concello: e[3],
           distrito: e[4],
           lat: e[6],
           lon: e[5],
-          selectedradio: 'comunidadeoff'
+          selectedradio: 'comunidade'
         }
       );
     });
 
 
     filtrosControl.iniciaBuscador( obxectos_mvmc );
-  } 
+  }
 
 
-  that.mapa_desselecciona = function() { 
+  that.mapa_desselecciona = function() {
 
     cl.marker_unselect();
     console.log( $(window.location).attr("origin") + $(window.location).attr("pathname") + "#" );
@@ -214,12 +214,12 @@ function mapController() {
     setTimeout(function(){
 
       if( mapa.getZoom() > 12 ){
-        mapa.setZoom(12);  
-        if( that.lastCenter ) 
+        mapa.setZoom(12);
+        if( that.lastCenter )
           mapa.setCenter( that.lastCenter );
       }
-      
-    }, 1000); 
+
+    }, 1000);
 
   }
 
@@ -231,7 +231,7 @@ function mapController() {
     setTimeout(function(){
       mapa.setCenter( pos )
       mapa.setZoom(14);
-    }, 1000); 
+    }, 1000);
 
 
     var iw = new google.maps.InfoWindow({

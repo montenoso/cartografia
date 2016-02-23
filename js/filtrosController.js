@@ -13,13 +13,13 @@ function filtrosController() {
 
 
   that.categoriasFiltros = {
-    mancomun: 'Mancomún',    
+    mancomun: 'Mancomún',
     feminismos: 'Feminismos'
 
   };
 
   that.tipodocumentoFiltros = {
-/*    comunidade: 'Comunidades',    
+/*    comunidade: 'Comunidades',
     foto: 'Fotografías',
     video: 'Vídeos',
     audio: 'Audios',
@@ -112,13 +112,12 @@ function filtrosController() {
     var enabledPoints = [];
 
     // allways show comunities
-    enabledPoints = $.merge( enabledPoints, that.comunidadesList);
-
+    //enabledPoints = $.merge( enabledPoints, that.comunidadesList);
 
     $.each( that.categoriasMapa, function( i, e ) {
 
-      //console.log(e);
-      
+      console.log(e);
+
       if( $.inArray( i,  that.selectedCategories )  != -1  ) {
 
         eval( 'enabledPoints = $.merge( enabledPoints, that.categoriasMapa.' + i + '.elements);');
@@ -130,7 +129,7 @@ function filtrosController() {
   //
   // Constructor
   //
-  
+
   // categorías
   that.settipodocumento();
 
@@ -171,7 +170,7 @@ function filtrosController() {
         searchIds: ['nome', 'pertence', 'concello', 'distrito'],
         //visiblePattern: ' "<img src=\'/images/marcadores_cluster/" + row.selectedradio + "_point_small.png\'>" +row.titulo_registro',
         visiblePattern:  '"<div class=\'elemento recurso tipo_"+row.selectedradio+"\' >" + "<div class=\'icona bgcolor-"+row.selectedradio+"\'></div>" + "<div class=\'tit\'>" + row.nome + "</div>" + "<div class=\'categoria\'>Concello:"+row.concello+" ("+row.distrito+")</div>" + "</div>"',
-        actionSelect: function( row ) { 
+        actionSelect: function( row ) {
 
           if( row.id ) {
             mapControl.notRegMvmc( row )
@@ -185,5 +184,3 @@ function filtrosController() {
   }
   //console.log(recursos)
 }
-
-
