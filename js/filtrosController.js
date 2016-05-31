@@ -142,6 +142,47 @@ function filtrosController() {
 
   });
 
+
+  // Selectores capas
+
+  var capa_satelite = false;
+  var capa_comunidades = true;
+
+  $('#capas_selector_satelite').click( function() {
+    if( capa_satelite == true ) {
+      capa_satelite = false;
+      $('#capas_selector_satelite').removeClass('activada');
+      mapa.setMapTypeId( google.maps.MapTypeId.ROADMAP );
+    }
+    else {
+      capa_satelite = true;
+      $('#capas_selector_satelite').addClass('activada');
+      mapa.setMapTypeId( google.maps.MapTypeId.SATELLITE );
+    }
+  });
+
+  $('#capas_selector_comunidades').click( function() {
+    if( capa_comunidades == true ) {
+      capa_comunidades = false;
+      $('#capas_selector_comunidades').removeClass('activada');
+      console.log( comunidadesImageMap.setOpacity(0) );
+    }
+    else {
+      capa_comunidades = true;
+      $('#capas_selector_comunidades').addClass('activada');
+      console.log( comunidadesImageMap.setOpacity(100) );
+    }
+  });
+
+  $('div.filtros-capas').hover(function() {
+    $('.filtros-capas-desplegale').show( );
+  });
+  $('.filtros-capas-desplegale').mouseout(function() {
+    $('.filtros-capas-desplegale').hide( );
+  });
+
+
+
   that.bodyClickEvent = $('body').bind('click', function( ev){
 
     if(ev.target.className != 'filtro filtros-buscar boton-filtros' && ev.target.className != 'caixaBusqueda'  ) {

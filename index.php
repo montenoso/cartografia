@@ -77,6 +77,7 @@ include("conecta.php");
     </script>
 
     <div id="espacio_mapa" style="" >
+
       <div id="cortina_mapa" style="display:none;"></div>
 
       <div id="map"></div>
@@ -113,6 +114,10 @@ include("conecta.php");
 
       <div> <input id="capas" type="text" class="caixaCapas" style="display:none;"></div>
       <div class="filtro filtros-capas boton-filtros" ></div>
+      <div class="filtros-capas-desplegale" style="display:none;" >
+        <div class="el" id="capas_selector_satelite"><div class="led"></div>Foto satélite</div>
+        <div class="el activada" id="capas_selector_comunidades"><div class="led"></div>Capa comunidades</div>
+      </div>
     </div>
     <div id="displays">
       <div id="display_destacados" >
