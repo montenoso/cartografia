@@ -83,7 +83,7 @@ include("conecta.php");
       <div id="map"></div>
       <div id="display_tooltip" style="display:none;">  </div>
       <div id="display_mapa_filters"  >
-        <div class="filtro filtros-add boton-filtros" onclick="mapa_establece_url('#novo' );" > </div>
+        <div class="filtro filtros-add boton-filtros" onmouseout="interfazControl.hideTooltip()" onmouseover="interfazControl.showTooltip('Engadir novo recurso')" onclick="mapa_establece_url('#novo' );" > </div>
 
         <!--div class="tit">Categoría:</div-->
         <!--div class="filtro categoria" id="filtros_cat">
