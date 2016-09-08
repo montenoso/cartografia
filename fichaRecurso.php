@@ -12,17 +12,18 @@ html, body {
   overflow: hidden;
 }
 </style>
- 
+
 </head>
 <body>
   <a class="btn btn-lg btn-info" style="margin:5px; margin-left:-440px;" onclick="parent.mapControl.mapa_desselecciona();">X</a>
     <h2 class="cover-heading" style="text-align:center; padding:20px;"><?php echo $titulo;?></h2>
-  <div class="site-wrapper" >      
+  <div class="site-wrapper" >
     <div class="site-wrapper-inner">
-    
+    <div style=" position: absolute;top: 40px; left: 170px;   color:#444;"><?php echo date("d-m-Y  \á\s H:i:s", strtotime($fecha));?></div>
+
     <div class="cajadevideo">
       <div class="video">
-      <?php 
+      <?php
 
 
       if( $selectedRadio == "video" ) {
@@ -37,7 +38,7 @@ html, body {
           echo '<iframe width="560" height="315" src="https://www.youtube.com/embed/'.$result[3].'" frameborder="0" allowfullscreen></iframe>';
         }
       }
-      else 
+      else
       if( $selectedRadio == "foto" ) {
         echo '<img src="/cartografia_nova/uploads/500_'.$nombre.'" alt="'.$titulo.'">';
       }
@@ -72,7 +73,7 @@ html, body {
         </div>
           <div class="transbox">
             <p class="lead">
-            Monte: <?php echo $nomePai;?>. 
+            Monte: <?php echo $nomePai;?>.
             Documentadorx: <?php echo $usuari;?>.
             Descripación: <?php echo $descripcion;?>
             </p>
@@ -90,7 +91,7 @@ html, body {
                   }
 
 
-                  
+
                   foreach($categorias as $cat) {
                     if($cat != ""){
                       echo '<IMG SRC="/cartografia_nova/images/categorias/'.$categoria_size.'/'.$cat.'.png">';
@@ -99,14 +100,14 @@ html, body {
                   }
                 }
 
-                ?> 
+                ?>
 
             </p>
 
     </div>
   </div>
   <script type="text/javascript">
-  
+
   </script>
 </body>
 </html>

@@ -24,13 +24,13 @@ function getSliderElement($e) {
 
 
 
-    
+
 if ( !isset($_GET['id']) || !is_numeric($_GET['id']) ) {
   ocorreuUnErro();
 }
 
 
-$id = $_GET['id'];      
+$id = $_GET['id'];
 
 $queryFicha = "SELECT * FROM documento WHERE material_id = $id";
 
@@ -41,12 +41,12 @@ if(!$result) {
   exit;
 }
 
-   
-$registro= mysql_fetch_object($result); 
+
+$registro= mysql_fetch_object($result);
 if(!$registro){
   exit;
 }
-
+$fecha = $registro->fecha_inser;
 $titulo = $registro->titulo_registro;
 $descripcion= $registro->descripcion;
 //$tema = $registro-> tema;
